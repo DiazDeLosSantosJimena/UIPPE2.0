@@ -18,9 +18,19 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'clave',
+        'nombre',
+        'app',
+        'apm',
+        'gen',
+        'fn',
+        'academico',
+        'foto',
         'email',
-        'password',
+        'pass',
+        'id_tipo',
+        'activo',
+        'id_registro'
     ];
 
     /**
@@ -41,4 +51,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function tb_tipos() {
+        return $this->belongsTo(Tipos::class,'id_tipo');
+    }
 }
