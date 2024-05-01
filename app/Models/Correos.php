@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Correos extends Model
 {
     use HasFactory;
+    protected $table = 'tb_correo';
+    protected $primaryKey = 'id_correo';
     protected $fillable = [
         'id_correo',
         'destinatario',

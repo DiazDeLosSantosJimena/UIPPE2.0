@@ -6,7 +6,7 @@ use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class UserSeeder extends Seeder
+class UsuariosSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -24,7 +24,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al222110707@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '1';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -40,7 +40,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al222110811@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '1';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -56,7 +56,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al222010230@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '1';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -72,7 +72,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al222220002@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '1';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -88,7 +88,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al222111400@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '1';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -104,7 +104,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al222111275@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '1';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -120,7 +120,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al721594356@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '3';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -136,7 +136,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al64512379@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '4';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -152,7 +152,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al315794685@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '5';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -168,7 +168,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al125789139@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '3';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -184,7 +184,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al125789135@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '4';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -200,7 +200,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al348971569@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '5';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -216,7 +216,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al798145632@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '3';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -232,7 +232,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al348971566@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '4';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -248,7 +248,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al36987215689@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '5';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -264,7 +264,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al348971555@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '3';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -280,7 +280,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al927468126@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '4';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -296,7 +296,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al394172648@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '5';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -312,7 +312,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al973468521@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '3';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -328,7 +328,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al647215381@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '4';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -344,7 +344,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al378416982@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '5';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -360,7 +360,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al378469125@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '3';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -376,7 +376,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al168743915@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '4';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -392,7 +392,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al671384561@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '5';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -408,7 +408,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al843179546@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '3';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -424,7 +424,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al456713695@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '4';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -440,7 +440,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al456123745@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '5';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -456,7 +456,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al469517843@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '3';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -472,7 +472,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al762498124@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '4';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -488,7 +488,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al274159634@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '5';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -504,7 +504,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al761349852@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '3';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -520,7 +520,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al651348751@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '4';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -536,7 +536,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al745351625@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '5';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -552,7 +552,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al349517642@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '3';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -568,7 +568,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al984613744@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '4';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -584,7 +584,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al547135468@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '5';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -600,7 +600,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al246875133@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '3';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -616,7 +616,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al231456789@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '4';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -632,7 +632,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al345781456@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '5';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -648,7 +648,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al451230784@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '3';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -664,7 +664,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al843516784@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '4';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -680,7 +680,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al1034561027@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '5';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -696,7 +696,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al213456741@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '3';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -712,7 +712,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al144337784@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '4';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -728,7 +728,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al999123484@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '5';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -744,7 +744,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al666321584@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '3';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -760,7 +760,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al888246187@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '4';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -776,7 +776,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al444615789@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '5';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -792,7 +792,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al777156423@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '3';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -808,7 +808,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al555127845@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '4';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -824,7 +824,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al333456178@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '5';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -840,7 +840,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al654447512@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '3';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -856,7 +856,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al647111999@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '4';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -872,7 +872,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al666771122@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '5';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -888,7 +888,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al888445511@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '3';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -904,7 +904,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al665511122@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '4';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -920,7 +920,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al998877666@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '5';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -936,7 +936,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al222222222@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '3';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -952,7 +952,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al777446612@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '4';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -968,7 +968,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al321564888@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '5';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -984,7 +984,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al215611447@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '3';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -1000,7 +1000,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al621222444@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '4';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -1016,7 +1016,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al555666111@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '5';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -1032,7 +1032,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al999456122@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '3';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -1048,7 +1048,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al120354871@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '4';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -1064,7 +1064,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al999445129@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '5';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -1080,7 +1080,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al777777771@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '3';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -1096,7 +1096,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al222244451@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '4';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -1112,7 +1112,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'al555555555@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '5';
         $usuario->activo = '1';
         $usuario->id_registro = '1';
@@ -1128,7 +1128,7 @@ class UserSeeder extends Seeder
         $usuario->academico = 'TSU Área Dasarrollo de Software Multiplataforma';
         $usuario->foto = 'cuervo.png';
         $usuario->email = 'admiuippe@gmail.com';
-        $usuario->pass = '123456';
+        $usuario->password = '123456';
         $usuario->id_tipo = '2';
         $usuario->activo = '1';
         $usuario->id_registro = '1';

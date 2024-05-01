@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Programas extends Model
 {
     use HasFactory;
+    protected $table = 'tb_programas';
+    protected $primaryKey = 'id_programa';
     protected $fillable = [
         'abreviatura',
         'nombre',

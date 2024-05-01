@@ -32,6 +32,7 @@ class User extends Authenticatable
         'activo',
         'id_registro'
     ];
+    
 
     /**
      * The attributes that should be hidden for serialization.

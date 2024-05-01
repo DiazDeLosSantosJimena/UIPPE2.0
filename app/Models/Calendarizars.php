@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Calendarizars extends Model
 {
     use HasFactory;
+    protected $table = 'tb_calendarizars';
+    protected $primaryKey = 'id_calendario';
     protected $fillable = [
         'areameta_id',
         'meses_id',

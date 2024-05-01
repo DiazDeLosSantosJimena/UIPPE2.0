@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class AreasMetas extends Model
 {
     use HasFactory;
+    protected $table = 'tb_areasmetas';
+    protected $primaryKey = 'id_areasmetas';
     protected $fillable = [
         'area_id',
         'meta_id',

@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Meses extends Model
 {
     use HasFactory;
+    protected $table = 'tb_meses';
+    protected $primaryKey = 'id_meses';
     protected $fillable = [
         'm_enero',
         'm_febrero',

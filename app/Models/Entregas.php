@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Entregas extends Model
 {
     use HasFactory;
+    protected $table = 'tb_entregas';
+    protected $primaryKey = 'id_entregas';
     protected $fillable = [
         'id_entregas',
         'areameta_id',

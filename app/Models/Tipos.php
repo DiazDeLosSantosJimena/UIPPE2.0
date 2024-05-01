@@ -8,13 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Tipos extends Model
 {
     use HasFactory;
+    protected $table = 'tb_tipos';
+    protected $primaryKey = 'id';
     protected $fillable = [
         'clave',
         'nombre',
         'descripcion',
-        'foto',
         'activo',
-         'id_registro'
+        'id_registro'
     ];
 
     public function areameta() {
