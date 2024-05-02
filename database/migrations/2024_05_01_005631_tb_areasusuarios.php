@@ -15,7 +15,7 @@ return new class extends Migration
         schema::create('tb_areasusuarios', function (Blueprint $table){
             $table->id('id_areasusuarios');
             $table->foreignId('area_id')->references('id_area')->on('tb_areas');
-            $table->foreignId('usuario_id')->references('id_usuario')->on('users');
+            $table->foreignId('usuario_id')->references('id')->on('users');
             $table->integer('id_registro');
             $table->timestamps();
         });
