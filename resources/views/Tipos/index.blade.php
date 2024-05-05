@@ -107,7 +107,7 @@ $session_area = session('session_area');
     </div>
     @else       <!-- Condición de acceso al contenido - por AREA ELSE -->
     <script>
-        window.location.replace("{{ route('registrosA', ['id' => $session_area]) }}");
+        window.location.replace("{{ route('registrosA', ['user_id' => auth()->user()->id, 'session_area' => $session_area]) }}");
     </script>
     @endif
 </div>

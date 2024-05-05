@@ -179,7 +179,7 @@ $session_area = session('session_area');
                         <label for="floatingInput">Selecciona uno o varios usuarios:</label>
                         <select multiple data-search="true" data-silent-initial-value-set="true" name="usuario_id[]">
                             @foreach ($usuarios as $info)
-                            <option value="{{ $info->id_usuario }}">{{ $info->nombre }} {{$info->app}} {{$info->apm}}</option>
+                            <option value="{{ $info->id }}">{{ $info->nombre }} {{$info->app}} {{$info->apm}}</option>
                             @endforeach
                         </select>
                     </div>

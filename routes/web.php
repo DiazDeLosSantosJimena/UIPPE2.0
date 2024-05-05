@@ -62,4 +62,6 @@ Route::middleware('auth')->group(function () {
     Route::name('editAreaUser')->put('editAreaUser/{id}', [AreasUsuariosController::class, 'edit']);
     Route::name('deleteAreaUser')->delete('deleteAreaUser/{id}', [AreasUsuariosController::class, 'destroy']);
     Route::post('areauser/store', [AreasUsuariosController::class, 'store'])->name('areausuario.store');
+
+    
 });

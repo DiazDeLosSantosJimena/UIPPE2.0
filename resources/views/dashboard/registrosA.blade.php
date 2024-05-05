@@ -11,9 +11,7 @@
     Variables de Sesiones del usuario START
 */
 $session_area = session('session_area');
-/*
-    Variables de Sesiones del usuario END
-*/
+
 ?>
 
 <!-- SCRIPT QUE FUNCIONA COMO MIDDLEWARE START -->
@@ -118,13 +116,13 @@ $session_area = session('session_area');
                                             </td>
                                             <td class="text-center">
                                                 <!-- Button show modal -->
-                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalshow{{ $info->id_usuario }}"><i class="fa-solid fa-eye"></i></button>
+                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalshow{{ $info->id }}"><i class="fa-solid fa-eye"></i></button>
                                             </td>
                                             @if(auth()->user()->id_tipo == 4 || auth()->user()->id_tipo == 5)
                                             @else
                                             <td>
                                                 <!-- Button edit modal -->
-                                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $info->id_usuario }}"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $info->id }}"><i class="fa-solid fa-pen-to-square"></i></button>
                                             </td>
                                             @endif
                                         </tr>
@@ -233,8 +231,8 @@ $session_area = session('session_area');
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="/areasusuarios" method="POST" enctype="multipart/form-data">
-                {{-- <form action="{{route('areausuario.store')}}" method="POST" enctype="multipart/form-data"> --}}
+                {{-- <form action="areasusuarios.store" method="POST" enctype="multipart/form-data"> --}}
+                <form action="{{route('areausuario.store')}}" method="POST" enctype="multipart/form-data">
                     {!! csrf_field() !!}
                     <div>
                         <label for="floatingInput">Selecciona un area:</label>
@@ -254,7 +252,7 @@ $session_area = session('session_area');
                         <select multiple data-search="true" data-silent-initial-value-set="true" name="usuario_id[]">
                         @foreach ($usuarios as $info)
                         @if($info -> id_tipo == 3 || $info -> id_tipo == 4 || $info -> id_tipo == 5)
-                            <option value="{{ $info->id_usuario }}">{{ $info->nombre }} {{$info->app}} {{$info->apm}}</option>
+                            <option value="{{ $info->id }}">{{ $info->nombre }} {{$info->app}} {{$info->apm}}</option>
                         @endif
                         @endforeach
                         </select>
@@ -282,7 +280,7 @@ $session_area = session('session_area');
 
 <!-- SHOW MODAL START -->
 @foreach ($Usuarios as $usuario)
-<div class="modal fade" id="modalshow{{ $usuario->id_usuario }}" tabindex="-1" aria-labelledby="modalshowLabel" aria-hidden="true">
+<div class="modal fade" id="modalshow{{ $usuario->id }}" tabindex="-1" aria-labelledby="modalshowLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -324,7 +322,7 @@ $session_area = session('session_area');
 
 <!-- EDIT MODAL START -->
 @foreach ($Usuarios as $usuario)
-<div class="modal fade" id="exampleModal{{ $usuario->id_usuario }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal{{ $usuario->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -332,8 +330,8 @@ $session_area = session('session_area');
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="" method="POST" enctype="multipart/form-data">
-                    {{-- <form action="{{ route('editUsuario', ['id' => $usuario->id_usuario]) }}" method="POST" enctype="multipart/form-data"> --}}
+                {{-- <form action="" method="POST" enctype="multipart/form-data"> --}}
+                    <form action="{{ route('editUsuario', ['id' => $usuario->id]) }}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field('PATCH') }}
                     {{ method_field('PUT') }}
                     <div class="form-floating mb-3">

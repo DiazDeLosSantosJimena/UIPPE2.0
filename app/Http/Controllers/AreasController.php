@@ -97,7 +97,7 @@ class AreasController extends Controller
         $query->id_registro = trim($request->registro);
         $query->save();
 
-        return redirect('registrosA');
+        return redirect('areas'); //CHECAR BIEN LA DIRECCION
     }
 
     public function destroy(Areas $id, Request $request)

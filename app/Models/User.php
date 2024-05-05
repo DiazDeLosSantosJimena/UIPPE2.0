@@ -27,7 +27,7 @@ class User extends Authenticatable
         'academico',
         'foto',
         'email',
-        'pass',
+        'password',
         'id_tipo',
         'activo',
         'id_registro'

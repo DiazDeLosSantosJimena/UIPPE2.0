@@ -128,7 +128,7 @@
                         <label for="floatingInput">Selecciona uno o varios usuarios:</label>
                         <select multiple data-search="true" data-silent-initial-value-set="true"  name="usuario_id[]">
                         @foreach ($usuarios as $info)
-                            <option value="{{ $info->id_usuario }}">{{ $info->nombre }} {{$info->app}} {{$info->apm}}</option>
+                            <option value="{{ $info->id }}">{{ $info->nombre }} {{$info->app}} {{$info->apm}}</option>
                         @endforeach
                         </select>
                     </div>
@@ -141,7 +141,7 @@
                             <label class="form-check-label" for="flexSwitchCheckChecked">Activo</label>
                         </div>
                     </div>
-                    <input class="form-control" type="text" name="registro" value="<?php echo $session_id ?>" style="display: none;">
+                    <input class="form-control" type="text" name="registro" value="{{ auth()->user()->id }}" style="display: none;">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>

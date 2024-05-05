@@ -8,12 +8,13 @@ $session_area = session('session_area');
 ?>
 <!-- Variables de Sesiones del usuario END -->
 @auth    <!-- Validacion de contenido LOGGEADO IF -->
+
 @if($session_area == 0)     <!-- Validacion de contenido POR AREA IF -->
 <div class="container p-4">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Inicio</a></li>
-            <li class="breadcrumb-item"><a href="{{ route('registrosA', ['id' => $session_area]) }}">Registros</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('registrosA', [auth()->user()->id => $session_area]) }}">Registros</a></li>
             <li class="breadcrumb-item" aria-current="page">Áreas</li>
         </ol>
     </nav>
@@ -149,7 +150,7 @@ $session_area = session('session_area');
                 <form action="{{ route('deleteArea', ['id' => $info->id_area]) }}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field('PATCH') }}
                     {{ method_field('PUT') }}
-                    <input class="form-control" type="text" name="registro" value="<?php echo $session_id ?>" style="display: none;">
+                    <input class="form-control" type="text" name="registro" value="{{ auth()->user()->id }}" style="display: none;">
                     <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Borrar</button>
                 </form>
             </div>
@@ -221,7 +222,7 @@ $session_area = session('session_area');
                             <label class="form-check-label" for="flexSwitchCheckChecked">Activo</label>
                         </div>
                     </div>
-                    <input class="form-control" type="text" name="registro" value="<?php echo $session_id ?>" style="display: none;">
+                    <input class="form-control" type="text" name="registro" value="{{ auth()->user()->id }}" style="display: none;">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -281,7 +282,7 @@ $session_area = session('session_area');
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <input class="form-control" type="hidden" name="registro" value="<?php echo $session_id ?>">
+                <input class="form-control" type="hidden" name="registro" value="{{ auth()->user()->id }}">
                 <input type="submit" href="usuarios/store" class="btn btn-success" value="Enviar" />
             </div>
             </form>

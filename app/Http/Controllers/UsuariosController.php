@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Hash;
 use App\Models\Tipos;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -64,7 +64,7 @@ class UsuariosController extends Controller
             'academico' => $request->input('academico'),
             'foto' => $foto2,
             'email' => $request->input('email'),
-            'pass' => "123123", //$request->input('pass'),
+            'password' => Hash::make('123123'), //$request->input('pass'),VERIFICAR COMO ASIGNAR UNA CONTRASEÑA
             'id_tipo' => $request->input('id_tipo'),
             'activo' => 1,
             'id_registro' => $request->input('registro'),
@@ -84,7 +84,7 @@ class UsuariosController extends Controller
  
     public function edit(User $id, Request $request)
     {
-        $query = User::find($id->id_usuario);
+        $query = User::find($id->id);
 
         if ($request->file('foto') != '') {
             $file = $request->file('foto');
