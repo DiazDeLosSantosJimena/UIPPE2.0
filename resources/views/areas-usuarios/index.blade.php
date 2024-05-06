@@ -1,4 +1,5 @@
 @extends('layout.navbar')
+
 <!-- Importacion de estilos para el select START -->
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/virtual-select.min.css') }}">
@@ -7,14 +8,7 @@
 
 @section('content')
 
-<!-- Variables de Sesiones del usuario START -->
-<?php
-$session_area = session('session_area');
-?>
-<!-- Variables de Sesiones del usuario END -->
-
 @auth    <!-- Condición de acceso al contenido LOGGEADO IF -->
-@if($session_area == 0)     <!-- Condición de acceso al contenido AREA IF -->
 <div class="container p-4">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -28,20 +22,19 @@ $session_area = session('session_area');
             <h3>Áreas | Usuarios</h3>
         </div>
         <div class="col p-4 d-flex justify-content-end">
-            {{--
             <a href="{{route('pdfau')}}"><button type="button" class="btn btn-danger mx-1 my-1"><i class="fa-solid fa-file-pdf"></i></button></a>
             <a class="btn btn-success float-end mx-1 my-1" href="{{ route('areasusuarios.export') }}"><i class="fa-sharp fa-solid fa-file-excel"></i></a>
-                --}}
             <button type="button" class="btn btn-success mx-1 my-1" id="btn_alta" data-bs-toggle="modal" data-bs-target="#modalalta"><i class="fa-solid fa-plus"></i></button>
         </div>
         <div class="table-responsive">
-            <table class="table">
+            <table class="table" id="areas-usuarios">
                 <thead>
                     <tr>
                         <th>#</th>
                         <th>Area</th>
                         <th>Usuario</th>
-                        <th colspan="2" class="text-center">Registro</th>
+                        <th class="text-center">Acción</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -66,11 +59,15 @@ $session_area = session('session_area');
     </div>
 </div>
 
-@else       <!-- Condición de acceso al contenido AREA ELSE -->
+<!-- Condición de acceso al contenido AREA ELSE -->
+{{--
 <script>
     window.location.replace("{{ route('registrosA', ['id' => $session_area]) }}");
-</script>
-@endif
+</script>    
+--}}
+
+@include('areas-usuarios.modales')
+
 @endauth   <!-- Condición de acceso al contenido LOGGEADO ELSE -->
 @guest
 <div class="container p-4">
@@ -86,124 +83,7 @@ $session_area = session('session_area');
 </div>
 @endguest
 
-<!-- ELIMINAR START MODAL -->
-@foreach ($asig as $info )
-<div class="modal fade" id="deleteModal{{ $info->id_areasusuarios }}" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="deleteModalLabel">Eliminar Área | {{ $info->id_areasusuarios }}</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body text-center">
-                ¿Realmente desea eliminar el registro?
-                <strong>
-                    <p>{{$info -> nombre .' | '. $info->nombreU .' '. $info->app .' '. $info->apm}}</p>
-                </strong>
-            </div>
-            <div class="modal-footer">
-            <form action="{{ route('deleteAreaUser', ['id' => $info->id_areasusuarios]) }}" method="POST" enctype="multipart/form-data">
-                {!! csrf_field() !!}
-                @method("delete")
-                <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Borrar</button>
-            </form>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            </div>
-        </div>
-    </div>
-</div>
-@endforeach
-<!-- ELIMINAR END MODAL -->
-
-<!-- SHOW MODAL START -->
-@foreach ($modalDetalle as $info)
-<div class="modal fade" id="modalshow{{ $info->id_areasusuarios }}" tabindex="-1" aria-labelledby="modalshowLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="modalshowLabel">Detalles | {{ $info -> clave }}</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body d-flex" style="align-items: center; justify-content: center;">
-                <div class="col text-center">
-                    <img src="{{ asset('img/post/'.$info->foto) }}" alt="{{ $info -> foto }}" style="width: 150px;">
-                </div>
-                <div class="col">
-                    <p><strong>Nombre: </strong><br>{{$info -> nombre .' '. $info->app .' '. $info->apm}}</p>
-                    <p><strong>Correo Electrónico: </strong><br>{{ $info -> email }}</p>
-                    <p><strong>Fecha de nacimiento: </strong><br>{{$info -> fn}}</p>
-                </div>
-            </div>
-            <hr>
-            <div class="modal-body row">
-                <h5 class="text-center"><strong>Área</strong></h5>
-                <div class="col-6 text-center">
-                    <p><strong>Clave: </strong><br>{{$info -> clave}}</p>
-                </div>
-                <div class="col-6 text-center">
-                    <p><strong>Nombre: </strong><br>{{ $info -> nombreA }}</p>
-                </div>
-                <div class="col-12">
-                    <p><strong>Descripción: </strong><br>{{$info -> descripcion}}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endforeach
-<!-- SHOW MODAL END -->
-
-<!-- ADD MODAL START -->
-<div class="modal fade" id="modalalta" tabindex="-1" aria-labelledby="modalaltaLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Área-usuario</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="{{route('areausuario.store')}}" method="POST" enctype="multipart/form-data">
-                    {!! csrf_field() !!}
-                    <div>
-                        <label for="floatingInput">Selecciona un area:</label>
-                        <select name="area_id" id="area_id" aria-label="floating label selext example" data-search="true" data-silent-initial-value-set="true">
-                            @foreach ($areas as $info)
-                            <option value="{{$info->id_area}}">{{$info->nombre}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-
-                    <hr class="sidebar-divider">
-
-                    <div>
-                        <label for="floatingInput">Selecciona uno o varios usuarios:</label>
-                        <select multiple data-search="true" data-silent-initial-value-set="true" name="usuario_id[]">
-                            @foreach ($usuarios as $info)
-                            <option value="{{ $info->id }}">{{ $info->nombre }} {{$info->app}} {{$info->apm}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-
-                    <hr class="sidebar-divider">
-
-                    <div class="mb-3">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" name="activo" role="switch" id="flexSwitchCheckChecked" checked>
-                            <label class="form-check-label" for="flexSwitchCheckChecked">Activo</label>
-                        </div>
-                    </div>
-                    <input class="form-control" type="text" name="registro" value="{{ auth()->user()->id }}" style="display: none;">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <input type="submit" href="usuarios/store" class="btn btn-success" value="Enviar" />
-            </div>
-            </form>
-        </div>
-    </div>
-</div>
-<!-- ADD MODAL END -->
-
+@section('js')
 <!-- SCRIPT MODAL START -->
 <script>
     $(function() {
@@ -231,5 +111,33 @@ $session_area = session('session_area');
     });
 </script>
 <!-- SCRIPT PARA MULTISELECT END -->
+<!-- Importacion y configuracion para las tablas dinamicas START -->
+<script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('js/dataTables.bootstrap5.min.js') }}"></script>
+<script>
+    $(document).ready(function() {
+        $('#areas-usuarios').DataTable({
+            "lengthMenu": [
+                [5, 10, 50, -1],
+                [5, 10, 50, "Todo"]
+            ],
+            ordering: false,
+            info: false,
+            language: {
+                "search": "Buscar:",
+                "paginate": {
+                    "first": "Primero",
+                    "last": "Ultimo",
+                    "next": "Siguiente",
+                    "previous": "Anterior"
+                },
+                "lengthMenu": "Mostrar _MENU_ Entradas",
+                "zeroRecords": "Sin resultados encontrados",
+            }
+        });
+    });
+</script>
+<!-- Importacion y configuracion para las tablas dinamicas END -->
+@endsection
 
 @endsection

@@ -28,10 +28,8 @@ $session_area = session('session_area');
             <h3>Usuarios</h3>
         </div>
         <div class="col p-4 d-flex justify-content-end">
-            {{--
             <a href="{{route('pdfu')}}"><button type="button" class="btn btn-danger mx-1 my-1"><i class="fa-solid fa-file-pdf"></i></button></a>
             <a class="btn btn-success float-end mx-1 my-1 " href="{{ route('usuarios.export') }}"><i class="fa-sharp fa-solid fa-file-excel"></i></a>
-            --}}
             <button type="button" class="btn btn-success mx-1 my-1" id="btn_alta" data-bs-toggle="modal" data-bs-target="#modalalta"><i class="fa-solid fa-plus"></i></button>
         </div>
         <div class="table-responsive">
@@ -168,7 +166,7 @@ $session_area = session('session_area');
 @endguest
 
 <!-- Importacion y configuracion para las tablas dinamicas START -->
-@section('dataTablesJs')
+@section('js')
 <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('js/dataTables.bootstrap5.min.js') }}"></script>
 <script>
@@ -189,6 +187,22 @@ $session_area = session('session_area');
                 "zeroRecords": "Sin resultados encontrados",
             }
         });
+    });
+</script>
+<script>
+    $(function() {
+        $('#modalmod').modal('show')
+    });
+</script>
+<script>
+    $(function() {
+        $('#modalshow').modal('show')
+    });
+    $(function() {
+        $('#modalver').modal('show')
+    });
+    $(function() {
+        $('#eliminarmodal').modal('show')
     });
 </script>
 @endsection

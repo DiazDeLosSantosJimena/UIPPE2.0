@@ -1,33 +1,58 @@
-@yield('modales')
-<!-- ELIMINAR START MODAL -->
-@foreach ($Usuarios as $usuario )
-<div class="modal fade" id="deleteModal{{ $usuario->id }}" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+<!-- ADD MODAL START -->
+<div class="modal fade" id="modalalta" tabindex="-1" aria-labelledby="modalaltaLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="deleteModalLabel">Eliminar Usuarios</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Área-usuario</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body text-center">
-                ¿Realmente desea eliminar el registro?
-                <strong>
-                    <p>{{$usuario -> clave .' | '. $usuario -> nombreU .' '. $usuario -> app .' '. $usuario->apm}}</p>
-                </strong>
+            <div class="modal-body">
+                {{-- <form action="areasusuarios.store" method="POST" enctype="multipart/form-data"> --}}
+                <form action="{{route('areausuario.store')}}" method="POST" enctype="multipart/form-data">
+                    {!! csrf_field() !!}
+                    <div>
+                        <label for="floatingInput">Selecciona un area:</label>
+                        <select class="form-control form-select" aria-label="Default select example" name="area_id">
+                            @foreach ($areasMulti as $info)
+                            @if($session_area == $info->id_area)
+                            <option value="{{$info->id_area}}">{{$info->nombre}}</option>
+                            @endif
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <hr class="sidebar-divider">
+
+                    <div>
+                        <label for="floatingInput">Selecciona uno o varios usuarios:</label>
+                        <select multiple data-search="true" data-silent-initial-value-set="true" name="usuario_id[]" id="usuariosSelect">
+                        @foreach ($usuarios as $info)
+                        @if($info -> id_tipo == 3 || $info -> id_tipo == 4 || $info -> id_tipo == 5)
+                            <option value="{{ $info->id }}">{{ $info->nombre }} {{$info->app}} {{$info->apm}}</option>
+                        @endif
+                        @endforeach
+                        </select>
+                    </div>
+
+                    <hr class="sidebar-divider">
+
+                    <div class="mb-3">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" name="activo" role="switch" id="flexSwitchCheckChecked" checked>
+                            <label class="form-check-label" for="flexSwitchCheckChecked">Activo</label>
+                        </div>
+                    </div>
+                    <input class="form-control" type="text" name="registro" value="{{ auth()->user()->id }}" style="display: none;">
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
-                <form action="{{ route('deleteUsers', ['id' => $usuario->id]) }}" method="POST" enctype="multipart/form-data">
-                    {{ csrf_field('PATCH') }}
-                    {{ method_field('PUT') }}
-                    <input class="form-control" type="text" name="registro" value="{{ auth()->user()->id }}" style="display: none;">
-                    <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Borrar</button>
-                </form>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <input type="submit" href="usuarios/store" class="btn btn-success" value="Enviar" />
             </div>
+            </form>
         </div>
     </div>
 </div>
-@endforeach
-<!-- ELIMINAR END MODAL -->
+<!-- ADD MODAL END -->
 
 <!-- SHOW MODAL START -->
 @foreach ($Usuarios as $usuario)
@@ -70,10 +95,9 @@
 @endforeach
 <!-- SHOW MODAL END -->
 
-
 <!-- EDIT MODAL START -->
 @foreach ($Usuarios as $usuario)
-<div class="modal fade" id="exampleModal{{ $usuario->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal{{ $usuario->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -81,7 +105,8 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('editUsuario', ['id' => $usuario->id]) }}" method="POST" enctype="multipart/form-data">
+                {{-- <form action="" method="POST" enctype="multipart/form-data"> --}}
+                    <form action="{{ route('editUsuario', ['id' => $usuario->id]) }}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field('PATCH') }}
                     {{ method_field('PUT') }}
                     <div class="form-floating mb-3">
@@ -152,9 +177,17 @@
                         <hr>
                         <label for=""> Tipo de usuario:</label>
                         <select class="form-control form-select" aria-label="Default select example" name="id_tipo" value="{{$usuario->id_tipo}}">
-                            @foreach($Tipos as $info)
-                            <option value={{$info->id}} {{ $info->id == $usuario->id_tipo ?'selected':''; }}>{{$info->nombre}}</option>
-                            @endforeach
+                        @foreach($Tipos as $info)
+                            @if(auth()->user()->id_tipo == 3)
+                                @if($info -> id != 1 || $info -> id != 1)
+                                    <option value={{$info->id}} {{ $info->id == $usuario->id_tipo ?'selected':''; }}>{{$info->nombre}}</option>
+                                @endif
+                            @else
+                                @if($info->id == $usuario->id_tipo)
+                                    <option value={{$info->id}} {{ $info->id == $usuario->id_tipo ?'selected':''; }}>{{$info->nombre}}</option>
+                                @endif
+                            @endif
+                        @endforeach
                         </select>
                         <hr>
                     </div>
@@ -181,109 +214,56 @@
 @endforeach
 <!-- EDIT MODAL END -->
 
-
-<!-- ADD MODAL START -->
-<div class="modal fade" id="modalalta" tabindex="-1" aria-labelledby="modalaltaLabel" aria-hidden="true">
+<!-- EDIT ÁREA START -->
+@foreach ($areas as $info)
+<div class="modal fade" id="exampleModal{{ $session_area }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Usuario</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Registro</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('usuarios.store') }}" method="POST" enctype="multipart/form-data">
-                    {!! csrf_field() !!}
-                    @include('components.flash_alerts')
+                <form action="{{ route('editArea', ['id' => $session_area]) }}" method="POST" enctype="multipart/form-data">
+                    {{ csrf_field('PATCH') }}
+                    {{ method_field('PUT') }}
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" name="clave" placeholder="name@example.com">
+                        <input type="text" class="form-control" id="floatingInput" name="clave" placeholder="name@example.com" value="{{ $areas -> clave }}">
                         <label for="floatingInput">Clave:</label>
-                        @error('clave')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
                     </div>
-                    <div class="row py-2">
-                        <div class="col">
-                            <label for="exampleInputEmail1" class="form-label">Nombre:</label>
-                            <input type="text" class="form-control" aria-label="First name" name="nombre">
-                            @error('nombre')
-                            <small class="form-text text-danger">{{$message}}</small>
-                            @enderror
-                        </div>
-                        <div class="col">
-                            <label for="exampleInputEmail1" class="form-label">Apellido Paterno:</label>
-                            <input type="text" class="form-control" aria-label="Last name" name="app">
-                            @error('app')
-                            <small class="form-text text-danger">{{$message}}</small>
-                            @enderror
-                        </div>
-                        <div class="col">
-                            <label for="exampleInputEmail1" class="form-label">Apellido Materno:</label>
-                            <input type="text" class="form-control" aria-label="Last name" name="apm">
-                            @error('apm')
-                            <small class="form-text text-danger">{{$message}}</small>
-                            @enderror
-                        </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" name="nombre" placeholder="name@example.com" value="{{ $areas -> nombre }}">
+                        <label for="floatingInput">Nombre:</label>
                     </div>
-                    <div class="py-2">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gen" id="flexRadioDefault1" value="F" checked>
-                            <label class="form-check-label" for="flexRadioDefault1">
-                                Femenino
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gen" id="flexRadioDefault2" value="M">
-                            <label class="form-check-label" for="flexRadioDefault2">
-                                Masculino
-                            </label>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Fecha de nacimiento:</label>
-                        <input type="date" class="form-control" id="fn" name="fn">
-                    </div>
-                    <div class="mb-3">
-                        <label for="formGroupExampleInput" class="form-label">Académico:</label>
-                        <input type="text" class="form-control" name="academico">
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Email:</label>
-                        <input type="email" class="form-control" name="email" placeholder="name@example.com">
-                        @error('email')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" name="descripcion" placeholder="name@example.com" value="{{ $areas -> descripcion }}">
+                        <label for="floatingInput">Descripción:</label>
                     </div>
                     <div class="mb-3">
                         <label for="formFile" class="form-label">Seleccione una foto de perfil:</label>
-                        <input class="form-control" type="file" name="foto">
+                        <input class="form-control" type="file" name="foto" id="formFile" value="{{ $areas -> foto }}">
                     </div>
-                    <div class="mb-3">
-                        <hr>
-                        <label for=""> Tipo de usuario:</label>
-                        <select class="form-control form-select" aria-label="Default select example" name="id_tipo">
-                            <option value="">Elige al tipo de usuario</option>
-                            @foreach($Tipos as $info)
-                            @if($info->activo > 0)
-                            <option value={{$info->id}}>{{$info->nombre}}</option>
-                            @endif
-                            @endforeach
-                        </select>
-                        <hr>
-                    </div>
+
                     <div class="mb-3">
                         <div class="form-check form-switch">
+                            @if($areas -> activo > 0)
                             <input class="form-check-input" type="checkbox" role="switch" name="activo" checked>
+                            @else
+                            <input class="form-check-input" type="checkbox" role="switch" name="activo">
+                            @endif
                             <label class="form-check-label" for="flexSwitchCheckChecked">Activo</label>
                         </div>
                     </div>
+
                     <input class="form-control" type="text" name="registro" value="{{ auth()->user()->id }}" style="display: none;">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <input type="submit" href="usuarios/store" class="btn btn-success" value="Enviar" />
+                <button type="submit" class="btn btn-success">Editar</button>
             </div>
             </form>
         </div>
     </div>
 </div>
-<!-- ADD MODAL END -->
+@endforeach
+<!-- EDIT ÁREA START -->

@@ -37,12 +37,6 @@ class DashboardController extends Controller
     // Cuando un usuario tiene un área asignada, la vista se asigna en esta función.
     public function registrosArea($id)
     {
-        $area_2 = \DB::SELECT('SELECT * FROM tb_areas WHERE id_area = ' . $id);
-        if (count($area_2) <= 0) {
-            return redirect('registros');
-        } else {
-            $area2 = Areas::find($id);
-        }
         $area = Areas::find($id);
         $metas = \DB::select('SELECT meta.id_meta, meta.clave, meta.nombre AS nombreM, meta.descripcion, meta.unidadmedida, meta.activo, programa.nombre AS nombreP, programa.abreviatura AS nombrePA, areas.id_area
                 FROM tb_metas AS meta

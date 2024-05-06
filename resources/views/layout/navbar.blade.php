@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/menu.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/all.min.css') }}">
+    <!-- <link rel="stylesheet" href="{{ asset('css/all.min.css') }}"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.13.1/datatables.min.css" />
     @yield('css')
@@ -42,15 +43,12 @@ $session_area = session('session_area');
                         @if(auth()->user()->id_tipo != 5)
                             <a href="{{ route('registrosA', ['id' => $session_area]) }}" class="nav_link"> <i class='bx bxs-edit'></i></i> <span class="nav_name">Registros</span> </a>
                             {{-- <a href="{{ route('graficos') }}" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Reportes</span> </a> --}}
-                            <a href="" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Reportes</span> </a>
-                            {{-- <a href="{{ route('calendario') }}" class="nav_link"> <i class='bx bx-calendar nav_icon'></i> <span class="nav_name">Calendario</span> </a> --}}
-                            <a href="" class="nav_link"> <i class='bx bx-calendar nav_icon'></i> <span class="nav_name">Calendario</span> </a>
+                            <a href="#" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Reportes</span> </a>
+                            <a href="{{ route('calendario') }}" class="nav_link"> <i class='bx bx-calendar nav_icon'></i> <span class="nav_name">Calendario</span> </a>
                             @if(auth()->user()->id_tipo == 1 || auth()->user()->id_tipo == 2)
-                                {{-- <a href="{{ route('correo') }}" class="nav_link"> <i class="bx bx-envelope nav_icon"></i> <span class="nav_name">Correo</span></a> --}}
-                                <a href="" class="nav_link"> <i class="bx bx-envelope nav_icon"></i> <span class="nav_name">Correo</span></a>
+                                <a href="{{ route('correo') }}" class="nav_link"> <i class="bx bx-envelope nav_icon"></i> <span class="nav_name">Correo</span></a>
                             @endif
-                            {{-- <a href="{{ route('perfil') }}" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Perfíl</span> </a> --}}
-                            <a href="" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Perfíl</span> </a>
+                            <a href="{{ route('perfil') }}" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Perfíl</span> </a>
                         @endif
                     @endif
                 </div>
@@ -73,7 +71,7 @@ $session_area = session('session_area');
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('js/3aafa2d207.js') }}"></script>
     <script src="{{ asset('js/menu.js') }}"></script>
-    <!-- <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script> -->
+    <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
     <!-- <script src="{{ asset('js/jquery-3.6.4.min.js') }}"></script> -->
     <!-- <script src="{{ asset('js/datatables.min.js') }}"></script>  -->
     <script>
