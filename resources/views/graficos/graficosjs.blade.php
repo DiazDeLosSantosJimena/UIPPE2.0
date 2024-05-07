@@ -227,7 +227,8 @@
                 text: 'Programas y sus metas'
             }
 
-        }
+        },
+          plugins: [bgPMColor],
 
     });
     const GraficoProgramasmetas = new Chart(
@@ -301,7 +302,7 @@
                 }]
             }
         },
-        plugins: [bgTColor],
+        plugins: [bgUPColor],
 
     });
 
