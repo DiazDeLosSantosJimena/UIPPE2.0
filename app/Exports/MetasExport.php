@@ -18,8 +18,11 @@ class MetasExport implements FromCollection, WithHeadings, WithEvents
     */
     public function collection()
     {
-        return Metas::select("clave", "nombre", "programa_id")->get();
-        
+        return Metas::select("tb_metas.clave", "tb_metas.nombre as meta_nombre", "tb_programas.nombre as programa_nombre")
+        ->join('tb_programas', 'tb_metas.programa_id', '=', 'tb_programas.id_programa')
+        ->get();
+    
+    
     }
   
     /**
@@ -43,9 +46,9 @@ class MetasExport implements FromCollection, WithHeadings, WithEvents
                         ->getStartColor()
                         ->setARGB('007A37');
 
-                        $event->sheet->getColumnDimension('A')->setWidth(8);
-                        $event->sheet->getColumnDimension('B')->setWidth(215);
-                        $event->sheet->getColumnDimension('C')->setWidth(11);  
+                        $event->sheet->getColumnDimension('A')->setWidth(10);
+                        $event->sheet->getColumnDimension('B')->setWidth(200);
+                        $event->sheet->getColumnDimension('C')->setWidth(78);  
   
             },
         ];

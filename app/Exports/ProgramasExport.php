@@ -44,8 +44,8 @@ class ProgramasExport implements FromCollection, WithHeadings, WithEvents
 
                         $event->sheet->getColumnDimension('A')->setWidth(10);
                         $event->sheet->getColumnDimension('B')->setWidth(17);
-                        $event->sheet->getColumnDimension('C')->setWidth(60);
-                        $event->sheet->getColumnDimension('D')->setWidth(80);  
+                        $event->sheet->getColumnDimension('C')->setWidth(78);
+                        $event->sheet->getColumnDimension('D')->setAutoSize(true);
   
             },
         ];

@@ -100,6 +100,204 @@
     }
 </script>
 
+
+<!-- -----------------------------------------------Script para modificar la grafica de areas------------------------------------------------ -->
+
+<script>
+    const bgColor = {
+        id: 'bgColor',
+        beforeDraw: (chart, options) => {
+            const {
+                ctx,
+                width,
+                height
+            } = chart;
+            ctx.fillStyle = 'white';
+            ctx.fillRect(0, 0, width, height)
+            ctx.restore();
+        }
+    }
+    new Chart(document.getElementById("GraficoMetasAreas"), {
+        type: 'bar',
+        data: {
+            labels: [
+
+                @foreach($areasmetas as $am)
+                "{{ $am->nombre }} | {{ $am->meta }} Metas",
+                @endforeach
+            ],
+            datasets: [{
+                backgroundColor: [
+                    @foreach($areasmetas as $am)
+                    "#" + Math.floor(Math.random() * 16777215).toString(16),
+                    @endforeach
+                ],
+                data: [
+                    @foreach($areasmetas as $am)
+                    "{{ $am -> meta }}",
+
+                    @endforeach
+                ]
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        },
+        plugins: [bgColor],
+
+    });
+    const GraficoMetasAreas = new Chart(
+        document.getElementById('GraficoMetasAreas'),
+        config
+    );
+
+    function generatePDF() {
+        const canvas = document.getElementById('GraficoMetasAreas');
+
+        const canvasImage = canvas.toDataURL('image/jpeg', 1.0);
+
+        let pdf = new jsPDF('landscape');
+
+        pdf.setFontSize(20);
+        pdf.addImage(canvasImage, 'JPEG', 15, 15, 280, 150);
+
+        pdf.save("GraficoMetasAreas.pdf")
+
+    }
+</script>
+
+
+<!-- -----------------------------------------------Script para modificar la grafica de programas|metas------------------------------------------------ -->
+<script>
+    new Chart(document.getElementById("GraficaProgamasMetas"), {
+        type: 'bar',
+        data: {
+            labels: [
+                @foreach($programas as $programa)
+                "{{ $programa -> abreviatura }}",
+                @endforeach
+            ],
+            datasets: [{
+                label: "Numero de metas que tiene el programa",
+                backgroundColor: [
+                    @foreach($programas as $programa)
+                    "#" + Math.floor(Math.random() * 16777215).toString(16),
+                    @endforeach
+                ],
+                data: [
+                    @foreach($metas as $metas)
+                    "{{ $metas -> conteo}}",
+
+                    @endforeach
+                ]
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            },
+            legend: {
+                display: false
+            },
+            title: {
+                display: true,
+                text: 'Programas y sus metas'
+            }
+
+        }
+
+    });
+</script>
+
+
+
+
+<!-- -----------------------------------------------Script para modificar la grafica de Usuarios|Puestos----------------------------------------------- -->
+<script>
+    const bgUPColor = {
+        id: 'bgUPColor',
+        beforeDraw: (chart, options) => {
+            const {
+                ctx,
+                width,
+                height
+            } = chart;
+            ctx.fillStyle = 'white';
+            ctx.fillRect(0, 0, width, height)
+            ctx.restore();
+        }
+    }
+    new Chart(document.getElementById("GraficaUsuarioPuesto"), {
+        type: 'pie',
+        data: {
+            labels: [
+
+                @foreach($puesto as $pue)
+                "{{ $pue->nombre }} | Total: {{ $pue->id_tipo }}",
+                @endforeach
+            ],
+            datasets: [{
+
+                backgroundColor: [
+                    @foreach($puesto as $pue)
+                    "#" + Math.floor(Math.random() * 16777215).toString(16),
+                    @endforeach
+                ],
+                data: [
+                    @foreach($puesto as $pue)
+                    "{{ $pue -> id_tipo}}",
+
+                    @endforeach
+                ]
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        },
+        plugins: [bgTColor],
+
+    });
+
+
+
+    const GraficoUsuarioPuesto = new Chart(
+        document.getElementById('GraficaUsuarioPuesto'),
+        config
+    );
+
+    function generateUPPDF() {
+        const canvas = document.getElementById('GraficaUsuarioPuesto');
+
+        const canvasImage = canvas.toDataURL('image/jpeg', 1.0);
+
+        let pdf = new jsPDF('landscape');
+
+        pdf.setFontSize(20);
+        pdf.addImage(canvasImage, 'JPEG', 15, 15, 280, 150);
+
+        pdf.save("GraficaUsuarioPuesto.pdf")
+
+    }
+</script>
+
+
+
 <!-- ------------------------------------------------Script para la grafica de el mes de enero----------------------------------------------------------- -->
 <script>
     const bgsColor = {
@@ -329,204 +527,6 @@
         pdf.addImage(canvasImage, 'JPEG', 15, 15, 280, 150);
 
         pdf.save("GraficoMarzo.pdf")
-
-    }
-</script>
-
-
-<!-- -----------------------------------------------Script para modificar la grafica de areas------------------------------------------------ -->
-
-<script>
-    const bgColor = {
-        id: 'bgColor',
-        beforeDraw: (chart, options) => {
-            const {
-                ctx,
-                width,
-                height
-            } = chart;
-            ctx.fillStyle = 'white';
-            ctx.fillRect(0, 0, width, height)
-            ctx.restore();
-        }
-    }
-    new Chart(document.getElementById("GraficoMetasAreas"), {
-        type: 'pie',
-        data: {
-            labels: [
-
-                @foreach($areasmetas as $am)
-
-                "{{ $am -> nombre. " | " .$am ->meta. "
-                Metas " }}",
-
-
-                @endforeach
-            ],
-            datasets: [{
-                backgroundColor: [
-                    @foreach($areasmetas as $am)
-                    "#" + Math.floor(Math.random() * 16777215).toString(16),
-                    @endforeach
-                ],
-                data: [
-                    @foreach($areasmetas as $am)
-                    "{{ $am -> meta }}",
-
-                    @endforeach
-                ]
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
-        },
-        plugins: [bgColor],
-
-    });
-    const GraficoMetasAreas = new Chart(
-        document.getElementById('GraficoMetasAreas'),
-        config
-    );
-
-    function generatePDF() {
-        const canvas = document.getElementById('GraficoMetasAreas');
-
-        const canvasImage = canvas.toDataURL('image/jpeg', 1.0);
-
-        let pdf = new jsPDF('landscape');
-
-        pdf.setFontSize(20);
-        pdf.addImage(canvasImage, 'JPEG', 15, 15, 280, 150);
-
-        pdf.save("GraficoMetasAreas.pdf")
-
-    }
-</script>
-
-<!-- -----------------------------------------------Script para modificar la grafica de programas|metas------------------------------------------------ -->
-<script>
-    new Chart(document.getElementById("GraficaProgamasMetas"), {
-        type: 'bar',
-        data: {
-            labels: [
-                @foreach($programas as $programa)
-                "{{ $programa -> abreviatura }}",
-                @endforeach
-            ],
-            datasets: [{
-                label: "Numero de metas que tiene el programa",
-                backgroundColor: [
-                    @foreach($programas as $programa)
-                    "#" + Math.floor(Math.random() * 16777215).toString(16),
-                    @endforeach
-                ],
-                data: [
-                    @foreach($metas as $metas)
-                    "{{ $metas -> conteo}}",
-
-                    @endforeach
-                ]
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            },
-            legend: {
-                display: false
-            },
-            title: {
-                display: true,
-                text: 'Programas y sus metas'
-            }
-
-        }
-
-    });
-</script>
-
-<!-- -----------------------------------------------Script para modificar la grafica de Usuarios|Puestos----------------------------------------------- -->
-<script>
-    const bgUPColor = {
-        id: 'bgUPColor',
-        beforeDraw: (chart, options) => {
-            const {
-                ctx,
-                width,
-                height
-            } = chart;
-            ctx.fillStyle = 'white';
-            ctx.fillRect(0, 0, width, height)
-            ctx.restore();
-        }
-    }
-    new Chart(document.getElementById("GraficaUsuarioPuesto"), {
-        type: 'pie',
-        data: {
-            labels: [
-
-                @foreach($puesto as $pue)
-                "{{ $pue -> nombre . " | " . "
-                Total: " .$pue -> id_tipo    }}",
-
-                @endforeach
-            ],
-            datasets: [{
-
-                backgroundColor: [
-                    @foreach($puesto as $pue)
-                    "#" + Math.floor(Math.random() * 16777215).toString(16),
-                    @endforeach
-                ],
-                data: [
-                    @foreach($puesto as $pue)
-                    "{{ $pue -> id_tipo}}",
-
-                    @endforeach
-                ]
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
-        },
-        plugins: [bgTColor],
-
-    });
-
-
-
-    const GraficoUsuarioPuesto = new Chart(
-        document.getElementById('GraficaUsuarioPuesto'),
-        config
-    );
-
-    function generateUPPDF() {
-        const canvas = document.getElementById('GraficaUsuarioPuesto');
-
-        const canvasImage = canvas.toDataURL('image/jpeg', 1.0);
-
-        let pdf = new jsPDF('landscape');
-
-        pdf.setFontSize(20);
-        pdf.addImage(canvasImage, 'JPEG', 15, 15, 280, 150);
-
-        pdf.save("GraficaUsuarioPuesto.pdf")
 
     }
 </script>

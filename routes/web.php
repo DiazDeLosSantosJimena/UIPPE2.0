@@ -152,7 +152,7 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::controller(DocsController::class)->group(function () {
-        Route::name('metas.export')->get('metas-export', 'export'); //  Route::name('metas.export')->get('metas-export', 'exportMetas');
+        Route::name('metas.export')->get('metas-export', 'exportMetas'); //  Route::name('metas.export')->get('metas-export', 'exportMetas');
     });
     //  Documentos Excel END----------------------------
 

@@ -47,9 +47,9 @@ class AreasMetasExport implements FromCollection, WithHeadings, WithEvents
                         ->getStartColor()
                         ->setARGB('007A37');
 
-                        $event->sheet->getColumnDimension('A')->setWidth(30);
-                        $event->sheet->getColumnDimension('B')->setWidth(39);
-                        $event->sheet->getColumnDimension('C')->setWidth(141);
+                        $event->sheet->getColumnDimension('A')->setWidth(63);
+                        $event->sheet->getColumnDimension('B')->setWidth(78);
+                        $event->sheet->getColumnDimension('C')->setAutoSize(true);
                         $event->sheet->getColumnDimension('D')->setWidth(15);   
   
             },

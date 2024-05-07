@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Exports\AreasExport;
+use App\Exports\MetasExport;
 use App\Exports\AreasMetasExport;
 use App\Exports\AreasUsExport;
 use App\Exports\ProgramasExport;
@@ -139,7 +140,6 @@ class DocsController extends Controller
     }
 
     public function exportMetas() {
-        //  Lógica
-        return redirect('dashboard');
+        return Excel::download(new MetasExport, 'Metas.xlsx');
     }
 }
