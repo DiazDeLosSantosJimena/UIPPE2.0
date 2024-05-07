@@ -14,9 +14,7 @@
         <div class="col p-4">
             <h3>Reportes</h3>
         </div>
-        <div class="col p-4 d-flex justify-content-end">
-            <button type="button" class="btn btn-success" id="btn_alta" data-bs-toggle="modal" data-bs-target="#modalalta"><i class="fa-regular fa-file-excel"></i></button>
-        </div>
+      
     </div>
     <div class="row">
         <!-- -----------------------------------------Grafica Muestra----------------------------------- -->

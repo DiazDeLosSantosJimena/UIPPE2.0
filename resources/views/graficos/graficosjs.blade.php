@@ -175,6 +175,19 @@
 
 <!-- -----------------------------------------------Script para modificar la grafica de programas|metas------------------------------------------------ -->
 <script>
+    const bgPMColor = {
+        id: 'bgPMColor',
+        beforeDraw: (chart, options) => {
+            const {
+                ctx,
+                width,
+                height
+            } = chart;
+            ctx.fillStyle = 'white';
+            ctx.fillRect(0, 0, width, height)
+            ctx.restore();
+        }
+    }
     new Chart(document.getElementById("GraficaProgamasMetas"), {
         type: 'bar',
         data: {
@@ -217,6 +230,24 @@
         }
 
     });
+    const GraficoProgramasmetas = new Chart(
+            document.getElementById('GraficaProgamasMetas'),
+            config
+        );
+
+        function generatePMPDF() {
+            const canvas = document.getElementById('GraficaProgamasMetas');
+
+            const canvasImage = canvas.toDataURL('image/jpeg', 1.0);
+
+            let pdf = new jsPDF('landscape');
+
+            pdf.setFontSize(20);
+            pdf.addImage(canvasImage, 'JPEG', 15, 15, 280, 150);
+
+            pdf.save("GraficaProgamasMetas.pdf")
+
+        }
 </script>
 
 
