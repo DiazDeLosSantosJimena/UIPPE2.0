@@ -17,6 +17,7 @@ use App\Models\Tipos;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
+use PDF;
 
 class DocsController extends Controller
 {
@@ -74,7 +75,7 @@ class DocsController extends Controller
 
     public function pdfAreasUsuarios()
     {
-        $areausuario = AreasUsuarios::select('tb_areasusuarios.id_areasusuarios','tb_areas.nombre as area_id', 'users.nombre as usuario_id', 'tb_areasusuarios.activo' )
+        $areausuario = AreasUsuarios::select('tb_areasusuarios.id_areasusuarios','tb_areas.nombre as area_id', 'users.nombre as usuario_id' )
         ->join('tb_areas','tb_areas.id_area','tb_areasusuarios.area_id')
         ->join('users','users.id','tb_areasusuarios.usuario_id')
         ->get();
