@@ -13,7 +13,7 @@ $session_area = session('session_area');
 ?>
 <!-- Variables de Sesiones del usuario END -->
 
-@auth    <!-- Condición de acceso al contenido LOGGEADO IF -->
+@auth <!-- Condición de acceso al contenido LOGGEADO IF -->
 <div class="container p-4">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -22,7 +22,7 @@ $session_area = session('session_area');
             <li class="breadcrumb-item" aria-current="page">Usuarios</li>
         </ol>
     </nav>
-    @if($session_area == 0)     <!-- Condición de acceso al contenido para administrador -->
+    @if($session_area == 0) <!-- Condición de acceso al contenido para administrador -->
     <div class="row">
         <div class="col p-4">
             <h3>Usuarios</h3>
@@ -140,7 +140,7 @@ $session_area = session('session_area');
             </table>
         </div>
     </div>
-    @else   <!-- Condición de acceso al contenido para administrador ELSE -->
+    @else <!-- Condición de acceso al contenido para administrador ELSE -->
     <script>
         window.location.replace("{{ route('registrosA', ['id' => $session_area]) }}");
     </script>
@@ -170,12 +170,15 @@ $session_area = session('session_area');
 <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('js/dataTables.bootstrap5.min.js') }}"></script>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $('#userTable').DataTable({
-            "lengthMenu": [[5, 10, 50, -1], [5, 10, 50, "Todo"]],
+            "lengthMenu": [
+                [5, 10, 50, -1],
+                [5, 10, 50, "Todo"]
+            ],
             ordering: false,
             info: false,
-            language:{
+            language: {
                 "search": "Buscar:",
                 "paginate": {
                     "first": "Primero",
@@ -205,7 +208,21 @@ $session_area = session('session_area');
         $('#eliminarmodal').modal('show')
     });
 </script>
+<script>
+    @if(session('success'))
+    $.notify({
+        message: "<b> Proceso exitoso! </b> {{ session('success') }}!"
+    }, {
+        type: 'success',
+        timer: 8000,
+        placement: {
+            from: 'top',
+            align: 'center'
+        }
+    });
+    @endif
+</script>
 @endsection
 <!-- Importacion y configuracion para las tablas dinamicas END -->
 
-@endsection     <!-- ENDSECTION DE CONTENIDO = @section('content') -->
+@endsection <!-- ENDSECTION DE CONTENIDO = @section('content') -->
