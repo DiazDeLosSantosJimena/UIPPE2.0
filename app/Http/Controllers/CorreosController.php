@@ -2,62 +2,74 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Correos;
-use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\Correos;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ReestablecerPassword;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\URL;
+use App\Models\User;
 
 class CorreosController extends Controller
 {
     public function recuperar()
     {
-        //  Recuperar contraseña!!
+        //recuperar contrase!!
         return view('sesiones/recuperacion');
     }
 
-    public function EnviarCorreo(Request $request)
-    {
+    public function EnviarCorreo(Request $request){
         $email = $request->input('email');
         $consulta = User::where('email', '=', $email)
             ->get();
 
-        $contacto = User::select('nombre')->where('email', '=', $email)
+            $contacto = User::select('nombre')->where('email', '=', $email)
             ->get();
 
-        if (count($consulta) == 0) {
-            session()->flash('Error', 'Credenciales Incorrectas.');
-            return redirect('recuperacion');
-        } else {
-            Mail::to($email)->send(new ReestablecerPassword($contacto));
-            session()->flash('Exito', 'Revise su bandeja de entrada.');
-            return redirect('recuperacion');
+            if (count($consulta) == 0) {
+                session()->flash('Error', 'Credenciales Incorrectas.');
+                return redirect('recuperacion');
+            } else {
+                Mail::to($email)->send(new ReestablecerPassword($contacto));
+                session()->flash('Exito', 'Revise su bandeja de entrada.');
+                return redirect('recuperacion');
         }
     }
 
-    public function EnviarCorreo2(Request $request)
-    {
+    public function EnviarCorreo2(Request $request){
         $email = $request->input('email');
         $consulta = User::where('email', '=', $email)
             ->get();
-        //$user = Usuarios::select('id_usuario')->where('email', '=', $email)->get();
-        $id = User::where('email', $email)->value('id_usuario');
+        //$user = User::select('id')->where('email', '=', $email)->get();
+        $id = User::where('email', $email)->value('id');
         //$id = strval($idu);
 
 
         // Generar la URL con el token temporal
         $url = URL::temporarySignedRoute(
             'reset', // Nombre de la ruta a la que se accederá
-            now()->addMinutes(15), // Tiempo de vida del token (10 minutos en este ejemplo)
+            now()->addMinutes(15),// Tiempo de vida del token (10 minutos en este ejemplo)
             ['id' => $id] //id del usuario
         );
 
-        if (count($consulta) == 0) {
-            session()->flash('Error', 'Credenciales Incorrectas.');
-            return redirect('recuperacion');
-        } else {
-            // Enviar la URL por correo electrónico
-            Mail::to($email)->send(new ReestablecerPassword($url));
-            session()->flash('Exito', 'Revise su bandeja de entrada.');
-            return redirect('recuperacion');
+            if (count($consulta) == 0) {
+                session()->flash('Error', 'Credenciales Incorrectas.');
+                return redirect('recuperacion');
+            } else {
+                // Enviar la URL por correo electrónico
+                Mail::to($email)->send(new ReestablecerPassword($url));
+                session()->flash('Exito', 'Revise su bandeja de entrada.');
+                return redirect('recuperacion');
+                /*$data = array(
+                    'destinatario'=> $email,
+                    'asunto'=> "Recuperacion de Contraseña",
+                    'url'=> $url,
+                );
+                Mail::send('mails.crecuperacion', compact('data'), function($message) use ($data){
+                    $message->to($data['destinatario'],'Systema SIPPyEM')
+                        ->subject($data['asunto']);
+                    $message->from('hello@example.com', 'Soporte SIPPyEM');
+                });*/
         }
     }
 
@@ -77,30 +89,28 @@ class CorreosController extends Controller
         $id = $request->input('id');
 
 
-        if ($pass1 == $pass2) {
-            User::where('id_usuario', $id)->update(array('pass' => $pass1,));
-            session()->flash('Exito', 'La contraseña se ha reestablecido correctamente.');
-            return redirect('/');
-        } else {
-            session()->flash('Error', 'Las contraseñas no coinciden.');
-            return redirect()->route('reset');
-        }
+            if($pass1 == $pass2){
+                User::where('id', $id)->update(array('password'=>$pass1,));
+                session()->flash('Exito', 'La contraseña se ha reestablecido correctamente.');
+                return redirect('/');
+            }else{
+                session()->flash('Error', 'Las contraseñas no coinciden.');
+                return redirect()->route('reset');   
+            }
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-    public function enviados(Request $request)
-    {
+    public function enviados(Request $request){
         $correos = Correos::all();
         $usuarios = User::all();
 
         return view('mails.correos', compact('correos', 'usuarios'));
     }
 
-    public function pcorreo(Request $request)
-    {
-        /*MULTIPLES DESTINATARIOS*/
+    public function pcorreo(Request $request){
+        /*MULTIPLES DESTINATARIOS*/ 
         /*$emails = ['eduhuwu@gmail.com', 'eduholvera@gmail.com', 'ff_lexus@hotmail.com'];*/
 
         /*Mail::send('mails.prueba', compact('data'), function($message) use ($emails){
@@ -112,14 +122,14 @@ class CorreosController extends Controller
 
         /*FORMULARIO*/
 
-        $iddes = $request->input('destinatario');
+        $iddes= $request->input('destinatario');
 
-        $cordes = User::where('id_usuario', $iddes)->value('email');
+        $cordes = User::where('id', $iddes)->value('email');
 
         $data = array(
-            'destinatario' => $cordes,
-            'asunto' => $request->input('asunto'),
-            'mensaje' => $request->input('mensaje'),
+            'destinatario'=> $cordes,
+            'asunto'=> $request->input('asunto'),
+            'mensaje'=> $request->input('mensaje'),
         );
 
         /*$destinatario = $request->input('destinatario');
@@ -134,10 +144,10 @@ class CorreosController extends Controller
         $datos->save();
 
 
-        Mail::send('mails.prueba', compact('data'), function ($message) use ($data) {
-            $message->to($data['destinatario'], 'Admin Uippe')
+        Mail::send('mails.prueba', compact('data'), function($message) use ($data){
+            $message->to($data['destinatario'],'Admin SIPPyEM')
                 ->subject($data['asunto']);
-            $message->from('hello@example.com', 'Soporte UIPPE');
+            $message->from('hello@example.com', 'Soporte SIPPyEM');
         });
 
 
@@ -150,5 +160,10 @@ class CorreosController extends Controller
                 ->subject('nose');
             $message->from('hello@example.com', 'Eduardo2');
         });*/
+
+        
+    }
+    public function prueba(Request $request){
+        return view('mails/prueba');
     }
 }
