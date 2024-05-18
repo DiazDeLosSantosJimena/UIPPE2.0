@@ -90,7 +90,7 @@ class CorreosController extends Controller
 
 
             if($pass1 == $pass2){
-                User::where('id', $id)->update(array('password'=>$pass1,));
+                User::where('id', $id)->update(array('password'=>bcrypt($pass1),));
                 session()->flash('Exito', 'La contraseña se ha reestablecido correctamente.');
                 return redirect('/');
             }else{
