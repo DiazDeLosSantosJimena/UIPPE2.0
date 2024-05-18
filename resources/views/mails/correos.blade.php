@@ -37,7 +37,7 @@ $session_area = session('session_area');
                     <select class="form-control" aria-label="Default select example" name="destinatario" required>
                         <option value="0">--Selecciona un Destinatario--</option>
                         @foreach ($usuarios as $usuarios)
-                        <option value="{{$usuarios->id_usuario}}">{{$usuarios->nombre}} {{$usuarios->app}}</option>
+                        <option value="{{$usuarios->id}}">{{$usuarios->nombre}} {{$usuarios->app}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -105,6 +105,8 @@ $session_area = session('session_area');
                         @endforeach
                     </tbody>
                 </table>
+
+                
             </div>
         </div>
     </div>
