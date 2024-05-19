@@ -27,28 +27,29 @@ class AuthController extends Controller
 
         //  Validación
         if (!Auth::validate($credentials)) {
-            return redirect()->to('/login')->withErrors('Error en alguno de los campos, intente nuevamente.');
+            return redirect()->to('/login')->with('error','Error en alguno de los campos, intente nuevamente.');
         }
 
         //  Obtener la información del usuario
         $user = Auth::getProvider()->retrieveByCredentials($credentials);
 
         if ($user->activo == '0') {
-            return redirect('/login');
+            return redirect('/login')->with('error', 'Usuario inactivo, si ocurrio algun error por favor comuniquese con algun administrador de la plataforma.');
         } else {
             //  En caso de pertenecer a un área, obtener esa área
             $area = AreasUsuarios::where('usuario_id', '=', $user->id)->get();
 
             if ($user->id_tipo == 3 && count($area) == 0) {
-                return redirect('/login');
+                return redirect('/login')->with('error', 'El usuario no cuenta con un área registrada, por favor comuniquese con el encargado de área o con algun administrador de la plataforma.');
             } else {
-                //  Loguear al usuario
-                Auth::login($user);
-                
                 //  Asignar una variable de sesión con el área al que pertenece el usuario
                 if ($user->id_tipo != 3 && $user->id_tipo != 4 && $user->id_tipo != 5) {
+                    //  Loguear al usuario de tipo administrador
+                    Auth::login($user);
                     $request->session()->put('session_area', 0);
                 } else {
+                    //  Loguear al usuario de tipo Encargado de Área, Secretaria o Invitado
+                    Auth::login($user);
                     $request->session()->put('session_area', $area[0]->area_id);
                 }
             }
