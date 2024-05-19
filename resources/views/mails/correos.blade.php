@@ -4,6 +4,7 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/correos.css') }}">
+<link rel="stylesheet" href="{{ asset('css/dataTables.bootstrap5.min.css') }}">
 @endsection
 
 <?php
@@ -59,7 +60,7 @@ $session_area = session('session_area');
 
             <br>
             <div class="table-responsive my-3">
-                <table class="table">
+                <table class="table" id="emailsTable">
                     <thead class="table-dark">
                         <tr>
                             <th scope="col">ID</th>
@@ -84,33 +85,36 @@ $session_area = session('session_area');
                                 </button>
                             </td>
                         </tr>
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal{{$correo->id_correo}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Correo Enviado a: {{$correo->destinatario}}</h1>
-                                    </div>
-                                    <div class="modal-body">
-                                        Asunto: {{$correo->asunto}} <br><br>
-                                        Mensaje:<br>
-                                        {{$correo->contenido}}
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         @endforeach
                     </tbody>
                 </table>
 
-                
+
             </div>
         </div>
     </div>
 </div>
+@foreach($correos as $correo)
+<!-- Modal -->
+<div class="modal fade" id="exampleModal{{$correo->id_correo}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Correo Enviado a: {{$correo->destinatario}}</h1>
+            </div>
+            <div class="modal-body">
+                Asunto: {{$correo->asunto}} <br><br>
+                Mensaje:<br>
+                {{$correo->contenido}}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+@endforeach
+
 @else
 <div class="container p-4">
     <div class="row">
@@ -124,8 +128,36 @@ $session_area = session('session_area');
     </div>
 </div>
 @endif
-@endauth
 
+@section('js')
+<script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('js/dataTables.bootstrap5.min.js') }}"></script>
+<script>
+    $(document).ready(function() {
+        $('#emailsTable').DataTable({
+            "lengthMenu": [
+                [5, 10, 50, -1],
+                [5, 10, 50, "Todo"]
+            ],
+            ordering: false,
+            info: false,
+            language: {
+                "search": "Buscar:",
+                "paginate": {
+                    "first": "Primero",
+                    "last": "Ultimo",
+                    "next": "Siguiente",
+                    "previous": "Anterior"
+                },
+                "lengthMenu": "Mostrar _MENU_ Entradas",
+                "zeroRecords": "Sin resultados encontrados",
+            }
+        });
+    });
+</script>
+@endsection
+
+@endauth
 
 @guest
 <div class="container p-4">
@@ -140,4 +172,6 @@ $session_area = session('session_area');
     </div>
 </div>
 @endguest
+
+
 @endsection

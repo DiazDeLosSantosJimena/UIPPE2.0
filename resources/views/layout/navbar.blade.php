@@ -31,9 +31,9 @@ $session_area = session('session_area');
     <div class="l-navbar" id="nav-bar">
         <nav class="navSidebar">
             <div>
-                <a href="{{ route('dashboard') }}" class="nav_link"><i class='bx bx-home nav_icon'></i><span class="nav_logo-name">UIPPE</span></a>
+                <a href="{{ route('dashboard') }}" class="nav_link"><i class='bx bx-home nav_icon'></i><span class="nav_logo-name">SIPPyEM</span></a>
                 <!-- bx bx-home-alt-2 logo de home  -->
-                <!-- <a href="#" class="nav_logo"><img src="{{ asset('logos/uippelogo.png') }}" alt="UIPPE" style="height: 70px;"></a> -->
+                <!-- <a href="#" class="nav_logo"><img src="{{ asset('logos/SIPPyEMlogo.png') }}" alt="SIPPyEM" style="height: 70px;"></a> -->
                 <div class="nav_list">
                     @if(auth()->user())
                         @if(auth()->user()->id_tipo == 5)

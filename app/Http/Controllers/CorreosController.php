@@ -91,11 +91,9 @@ class CorreosController extends Controller
 
             if($pass1 == $pass2){
                 User::where('id', $id)->update(array('password'=>bcrypt($pass1),));
-                session()->flash('Exito', 'La contraseña se ha reestablecido correctamente.');
-                return redirect('/');
+                return redirect('/')->with('exito', 'La contraseña se ha reestablecido correctamente.');
             }else{
-                session()->flash('Error', 'Las contraseñas no coinciden.');
-                return redirect()->route('reset');   
+                return redirect()->route('reset')->with('error', 'Las contraseñas no coinciden.');   
             }
     }
 

@@ -208,20 +208,6 @@ $session_area = session('session_area');
         $('#eliminarmodal').modal('show')
     });
 </script>
-<script>
-    @if(session('success'))
-    $.notify({
-        message: "<b> Proceso exitoso! </b> {{ session('success') }}!"
-    }, {
-        type: 'success',
-        timer: 8000,
-        placement: {
-            from: 'top',
-            align: 'center'
-        }
-    });
-    @endif
-</script>
 @endsection
 <!-- Importacion y configuracion para las tablas dinamicas END -->
 
