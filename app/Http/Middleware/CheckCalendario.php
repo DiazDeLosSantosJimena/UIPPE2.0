@@ -4,28 +4,25 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
 
-class CheckRole
+class CheckCalendario
 {
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @return mixed
+     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next)
     {
         if (auth()->check()) {
             $userRole = auth()->user()->id_tipo;
 
-            if (in_array($userRole, [1, 2])) {
+            if (in_array($userRole, [1, 2, 3, 4])) {
                 return $next($request);
             }
         }
-
-
-        // Redirect to a specific page or show an error message
+        
         abort(403, 'Unauthorized action.');
     }
 }
