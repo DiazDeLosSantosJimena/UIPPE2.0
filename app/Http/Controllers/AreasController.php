@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Areas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AreasController extends Controller
 {
@@ -97,7 +98,12 @@ class AreasController extends Controller
         $query->id_registro = trim($request->registro);
         $query->save();
 
-        return redirect('areas'); //CHECAR BIEN LA DIRECCION
+        $user = Auth::user();
+        if ($user->id_tipo == 3 || $user->id_tipo == 4) {
+            return redirect()->route('registrosA', ['id' => $id]);
+        }
+
+        return redirect()->route('areas.index');
     }
 
     public function destroy(Areas $id, Request $request)
