@@ -3,7 +3,7 @@
 <?php
 $session_area = session('session_area');
 ?>
-<title>UIPPE</title>
+<title>SIPPyEM</title>
 @auth    <!-- Condición de acceso al contenido LOGGEADO IF -->
 <div class="container p-4">
     <div class="row justify-content-md-center">

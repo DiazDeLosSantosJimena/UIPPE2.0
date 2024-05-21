@@ -65,7 +65,7 @@ class UsuariosController extends Controller
             'academico' => $request->input('academico'),
             'foto' => $foto2,
             'email' => $request->input('email'),
-            'password' => Hash::make('123123'), //$request->input('pass'),VERIFICAR COMO ASIGNAR UNA CONTRASEÑA
+            'password' => '123123', //$request->input('pass'),VERIFICAR COMO ASIGNAR UNA CONTRASEÑA
             'id_tipo' => $request->input('id_tipo'),
             'activo' => 1,
             'id_registro' => $request->input('registro'),
