@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Tipos;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class UsuariosController extends Controller
@@ -123,12 +124,17 @@ class UsuariosController extends Controller
         $query->id_registro = trim($request->registro);
         $query->save();
 
+        $user = Auth::user();
+        if ($user->id_tipo == 3 || $user->id_tipo == 4) {
+            return redirect()->route('registrosA', ['id' => $id]);
+        }
+
         return redirect('usuarios');
     }
 
-    public function destroy(Usuarios $id, Request $request)
+    public function destroy(User $id, Request $request)
     {
-        $query = User::find($id->id_usuario);
+        $query = User::find($id->id);
         $query -> activo = 0;
         $query -> id_registro = trim($request->registro);
         $query -> save();

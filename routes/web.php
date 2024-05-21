@@ -59,17 +59,17 @@ Route::middleware('auth')->group(function () {
     Route::name('registros')->get('registros', [DashboardController::class, 'registros']);
 
     //  Areas
-    Route::resource('areas', AreasController::class);
+    Route::resource('areas', AreasController::class)->middleware('role:1,2');
     Route::name('editArea')->put('editArea/{id}', [AreasController::class, 'edit']);
     Route::name('deleteArea')->put('deleteArea/{id}', [AreasController::class, 'destroy']);
 
     // Tipos
-    Route::resource('tipos', TiposController::class);
+    Route::resource('tipos', TiposController::class)->middleware('role:1,2');
     Route::name('editTip')->put('editTip/{id}', [TiposController::class, 'edit']);
     Route::name('deleteTip')->put('deleteTip/{id}', [TiposController::class, 'destroy']);
 
     //  Usuarios
-    Route::resource('usuarios', UsuariosController::class);
+    Route::resource('usuarios', UsuariosController::class)->middleware('role:1,2');
     Route::name('editUsuario')->put('editUsuario/{id}', [UsuariosController::class, 'edit']);
     Route::name('deleteUsers')->put('deleteUsers/{id}', [UsuariosController::class, 'destroy']);
     Route::name('perfil')->get('perfil', [UsuariosController::class, 'perfil']);
@@ -81,23 +81,23 @@ Route::middleware('auth')->group(function () {
     Route::name('EditPerfil')->put('EditPerfil/{id}', [AuthController::class, 'update']);
 
     //  Áreas Usuarios
-    Route::resource('areas-usuarios', AreasUsuariosController::class);
+    Route::resource('areas-usuarios', AreasUsuariosController::class)->middleware('role:1,2');
     Route::name('editAreaUser')->put('editAreaUser/{id}', [AreasUsuariosController::class, 'edit']);
     Route::name('deleteAreaUser')->delete('deleteAreaUser/{id}', [AreasUsuariosController::class, 'destroy']);
     Route::post('areauser/store', [AreasUsuariosController::class, 'store'])->name('areausuario.store');
 
     //  Programas
-    Route::resource('programas', ProgramasController::class);
+    Route::resource('programas', ProgramasController::class)->middleware('role:1,2');
     Route::name('editProgram')->put('editProgram/{id}', [ProgramasController::class, 'edit']);
     Route::name('deleteProgram')->put('deleteProgram/{id}', [ProgramasController::class, 'destroy']);
 
     //   Metas
-    Route::resource('metas', MetasController::class);
+    Route::resource('metas', MetasController::class)->middleware('role:1,2');
     Route::name('deleteMeta')->put('deleteMeta/{id}', [MetasController::class, 'destroy']);
     Route::name('editMeta')->put('editMeta/{id}', [MetasController::class, 'edit']);
 
     //   Áreas Metas
-    Route::resource('areasmetas', AreasMetasController::class);
+    Route::resource('areasmetas', AreasMetasController::class)->middleware('role:1,2');
     Route::name('multi')->get('multi',  [AreasMetasController::class, 'index']);
     //  MULTI-SELECTS START ----------------------------
     Route::name('js_metas')->get('js_metas', [AreasMetasController::class, 'js_metas']);
@@ -106,7 +106,7 @@ Route::middleware('auth')->group(function () {
 
     //  Calendario
     Route::resource('calendarizars', CalendarizarsController::class);
-    Route::name('calendario')->get('calendario', [CalendarizarsController::class, 'index']);
+    Route::name('calendario')->get('calendario', [CalendarizarsController::class, 'index'])->middleware('role:1,2,3,4');
     Route::name('calendUpdate')->put('calendUpdate/{id}', [CalendarizarsController::class, 'update']);
     Route::name('entregaMetas')->get('entregaMetas', [CalendarizarsController::class, 'entregasView']);
     Route::name('entregasNew')->post('entregasNew', [CalendarizarsController::class, 'entregaN']);
