@@ -1,5 +1,4 @@
 <?php
-
 use App\Http\Controllers\AreasController;
 use App\Http\Controllers\AreasMetasController;
 use App\Http\Controllers\AreasUsuariosController;
@@ -99,6 +98,7 @@ Route::middleware('auth')->group(function () {
     //   Áreas Metas
     Route::resource('areasmetas', AreasMetasController::class)->middleware('role');
     Route::name('multi')->get('multi',  [AreasMetasController::class, 'index']);
+    Route::name('editAreaMeta')->put('editAreaMeta/{id}', [AreasMetasController::class, 'edit']);
     //  MULTI-SELECTS START ----------------------------
     Route::name('js_metas')->get('js_metas', [AreasMetasController::class, 'js_metas']);
     Route::name('js_areas')->get('js_areas', [AreasMetasController::class, 'js_areas']);

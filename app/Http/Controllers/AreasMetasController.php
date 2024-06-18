@@ -29,6 +29,13 @@ class AreasMetasController extends Controller
             ->select('tb_metas.nombre as nmeta', 'tb_metas.id_meta as mid', 'tb_programas.nombre as pnombre', 'tb_areas.nombre as area', 'tb_areasmetas.id_areasmetas as areasmeta',  'tb_areasmetas.objetivo as objetivo')
             ->get();
 
+            $areasmetasid = \DB::table('tb_areasmetas')
+            ->join('tb_programas', 'tb_areasmetas.id_programa', 'tb_programas.id_programa')
+            ->join('tb_metas', 'tb_areasmetas.meta_id', 'tb_metas.id_meta')
+            ->join('tb_areas', 'tb_areasmetas.area_id',  'tb_areas.id_area')
+            ->select('tb_metas.id_meta', 'tb_programas.id_programa', 'tb_areas.id_area', 'tb_areasmetas.id_areasmetas as areasmeta',  'tb_areasmetas.objetivo as objetivo')
+            ->get();
+
 
         // $areasmetasd = AreasMetas::all();
         $metas = Metas::all()->where('activo', '>', '0');
@@ -38,6 +45,7 @@ class AreasMetasController extends Controller
         return view('areasmetas.index')
             ->with(['areasmetas' => $areasmetas])
             ->with(['areasmetasd' => $areasmetasd])
+            ->with(['areasmetasid' => $areasmetasid])
             ->with(['programas' => $programas])
             ->with(['areas' => $areas])
             ->with(['area' => $area])
@@ -68,6 +76,18 @@ class AreasMetasController extends Controller
         }
 
         return redirect()->route("areasmetas.index");
+    }
+
+    public function edit(AreasMetas $id, Request $request){
+
+        $query = AreasMetas::find($id->id_areasmetas);
+        if($query === null){
+            return redirect()->route("areasmetas.index")->with('error', 'Parece que algo salío mal, intentelo nuevamente!');
+        }
+
+        $query->objetivo = trim($request->objetivo);
+        $query->save();
+        return redirect()->route('areasmetas.index')->with('success', 'Cambios realizados exitosamente!');
     }
 
     public function destroy($id)

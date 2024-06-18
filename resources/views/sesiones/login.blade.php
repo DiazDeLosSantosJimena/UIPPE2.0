@@ -45,7 +45,7 @@
                 <!-- Imagen -->
             </div>
             <div class="col"><!-Sesion>
-                    <div class="text-end"><img src="{{asset('logos/logotipoutvt.png')}}" width="200px" alt=""></div><!-Logo>
+                    <div class="text-end"><img src="" width="200px" alt="SIPPyEM"></div><!-Logo>
                         <h2 class="fw-bold text-center pb-3">Inicia Sesión</h2>
                         <!-- Form de Inicio de Sesion -->
                         <form action="/login" method="POST">

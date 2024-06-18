@@ -77,7 +77,8 @@ $session_area = session('session_area');
                         <th scope="col">Programa</th>
                         <th scope="col">Meta</th>
                         <th scope="col">Objetivo</th>
-                        <th class="text-center">Acciones</th>
+                        <th class="text-center">Editar</th>
+                        <th class="text-center">Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -88,6 +89,10 @@ $session_area = session('session_area');
                         <td>{{ $info->pnombre }}</td>
                         <td>{{ $info->nmeta }}</td>
                         <td>{{ $info->objetivo }}</td>
+                        <td class="text-center">
+                            <!-- Button edit modal -->
+                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal{{ $info->id_areasmetas }}"><i class="fa-solid fa-pen-to-square"></i></button>
+                        </td>
                         <td class="text-center">
                             <!-- Button delete modal -->
                             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $info->id_areasmetas }}"><i class="fa-solid fa-trash"></i></button>

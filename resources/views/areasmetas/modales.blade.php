@@ -76,7 +76,7 @@
                     </div>
                     <div multiple data-search="true" data-silent-initial-value-set="true" class="form-floating">
                         <textarea class="form-control" placeholder="Leave a comment here" name="objetivo" style="height: 100px"></textarea>
-                        <label for="floatingTextarea2">Objetivo:</label>
+                        <label for="objetivos2">Objetivo:</label>
                     </div>
                     <input class="form-control" type="text" name="registro" value="{{ auth()->user()->id }}" style="display: none;">
             </div>
@@ -89,7 +89,74 @@
     </div>
 </div>
 <!-- MODAL ADD END -->
+
+<!-- MODAL EDIT START -->
+@foreach ($areasmetasid as $areasmeta)
+<div class="modal fade" id="editModal{{ $areasmeta->areasmeta }}" tabindex="-1" aria-labelledby="editModal{{ $areasmeta->areasmeta }}Label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="editModal{{ $areasmeta->areasmeta }}Label">Editar registro</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('editAreaMeta', [ 'id' => $areasmeta->areasmeta ]) }}" method="post" enctype="multipart/form-data" class="row">
+                    {{ csrf_field('PATCH') }}
+                    {{ method_field('PUT') }}
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label for="selectProgramaEdit" class="form-label">Selecciona un programa:</label>
+                            <select class="form-select" aria-label="programas" id="selectProgramaEdit" name="programa" disabled>
+                                @foreach ($programas as $info)
+                                @if($info->id_programa == $areasmeta->id_programa)
+                                <!-- <option value="$info->id_programa" $info->id_programa == $areasmeta->id_programa ? 'selected' : '' ; > $info->abreviatura </option> NO FUNCIONÓ (las llaves de la sintaxis se eliminaron para crear el comentario) -->
+                                <option value="{{$info->id_programa}}" selected>{{ $info->abreviatura }}</option>
+                                @endif
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label for="selectMetaEdit" class="form-label">Selecciona una meta:</label>
+                            <select class="form-select" aria-label="metas" id="selectMetaEdit" name="meta" disabled>
+                                @foreach($metas as $info)
+                                @if($info->id_meta == $areasmeta->id_meta)
+                                <option value="{{$info->id_meta}}" selected>{{ $info->nombre }}</option>
+                                @endif
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label for="selectAreaEdit" class="form-label">Selecciona una área:</label>
+                            <select class="form-select" aria-label="areas" id="selectAreaEdit" name="area" disabled>
+                                @foreach($areas as $info)
+                                @if($info->id_area == $areasmeta->id_area)
+                                <option value="{{$info->id_area}}" selected>{{ $info->nombre }}</option>
+                                @endif
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="objetivos" name="objetivo">{{ $areasmeta->objetivo }}</textarea>
+                            <label for="objetivos">Objetivos</label>
+                        </div>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-warning">Guardar</button>
+            </div>
+            </form>
+        </div>
+    </div>
 </div>
+@endforeach
+<!-- MODAL EDIT END -->
 
 <!-- SCRIPT MODAL START -->
 <script>
@@ -115,4 +182,3 @@
 </script>
 
 <!-- SCRIPT MODAL END -->
-
