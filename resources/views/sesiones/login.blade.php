@@ -56,7 +56,7 @@
                                     <input type="email" class="form-control" name="email" id="email" placeholder="correo@proveedor.dominio" required>
                                 </div>
 
-                                <div class="mb-4">
+                            <div class="mb-4">
                                     <label for="pass" class="form-label">&nbsp;<i class="fa-sharp fa-solid fa-key"></i>Contraseña:</label>
                                     <input type="password" class="form-control" name="password" id="password" placeholder="Contraseña" required>
                                 </div>
