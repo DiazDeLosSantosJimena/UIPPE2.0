@@ -1,7 +1,7 @@
 @extends('layout.navbar')
 <!-- Importación y configiración de estilos para las tablas dinamicas START -->
 @section('dataTablesCss')
-<link rel="stylesheet" href="{{ asset('css/dataTables.bootstrap5.min.css') }}">
+<link rel="stylesheet" href="css/dataTables.bootstrap5.min.css">
 <style>
     input[type=number]::-webkit-inner-spin-button,
     input[type=number]::-webkit-outer-spin-button {
@@ -31,7 +31,7 @@ $session_area = session('session_area');
             <li class="breadcrumb-item" aria-current="page">Entrega Metas</li>
         </ol>
     </nav>
-    
+
     <div class="row">
         <div class="col-12 p-4">
             <h3>Entrega Metas</h3>
@@ -200,11 +200,11 @@ $session_area = session('session_area');
                         <strong><p>Unidad de Medida: </strong>{{ $meta->medida }}</p>
                     </div>
                 </div>
-                <form action="{{ route('entregasNew') }}" method="POST" enctype="multipart/form-data"> 
+                <form action="{{ route('entregasNew') }}" method="POST" enctype="multipart/form-data">
                 {!! csrf_field() !!}
                 <div class="table-responsive table-responsive-sm my-4">
                     <table class="table align-middle table-sm table-bordered border-dark">
-                        
+
                         <thead class="table-success table-bordered border-dark">
                             <!-- Campos en tabla metas -->
                             <tr>
@@ -355,12 +355,12 @@ $session_area = session('session_area');
                         <strong><p>Unidad de Medida: </strong>{{ $meta->medida }}</p>
                     </div>
                 </div>
-                <form action="{{ route('entregasUpdate', ['id' => $meta->id_entregas]) }}" method="POST" enctype="multipart/form-data"> 
+                <form action="{{ route('entregasUpdate', ['id' => $meta->id_entregas]) }}" method="POST" enctype="multipart/form-data">
                 {{ csrf_field('PATCH') }}
                 {{ method_field('PUT') }}
                 <div class="table-responsive table-responsive-sm my-4">
                     <table class="table align-middle table-sm table-bordered border-dark">
-                        
+
                         <thead class="table-success table-bordered border-dark">
                             <!-- Campos en tabla metas -->
                             <tr>
@@ -502,7 +502,7 @@ $session_area = session('session_area');
             <h3>Entrega Metas</h3>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 py-3 text-center">
-            <img src="{{ asset('img/login.png') }}" alt="Inicie Sesión para poder ver el contenido" class="img-fluid" style="width: 800px;">
+            <img src="img/login.png" alt="Inicie Sesión para poder ver el contenido" class="img-fluid" style="width: 800px;">
             <p>Para ver el contenido <a href="{{ route('login') }}">Iniciar Sesión</a></p>
         </div>
     </div>
@@ -511,8 +511,8 @@ $session_area = session('session_area');
 
 <!-- Importación y configiración de estilos para las tablas dinamicas START -->
 @section('js')
-<script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('js/dataTables.bootstrap5.min.js') }}"></script>
+<script src="js/jquery.dataTables.min.js"></script>
+<script src="js/dataTables.bootstrap5.min.js"></script>
 <script>
     $(document).ready(function () {
         $('#metasTableS').DataTable({
@@ -562,7 +562,7 @@ $session_area = session('session_area');
             for(var i=0; i<12; i++){
                 var inputTotal = document.querySelector(".sum"+i+"{{ $cantP->id_areasmetas }}");
                 if(i>=mesNow){
-                    
+
                 }else{
                     inputTotal.setAttribute('readOnly', 'true');
                 }
@@ -570,7 +570,7 @@ $session_area = session('session_area');
         @endif
 
         var cantMeses = new Array;
-        
+
         for(var i=1; i<=12; i++){
             var mesP = document.querySelector("#mes"+i+"{{ $cantP -> id_areasmetas }}");
             if(i == 1){

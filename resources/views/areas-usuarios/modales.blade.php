@@ -60,7 +60,7 @@
             </div>
             <div class="modal-body d-flex" style="align-items: center; justify-content: center;">
                 <div class="col text-center">
-                    <img src="{{ asset('img/post/'.$info->foto) }}" alt="{{ $info -> foto }}" style="width: 150px;">
+                    <img src="img/post/{{$info->foto }}" alt="{{ $info -> foto }}" style="width: 150px;">
                 </div>
                 <div class="col">
                     <p><strong>Nombre: </strong><br>{{$info -> nombre .' '. $info->app .' '. $info->apm}}</p>

@@ -16,7 +16,7 @@
         crossorigin="anonymous"></script>
 
     <!-- Enlace a hojas de estilo CSS locales -->
-    <link rel="stylesheet" href="{{ asset('css/sesiones.css') }}">
+    <link rel="stylesheet" href="css/sesiones.css">
 
     <!-- Enlace a hojas de estilos CSS de Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
@@ -24,7 +24,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Carga de script JavaScript local -->
-    <script src="{{ asset('js/sesiones.js') }}"></script>
+    <script src="js/sesiones.js"></script>
 
     <title>Recuperacion de Contraseña</title>
 </head>
@@ -43,12 +43,12 @@
             </div>
         @endif
     </div>
-    
+
     <div class="contenedor rounded shadow">
         <div class="text-end">
-            <img src="{{asset('logos/logotipoutvt.png')}}" width="200px" alt="">
+            <img src="logos/logotipoutvt.png" width="200px" alt="">
         </div> <!-- Cierre de la etiqueta del logo -->
-        
+
         <!-- Columna central -->
         <h2 class="text-center pb-3">Restablece tu Contraseña</h2>
 
@@ -56,9 +56,9 @@
             <!-- Formulario de recuperación de contraseña -->
             <form id="recuperar" action="{{ route('passwordc')}}" method="GET">
                 @csrf <!-- Protección CSRF -->
-                
+
                 <input type="hidden" value="{{$id}}" name="id" id="">
-                
+
                 <label for="pass" class="form-label">&nbsp; <i class="fa-sharp fa-solid fa-key"></i> Rellena los campos:</label>
                 <ul>
                     <li>Ingresa la nueva contraseña.</li>
@@ -68,7 +68,7 @@
                             <i class="fa-solid fa-eye"></i>
                         </button>
                     </div>
-                    
+
                     <li>Verifica la contraseña.</li>
                     <div class="input-group mb-3">
                         <input type="password" name="pass2" id="password2" class="form-control" placeholder="Nueva Contraseña" pattern="(?=.*\d)(?=.*[!@?_#$%^&*]).{9,}" title="La contraseña debe tener al menos 8 caracteres, 1 número y 1 carácter especial">
@@ -77,7 +77,7 @@
                         </button>
                     </div>
                 </ul>
-                
+
                 <div class="boton mb-3 pt-6">
                     <button class="btn btn-success" id="sub" type="submit">Reestablecer</button>
                 </div>

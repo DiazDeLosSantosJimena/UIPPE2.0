@@ -23,7 +23,7 @@ $session_area = session('session_area');
         </div>
         <hr style="margin-top: 0%;">
         <div class="col-lg-3 col-sm-12 d-flex justify-content-center">
-            <img src="{{ asset('img/post/'.auth()->user()->foto) }}" alt="img" style="width: 150px; height: 150px;">
+            <img src="img/post/{{auth()->user()->foto }}" alt="img" style="width: 150px; height: 150px;">
         </div>
         <div class="col-lg-6 col-sm-12 table-responsive">
             <table class="table">
@@ -74,7 +74,7 @@ $session_area = session('session_area');
             <h3>Perfíl</h3>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 py-3 text-center">
-            <img src="{{ asset('img/logos/login.png') }}" alt="Inicie Sesión para poder ver el contenido" class="img-fluid" style="width: 800px;">
+            <img src="img/logos/login.png" alt="Inicie Sesión para poder ver el contenido" class="img-fluid" style="width: 800px;">
             <p>Para ver el contenido <a href="/login">Iniciar Sesión</a></p>
         </div>
     </div>

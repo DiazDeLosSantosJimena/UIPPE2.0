@@ -28,7 +28,7 @@ $session_area = session('session_area');
         <hr style="margin-top: 0%;">
         <div class="col-lg-3 col-sm-12">
             <div class="d-flex justify-content-center">
-                <img src="{{ asset('img/post/'.auth()->user()->foto) }}" alt="img" style="width: 150px; height: 150px;">
+                <img src="img/post/{{auth()->user()->foto }}" alt="img" style="width: 150px; height: 150px;">
             </div>
             <form action="{{ route('EditPerfil', ['id' => auth()->user()->id]) }}" method="POST" enctype="multipart/form-data">
                 {{ csrf_field('PATCH') }}
@@ -162,7 +162,7 @@ $session_area = session('session_area');
             <h3>Perfíl</h3>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 py-3 text-center">
-            <img src="{{ asset('img/logos/login.png') }}" alt="Inicie Sesión para poder ver el contenido" class="img-fluid" style="width: 800px;">
+            <img src="img/logos/login.png" alt="Inicie Sesión para poder ver el contenido" class="img-fluid" style="width: 800px;">
             <p>Para ver el contenido <a href="/login">Iniciar Sesión</a></p>
         </div>
     </div>

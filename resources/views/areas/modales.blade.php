@@ -65,7 +65,7 @@
             </div>
             <div class="modal-body">
                 <div class="text-center py-3">
-                    <img src="{{ asset('img/post/'.$info->foto) }}" alt="{{ $info -> foto }}">
+                    <img src="img/post/{{ $info->foto }}" alt="{{ $info -> foto }}">
                 </div>
                 <p>Nombre: {{$info -> nombre }}</p>
                 <p>Descripción: {{$info -> descripcion}}</p>

@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{{ asset('css/sesiones.css') }}">
+    <link rel="stylesheet" href="css/sesiones.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>SIPPyEM</title>
     <script>
@@ -16,8 +17,7 @@
     </script>
 </head>
 
-<body>
-    <div class="mb5 alert">
+
         @if($Alerta = Session::get('Exito'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Alerta!</strong> {{$Alerta}}
@@ -48,7 +48,7 @@
                     <div class="text-end"><img src="" width="200px" alt="SIPPyEM"></div><!-Logo>
                         <h2 class="fw-bold text-center pb-3">Inicia Sesión</h2>
                         <!-- Form de Inicio de Sesion -->
-                        <form action="/login" method="POST">
+                        <form action="{{ route('login') }}" method="POST">
                             @csrf
                             <div class="mb-4">
                                 <div class="mb-4">

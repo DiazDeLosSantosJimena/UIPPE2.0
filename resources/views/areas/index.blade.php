@@ -43,7 +43,7 @@ $session_area = session('session_area');
                     @foreach($areas as $info)
                     @if($session_area === 0)
                     <tr>
-                        <td class="text-center"><img src="{{ asset('img/post/'.$info-> foto) }}" alt="{{ $info->foto }}" style="width: 50px; border-radius: 15px;"></td>
+                        <td class="text-center"><img src="img/post/{{$info-> foto}}" alt="{{ $info->foto }}" style="width: 50px; border-radius: 15px;"></td>
                         <td>{{ $info->clave}}</td>
                         <td>{{ $info->nombre}}</td>
                         <td>{{ $info->descripcion}}</td>
@@ -73,7 +73,7 @@ $session_area = session('session_area');
                     </tr>
                     @elseif($session_area === $info->id_area)
                     <tr>
-                        <td class="text-center"><img src="{{ asset('img/post/'.$info-> foto) }}" alt="{{ $info->foto }}" style="width: 50px; border-radius: 15px;"></td>
+                        <td class="text-center"><img src="'img/post/'.$ino-> foto" alt="{{ $info->foto }}" style="width: 50px; border-radius: 15px;"></td>
                         <td>{{ $info->clave}}</td>
                         <td>{{ $info->nombre}}</td>
                         <td>{{ $info->descripcion}}</td>
@@ -119,7 +119,7 @@ $session_area = session('session_area');
             <h3>Áreas</h3>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 py-3 text-center">
-            <img src="{{ asset('img/logos/login.png') }}" alt="Inicie Sesión para poder ver el contenido" class="img-fluid" style="width: 800px;">
+            <img src="img/logos/login.png" alt="Inicie Sesión para poder ver el contenido" class="img-fluid" style="width: 800px;">
             <p>Para ver el contenido <a href="{{ route('login') }}">Iniciar Sesión</a></p>
         </div>
     </div>
