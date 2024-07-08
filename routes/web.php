@@ -39,7 +39,7 @@ Route::get('/', function () {
 //  Login
 Route::get('/login', [AuthController::class, 'show'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
-Route::get('/logout', [LogoutController::class, 'logout']);
+Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
 
 //  Correos
 Route::name('recuperacion')->get('recuperacion', [CorreosController::class, 'recuperar']);

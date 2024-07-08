@@ -3,8 +3,8 @@
 <title>Correo</title>
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/correos.css') }}">
-<link rel="stylesheet" href="{{ asset('css/dataTables.bootstrap5.min.css') }}">
+<link rel="stylesheet" href="css/correos.css">
+<link rel="stylesheet" href="css/dataTables.bootstrap5.min.css">
 @endsection
 
 <?php
@@ -122,16 +122,16 @@ $session_area = session('session_area');
             <h3>Calendario</h3>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 py-3 text-center">
-            <img src="{{ asset('img/logos/login.png') }}" alt="Inicie Sesión para poder ver el contenido" class="img-fluid" style="width: 800px;">
-            <p>Para ver el contenido debe tener un área asignada</p>
+            <img src="img/logos/login.png" alt="Inicie Sesión para poder ver el contenido" class="img-fluid" style="width: 800px;">
+        <p>Para ver el contenido debe tener un área asignada</p>
         </div>
     </div>
 </div>
 @endif
 
 @section('js')
-<script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('js/dataTables.bootstrap5.min.js') }}"></script>
+<script src="js/jquery.dataTables.min.js"></script>
+<script src="js/dataTables.bootstrap5.min.js"></script>
 <script>
     $(document).ready(function() {
         $('#emailsTable').DataTable({
@@ -166,7 +166,7 @@ $session_area = session('session_area');
             <h3>Inicio</h3>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 py-3 text-center">
-            <img src="{{ asset('img/logos/login.png') }}" alt="Inicie Sesión para poder ver el contenido" class="img-fluid" style="width: 800px;">
+            <img src="img/logos/login.png" alt="Inicie Sesión para poder ver el contenido" class="img-fluid" style="width: 800px;">
             <p>Para ver el contenido <a href="{{ route('login') }}">Iniciar Sesión</a></p>
         </div>
     </div>

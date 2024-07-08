@@ -66,7 +66,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="text-center py-3">
-                        <img src="{{ asset('img/post/'.$usuario->foto) }}" alt="{{ $usuario -> foto }}" style="width: 300px; border-radius: 100px;">
+                        <img src="img/post/{{$usuario->foto }}" alt="{{ $usuario -> foto }}" style="width: 300px; border-radius: 100px;">
                     </div>
                     <div class="text-center">
                         <h4>

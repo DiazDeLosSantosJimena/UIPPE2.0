@@ -1,7 +1,7 @@
 @extends('layout.navbar')
 <!-- Importacion de estilos para el select START -->
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/dataTables.bootstrap5.min.css') }}">
+<link rel="stylesheet" href="css/dataTables.bootstrap5.min.css">
 @endsection
 <!-- Importacion de estilos para el select END -->
 
@@ -59,7 +59,7 @@ $session_area = session('session_area');
                     @foreach($Usuarios as $usuario)
                     @if(auth()->user()->id != 3)
                     <tr>
-                        <td class="text-center"><img src="{{ asset('img/post/'.$usuario-> foto) }}" alt="{{ $usuario->foto }}" style="width: 45px; border-radius: 15px;"></td>
+                        <td class="text-center"><img src="img/post/{{$usuario-> foto}}" alt="{{ $usuario->foto }}" style="width: 45px; border-radius: 15px;"></td>
                         <td>{{ $usuario->clave}}</td>
                         <td>{{ $usuario->nombreU}}</td>
                         <td>{{ $usuario->app .' '. $usuario->apm }}</td>
@@ -100,7 +100,7 @@ $session_area = session('session_area');
                     </tr>
                     @elseif($usuario->activo > 0)
                     <tr>
-                        <td class="text-center"><img src="{{ asset('img/post/'.$usuario-> foto) }}" alt="{{ $usuario->foto }}" style="width: 45px; border-radius: 15px;"></td>
+                        <td class="text-center"><img src="img/post/{{$usuario-> foto }}" alt="{{ $usuario->foto }}" style="width: 45px; border-radius: 15px;"></td>
                         <td>{{ $usuario->clave}}</td>
                         <td>{{ $usuario->nombreU}}</td>
                         <td>{{ $usuario->app .' '. $usuario->apm }}</td>
@@ -164,7 +164,7 @@ $session_area = session('session_area');
             <h3>Usuarios</h3>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 py-3 text-center">
-            <img src="{{ asset('img/logos/login.png') }}" alt="Inicie Sesión para poder ver el contenido" class="img-fluid" style="width: 800px;">
+            <img src="img/logos/login.png" alt="Inicie Sesión para poder ver el contenido" class="img-fluid" style="width: 800px;">
             <p>Para ver el contenido <a href="{{ route('login') }}">Iniciar Sesión</a></p>
         </div>
     </div>
@@ -173,8 +173,8 @@ $session_area = session('session_area');
 
 <!-- Importacion y configuracion para las tablas dinamicas START -->
 @section('js')
-<script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('js/dataTables.bootstrap5.min.js') }}"></script>
+<script src="js/jquery.dataTables.min.js"></script>
+<script src="js/dataTables.bootstrap5.min.js"></script>
 <script>
     $(document).ready(function() {
         $('#userTable').DataTable({

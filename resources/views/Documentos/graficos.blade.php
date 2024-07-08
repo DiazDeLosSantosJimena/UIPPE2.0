@@ -40,7 +40,7 @@ $session_tipo = session('session_tipo');
                         <!-- Aquí va el contenido 1 -->
                         <canvas id="GraficaReportes" width="600" height="400"></canvas>
                         <center><button onclick="generateRGPDF()" class="btn btn-danger">Generar PDF</button></center>
-                       
+
 <form action="{{route('buscar')}}" method="POST">
   @csrf
   <div>Mes de inicio</div>
@@ -56,11 +56,11 @@ $session_tipo = session('session_tipo');
 
 
 
-        
+
 
         @else
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 py-3 text-center">
-                    <img src="{{ asset('img/login.png') }}" alt="Inicie Sesión para poder ver el contenido" class="img-fluid" style="width: 800px;">
+                    <img src="img/login.png" alt="Inicie Sesión para poder ver el contenido" class="img-fluid" style="width: 800px;">
                     <p>Para ver el contenido <a href="/login">Iniciar Sesión</a></p>
                 </div>
                 @endif
@@ -70,7 +70,7 @@ $session_tipo = session('session_tipo');
             <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js" integrity="sha512-OD9Gn6cAUQezuljS6411uRFr84pkrCtw23Hl5TYzmGyD0YcunJIPSBDzrV8EeCiFxGWWvtJOfVo5pOgB++Jsag==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
             <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>
 
-            
+
     <script>
         const bgREColor = {
                     id: 'bgRETColor',
@@ -95,14 +95,14 @@ $session_tipo = session('session_tipo');
 
                                 @endforeach
                         ],
-                        
-                     
+
+
                         datasets: [{
                             label: "Registros de metas por mes",
                             borderColor: [
                                 'rgb(0,99,0)',
                             ],
-                            
+
                             data: [
                                 @foreach($resultados as $am)
                                 "{{ $am -> conteo }}",
@@ -111,11 +111,11 @@ $session_tipo = session('session_tipo');
                             ],
                             tension: 0.1,
                             fill: false
-                        
+
                         }]
                     },
                     options: {
- 
+
                         scales: {
                             yAxes: [{
                                 ticks: {
@@ -126,9 +126,9 @@ $session_tipo = session('session_tipo');
                             legend: {
                                 display: true
                             },
-                            
+
                     },
-                 
+
                     plugins: [bgREColor],
                 });
 
