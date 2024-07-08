@@ -33,7 +33,7 @@
             <tr class="table-success">
                 <td>Clave</td>
                 <td>Nombre</td>
-                <td>Descripcion</td>
+                <td>Descripción</td>
             </tr>
         </thead>
         @foreach($tipos as $t )

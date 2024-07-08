@@ -26,7 +26,7 @@
     <!-- Carga de script JavaScript local -->
     <script src="js/sesiones.js"></script>
 
-    <title>Recuperacion de Contraseña</title>
+    <title>Recuperación de Contraseña</title>
 </head>
 <body>
     <div class="mb5 alert">
@@ -50,7 +50,7 @@
         </div> <!-- Cierre de la etiqueta del logo -->
 
         <!-- Columna central -->
-        <h2 class="text-center pb-3">Restablece tu Contraseña</h2>
+        <h2 class="text-center pb-3">Restablecer tu Contraseña</h2>
 
         <div class="in">
             <!-- Formulario de recuperación de contraseña -->
@@ -79,7 +79,7 @@
                 </ul>
 
                 <div class="boton mb-3 pt-6">
-                    <button class="btn btn-success" id="sub" type="submit">Reestablecer</button>
+                    <button class="btn btn-success" id="sub" type="submit">Restablecer</button>
                 </div>
             </form>
         </div>

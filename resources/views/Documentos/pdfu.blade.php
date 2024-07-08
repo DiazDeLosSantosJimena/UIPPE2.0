@@ -35,8 +35,8 @@
                 <td>Foto</td>
                 <td>Clave</td>
                 <td>Nombre</td>
-                <td>Genero</td>
-                <td>Academico</td>
+                <td>Género</td>
+                <td>Académico</td>
                 <td>Email</td>
             </tr>
         </thead>
