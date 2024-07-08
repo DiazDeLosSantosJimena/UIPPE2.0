@@ -14,6 +14,7 @@ $session_area = session('session_area');
 ?>
 <!-- Variables de Sesiones del usuario END -->
 <!-- SCRIPT de petición para el multi-select START -->
+
 <head>
     <script src="{{ asset('js\jquery-3.6.4.min.js') }}"></script>
     <script>
@@ -50,7 +51,7 @@ $session_area = session('session_area');
 </head>
 <!-- SCRIPT de petición para el multi-select END -->
 
-@auth    <!-- Condición de acceso al contenido LOGGEADO -->
+@auth <!-- Condición de acceso al contenido LOGGEADO -->
 <div class="container p-4">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -59,6 +60,12 @@ $session_area = session('session_area');
             <li class="breadcrumb-item" aria-current="page">Áreas-Metas</li>
         </ol>
     </nav>
+    @if(session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Alerta!</strong> {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
     <div class="row">
         <div class="col p-4">
             <h3>Áreas | Metas</h3>
@@ -141,12 +148,15 @@ $session_area = session('session_area');
 <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('js/dataTables.bootstrap5.min.js') }}"></script>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $('#areasMetas').DataTable({
-            "lengthMenu": [[5, 10, 50, -1], [5, 10, 50, "Todo"]],
+            "lengthMenu": [
+                [5, 10, 50, -1],
+                [5, 10, 50, "Todo"]
+            ],
             ordering: false,
             info: false,
-            language:{
+            language: {
                 "search": "Buscar:",
                 "paginate": {
                     "first": "Primero",
@@ -179,4 +189,4 @@ $session_area = session('session_area');
 </div>
 @endguest
 
-@endsection     <!-- ENDSECTION DE CONTENIDO = @section('content') -->
+@endsection <!-- ENDSECTION DE CONTENIDO = @section('content') -->

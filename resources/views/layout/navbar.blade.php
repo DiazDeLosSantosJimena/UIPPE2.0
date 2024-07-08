@@ -138,6 +138,7 @@ $session_area = session('session_area');
             var URLpath = window.location.pathname;
             let regex = /\/(.*?)\//;
             let match = URLpath.match(regex);
+            console.log(URLpath);
             if (URLpath === "/dashboard") {
                 let elementoNav = document.querySelector('#a_sippyem');
                 elementoNav.classList.add('active');

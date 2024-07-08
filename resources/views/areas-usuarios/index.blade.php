@@ -17,6 +17,12 @@
             <li class="breadcrumb-item" aria-current="page">Áreas-Usuarios</li>
         </ol>
     </nav>
+    @if(session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Alerta!</strong> {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
     <div class="row">
         <div class="col p-4">
             <h3>Áreas | Usuarios</h3>

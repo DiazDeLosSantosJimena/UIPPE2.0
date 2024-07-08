@@ -40,7 +40,7 @@ class TiposController extends Controller
             'id_registro' => $request->input('registro'),
         ));
 
-        return redirect('tipos');
+        return redirect('tipos')->with('success', 'Registro creado con éxito!');
     }
 
     public function show($id)
@@ -72,7 +72,7 @@ class TiposController extends Controller
         $query->id_registro = trim($request->registro);
         $query->save();
 
-        return redirect('tipos');
+        return redirect('tipos')->with('success', 'Registro modificado con éxito!');
     }
 
     public function destroy(Tipos $id, Request $request)
@@ -81,6 +81,6 @@ class TiposController extends Controller
         $query->activo = 0;
         $query->id_registro = trim($request->registro);
         $query->save();
-        return redirect('tipos');
+        return redirect('tipos')->with('success', 'Registro desactivado con éxito!');
     }
 }

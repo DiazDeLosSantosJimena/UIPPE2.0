@@ -22,6 +22,12 @@ $session_area = session('session_area');
             <li class="breadcrumb-item" aria-current="page">Usuarios</li>
         </ol>
     </nav>
+    @if(session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Alerta!</strong> {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
     @if($session_area == 0) <!-- Condición de acceso al contenido para administrador -->
     <div class="row">
         <div class="col p-4">

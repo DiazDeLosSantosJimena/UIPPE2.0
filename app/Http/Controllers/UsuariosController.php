@@ -71,7 +71,7 @@ class UsuariosController extends Controller
             'id_registro' => $request->input('registro'),
         ));
 
-        return redirect('usuarios');
+        return redirect('usuarios')->with('success', 'Registro creado con éxito!');
     }
 
     public function show($id)
@@ -129,7 +129,7 @@ class UsuariosController extends Controller
             return redirect()->route('registrosA', ['id' => $id]);
         }
 
-        return redirect('usuarios');
+        return redirect('usuarios')->with('success', 'Registro modificado con éxito!');
     }
 
     public function destroy(User $id, Request $request)
@@ -138,7 +138,7 @@ class UsuariosController extends Controller
         $query -> activo = 0;
         $query -> id_registro = trim($request->registro);
         $query -> save();
-        return redirect('usuarios');
+        return redirect('usuarios')->with('success', 'Registro desactivado con éxito!');
     }
 
     public function perfil()

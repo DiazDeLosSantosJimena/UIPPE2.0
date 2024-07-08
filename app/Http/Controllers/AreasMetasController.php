@@ -75,7 +75,7 @@ class AreasMetasController extends Controller
             ));
         }
 
-        return redirect()->route("areasmetas.index");
+        return redirect()->route("areasmetas.index")->with('success', 'Registro creado con éxito!');
     }
 
     public function edit(AreasMetas $id, Request $request){
@@ -93,7 +93,7 @@ class AreasMetasController extends Controller
     public function destroy($id)
     {
         $areasmeta = AreasMetas::find($id)->delete();
-        return redirect()->route("areasmetas.index");
+        return redirect()->route("areasmetas.index")->with('success', 'Registro eliminado con éxito!');
     }
 
     public function js_metas(Request $request)

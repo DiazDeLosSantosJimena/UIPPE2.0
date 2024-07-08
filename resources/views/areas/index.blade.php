@@ -16,11 +16,16 @@ $session_area = session('session_area');
             <li class="breadcrumb-item" aria-current="page">Áreas</li>
         </ol>
     </nav>
+    @if(session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Mensaje!</strong> {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
     <div class="row">
         <div class="col p-4">
             <h3>Áreas</h3>
         </div>
-
         <div class="col p-4 d-flex justify-content-end">
             <a href="{{route('pdfAreas')}}" class="mx-1 my-1"><button type="button" class="btn btn-danger"><i class="fa-solid fa-file-pdf"></i></button>
             <a class="btn btn-success float-end mx-1 my-1" href="{{ route('areas.export') }}"><i class="fa-sharp fa-solid fa-file-excel"></i></a>

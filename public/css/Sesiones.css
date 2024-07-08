@@ -1,6 +1,7 @@
 /*Universal*/
 .bg{
-    /* background-image: url("../img/logos/uippelogo.png"); */
+    background-image: url("../img/logos/SIPPyEM.png");
+    width: auto;
     background-position: center center;
     background-repeat: no-repeat;
 }
