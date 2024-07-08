@@ -59,7 +59,7 @@
                     <div class="col-6 text-center">
                         <strong>Estado: </strong>@if($usuario -> activo > 0) <p style="color: green;">Activo</p> @else <p style="color: red;">Inactivo</p> @endif
                     </div>
-                    <p><strong>Academico: </strong>{{$usuario -> academico}}</p>
+                    <p><strong>Académico: </strong>{{$usuario -> academico}}</p>
                     <p><strong>Correo: </strong>{{$usuario -> email}}</p>
                     <p><strong>Tipo: </strong> {{$usuario->nombreT}}</p>
                 </div>
@@ -103,7 +103,7 @@
                         </div>
                     </div>
                     <div class="py-2">
-                        <label for="colFormLabelSm" class="form-label">Sexo | Genero :</label>
+                        <label for="colFormLabelSm" class="form-label">Sexo | Género :</label>
                         @if($usuario->gen == "F")
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="M" id="flexCheckDefault" name="gen">

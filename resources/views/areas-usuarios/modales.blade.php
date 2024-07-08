@@ -10,7 +10,7 @@
                 <form action="{{route('areausuario.store')}}" method="POST" enctype="multipart/form-data">
                     {!! csrf_field() !!}
                     <div>
-                        <label for="floatingInput">Selecciona un area:</label>
+                        <label for="floatingInput">Selecciona un área:</label>
                         <select name="area_id" id="area_id" aria-label="floating label selext example" data-search="true" data-silent-initial-value-set="true">
                             @foreach ($areas as $info)
                             <option value="{{$info->id_area}}">{{$info->nombre}}</option>

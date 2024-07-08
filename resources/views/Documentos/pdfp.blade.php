@@ -35,7 +35,7 @@
                 <td>#</td>
                 <td>Abreviatura</td>
                 <td>Nombre</td>
-                <td>Descripcion</td>
+                <td>Descripción</td>
             </tr>
         </thead>
         @foreach($programas as $p )

@@ -10,7 +10,7 @@
 	<title></title>
 </head>
 <body>
-	<h2>Contactanos</h2>
+	<h2>Contáctanos</h2>
 <form action="{{route('pcorreo')}}" method="GET">
 	@csrf
 	<label for="">Correo</label><input type="text" name="destinatario"><br>

@@ -34,7 +34,7 @@
                 <td>Foto</td>
                 <td>Clave</td>
                 <td>Nombre</td>
-                <td>Descripcion</td>
+                <td>Descripción</td>
             </tr>
         </thead>
         @foreach($areas as $a )

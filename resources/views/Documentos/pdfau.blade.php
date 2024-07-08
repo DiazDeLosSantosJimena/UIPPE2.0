@@ -28,7 +28,7 @@
     <table>
         <thead>
             <center>
-                <h1>Areas|Usuarios registradas en el sistema</h1>
+                <h1>Áreas|Usuarios registradas en el sistema</h1>
             </center>
             <br>
             <b>Fecha: @php echo date('d/m/Y'); @endphp</b>
@@ -40,7 +40,7 @@
         <thead>
             <tr>
                 <td>ID</td>
-                <td>Areas</td>
+                <td>Áreas</td>
                 <td>Usuarios</td>
 
             </tr>

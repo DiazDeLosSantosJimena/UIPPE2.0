@@ -37,7 +37,7 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Area</th>
+                        <th>Área</th>
                         <th>Usuario</th>
                         <th class="text-center">Acción</th>
                         <th></th>

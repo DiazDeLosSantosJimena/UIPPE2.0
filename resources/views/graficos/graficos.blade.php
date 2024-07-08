@@ -18,10 +18,10 @@
     </div>
     <div class="row">
         <!-- -----------------------------------------Grafica Muestra----------------------------------- -->
-        <h5>Graficas de Muestra </h5>
+        <h5>Gráficas de Muestra </h5>
         <div class="container p-1">
             <div id="my-div">
-                <button class="btn btn-success" onclick="mostrarContenido('contenido4')">Metas asignadas por areas</button>
+                <button class="btn btn-success" onclick="mostrarContenido('contenido4')">Metas asignadas por áreas</button>
                 <button class="btn btn-success" onclick="mostrarContenido('contenido5')">Programas Metas</button>
                 <button class="btn btn-success" onclick="mostrarContenido('contenido6')">Usuarios Puestos</button>
                 <button class="btn btn-success" onclick="location.reload()">Cerrar</button>
@@ -61,7 +61,7 @@
                 </div>
             </div>
             <!-- -----------------------------------------Grafica de prueba por meses Enero-Marzo ----------------------------------- -->
-            <h5>Graficas de las metas por Meses y Trimestral </h5>
+            <h5>Gráficas de las metas por Meses y Trimestral </h5>
             <div class="container p-1">
                 <div id="my-div">
                     <button class="btn btn-success" onclick="mostrarContenido('contenido0')">Enero</button>

@@ -46,7 +46,7 @@ $session_area = session('session_area');
                         <th>Clave</th>
                         <th>Nombre</th>
                         <th>Apellidos</th>
-                        <th>Genero</th>
+                        <th>Género</th>
                         <th>Académico</th>
                         <th>Email</th>
                         <th>Activo</th>
