@@ -32,7 +32,7 @@ $session_area = session('session_area');
         </div>
             <div class="col-xs-4 col-md-4 col-xl-4 d-flex">
                 <i class='bx bxs-rectangle text-success mx-3 my-1'></i>
-                <p>Cantidad Propuesta</p>
+                <p>Tabla de metas con cantidad propuesta.</p>
             </div>
             <div class="col p-4 d-flex justify-content-end">
                 <a class="btn btn-success" href="{{ route('entregaMetas') }}">Entrega Metas</a>
@@ -89,12 +89,8 @@ $session_area = session('session_area');
             </table>
         </div>
         <div class="col-xs-4 col-md-4 col-xl-4 d-flex">
-            <i class='bx bxs-rectangle text-warning mx-3 my-1'></i>
-            <p>Cantidad por establecer</p>
-        </div>
-        <div class="col-xs-4 col-md-4 col-xl-4 d-flex">
             <i class='bx bxs-rectangle text-danger mx-3 my-1'></i>
-            <p>Cantidad sin registro eficiente</p>
+            <p>Tabla de metas sin cantidad establecida.</p>
         </div>
         <!-- Tabla de metas por completar -->
         <div class="table-responsive my-4">

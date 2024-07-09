@@ -1,6 +1,5 @@
 <!-- MODAL MESES CON REGISTROS START -->
 @foreach ($areasconMeses as $meta)
-@if($session_area == $meta->area_id)
 <div class="modal fade" id="modalshow{{ $meta->id_areasmetas }}" tabindex="-1" aria-labelledby="modalshowLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -9,9 +8,9 @@
                 <div style="margin-left: 180px;" id="sumaTotal{{ $meta->id_areasmetas }}">{{ $meta->meses_c }}</div>
             </div>
             <div class="modal-body">
-                <form action="{{ route('calendUpdate', ['id' => $meta->id_areasmetas]) }}" method="POST" enctype="multipart/form-data" onclick="sumaFormulario(this);" id="{{ $meta->id_meta }}"> 
-                {{ csrf_field('PATCH') }}
-                {{ method_field('PUT') }}
+                <form action="{{ route('calendUpdate', ['id' => $meta->id_areasmetas]) }}" method="POST" enctype="multipart/form-data" onclick="sumaFormulario(this); validacion(this);" id="{{ $meta->id_meta }}">
+                    {{ csrf_field('PATCH') }}
+                    {{ method_field('PUT') }}
                     <div class="row mb-3">
                         <label for="colFormLabel" class="col-sm-3 col-form-label">Enero:</label>
                         <div class="col-sm-9">
@@ -88,15 +87,26 @@
             <div class="modal-footer">
                 <input class="form-control" type="hidden" name="registro" value="{{ auth()->user()->id }}" style="display: none;">
                 <input class="form-control" type="hidden" name="area_meta" value="{{ $meta->id_areasmetas }}" style="display: none;">
-                <input class="form-control" type="hidden" name="cantidad" id="cantidad{{ $meta->id_areasmetas }}" value="" style="display: none;">
+                <input class="form-control" type="hidden" name="cantidad" id="cantidad{{ $meta->id_meta }}" value="{{ $meta->meses_c }}" style="display: none;">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="submit" class="btn btn-primary" id="save{{ $meta->id_areasmetas }}">Guardar</button>
+                <button type="submit" class="btn btn-primary" id="save{{ $meta->id_meta }}">Guardar</button>
             </div>
             </form>
         </div>
     </div>
 </div>
-@endif
+<!-- SCRIPT para la validación de los modales START -->
+<script>
+    function validacion(formulario) {
+        const cantidadEstablecida = {{ $meta->meses_c }};
+        const nuevaCantidad = formulario.parentElement.parentElement.lastElementChild.querySelector(`#cantidad${formulario.id}`);
+
+        if(nuevaCantidad > cantidadEstablecida){
+            
+        }
+    }
+</script>
+<!-- SCRIPT para la validación de los modales END -->
 @endforeach
 <!-- MODAL MESES CON REGISTRO EN MESES END -->
 
@@ -110,8 +120,8 @@
                 <div style="margin-left: 180px;" id="sumaTotal{{ $meta->id_meta }}">50</div>
             </div>
             <div class="modal-body">
-                <form action="{{ route('calendarizars.store') }}" method="POST" enctype="multipart/form-data" onclick="sumaFormulario(this);" id="{{ $meta->id_meta }}"> 
-                {!! csrf_field() !!}
+                <form action="{{ route('calendarizars.store') }}" method="POST" enctype="multipart/form-data" onclick="sumaFormulario(this);" id="{{ $meta->id_meta }}">
+                    {!! csrf_field() !!}
                     <div class="row mb-3">
                         <label for="colFormLabel" class="col-sm-3 col-form-label">Enero:</label>
                         <div class="col-sm-9">
@@ -188,7 +198,7 @@
             <div class="modal-footer">
                 <input class="form-control" type="text" name="registro" value="{{ auth()->user()->id }}" style="display: none;">
                 <input class="form-control" type="text" name="area_meta" value="{{ $meta->id_areasmetas }}" style="display: none;">
-                <input class="form-control cantidadEntrega" type="text" name="cantidad" value="0" style="display: none;">
+                <input class="form-control" type="text" name="cantidad" id="cantidad{{ $meta->id_meta }}" value="0" style="display: none;">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                 <button type="submit" class="btn btn-primary" id="save{{ $meta->id_areasmetas }}">Guardar</button>
             </div>
@@ -196,15 +206,15 @@
         </div>
     </div>
 </div>
-<!-- Validación con botón -->
 @endforeach
 
 <!-- SCRIPT para la suma dinamica de los modales START -->
 <script>
-    function sumaFormulario(formulario){
+    function sumaFormulario(formulario) {
         //  Ubica el registro en la tabla y selecciona la columna con la cantidad propuesta anual
         const impresionTabla = String(`cantEntrega${formulario.id}`);
         const inputElements = formulario.querySelectorAll('input[type="number"]');
+        const cantidad = document.getElementById(String(`cantidad${formulario.id}`));
 
         inputElements.forEach(inputElement => {
             inputElement.addEventListener('input', () => {
@@ -212,11 +222,12 @@
                 let CantidadTotal = 0;
                 inputElements.forEach(inputElement => {
                     const valorActual = parseInt(inputElement.value, 10);
-                    if(!isNaN(valorActual)){
+                    if (!isNaN(valorActual)) {
                         CantidadTotal += valorActual;
                     }
                 });
                 formulario.parentElement.parentElement.firstElementChild.querySelector('div').textContent = CantidadTotal;
+                cantidad.value = CantidadTotal;
                 document.getElementById(impresionTabla).textContent = CantidadTotal;
             });
         });
