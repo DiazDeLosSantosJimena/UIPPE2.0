@@ -196,9 +196,7 @@
         </div>
     </div>
 </div>
-<script>
-
-</script>
+<!-- Validación con botón -->
 @endforeach
 
 <!-- SCRIPT para la suma dinamica de los modales START -->
