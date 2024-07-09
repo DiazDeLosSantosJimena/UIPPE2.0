@@ -90,37 +90,35 @@
 	</style>
 </head>
 
-<body style="background-color: #f8f8f9; margin: 0; padding: 0; -webkit-text-size-adjust: none; text-size-adjust: none;">
+<body class="body" style="background-color: #f8f8f9; margin: 0; padding: 0; -webkit-text-size-adjust: none; text-size-adjust: none;">
 	<table class="nl-container" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f8f8f9;">
 		<tbody>
 			<tr>
 				<td>
-					<table class="row row-1" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff;">
+					<table class="row row-1" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
 						<tbody>
 							<tr>
 								<td>
-									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000000; width: 640px; margin: 0 auto;" width="640">
+									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; border-radius: 0; color: #000000; width: 640px; margin: 0 auto;" width="640">
 										<tbody>
 											<tr>
-												<td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+												<td class="column column-1" width="50%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: bottom; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
 													<table class="image_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
 														<tr>
-															<td class="pad" style="width:100%;padding-right:0px;padding-left:0px;">
-																<div class="alignment" align="right" style="line-height:10px">
-																	<div style="max-width: 256px;"><img src="https://f2edaf7f96.imgdist.com/public/users/Integrators/BeeProAgency/955344_939853/logotipoutvt.png" style="display: block; height: auto; border: 0; width: 100%;" width="256" height="auto"></div>
+															<td class="pad" style="padding-left:35px;width:100%;padding-right:0px;">
+																<div class="alignment" align="left" style="line-height:10px">
+																	<div style="max-width: 112px;"><img src="https://f2edaf7f96.imgdist.com/pub/bfra/yh8b59wi/3vf/alp/5tf/SIPPyEM.png" style="display: block; height: auto; border: 0; width: 100%;" width="112" height="auto"></div>
 																</div>
 															</td>
 														</tr>
 													</table>
-													<table class="divider_block block-2" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+												</td>
+												<td class="column column-2" width="50%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: bottom; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+													<table class="image_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
 														<tr>
-															<td class="pad">
-																<div class="alignment" align="center">
-																	<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-																		<tr>
-																			<td class="divider_inner" style="font-size: 1px; line-height: 1px; border-top: 4px solid #736969;"><span>&#8202;</span></td>
-																		</tr>
-																	</table>
+															<td class="pad" style="padding-right:20px;width:100%;padding-left:0px;">
+																<div class="alignment" align="right" style="line-height:10px">
+																	<div style="max-width: 224px;"><img src="https://f2edaf7f96.imgdist.com/public/users/Integrators/BeeProAgency/955344_939853/logotipoutvt.png" style="display: block; height: auto; border: 0; width: 100%;" width="224" height="auto"></div>
 																</div>
 															</td>
 														</tr>
@@ -133,7 +131,7 @@
 							</tr>
 						</tbody>
 					</table>
-					<table class="row row-2" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+					<table class="row row-2" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff;">
 						<tbody>
 							<tr>
 								<td>
@@ -141,33 +139,15 @@
 										<tbody>
 											<tr>
 												<td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-													<table class="text_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+													<table class="divider_block block-1" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
 														<tr>
-															<td class="pad" style="padding-bottom:10px;padding-left:40px;padding-right:40px;padding-top:10px;">
-																<div style="font-family: sans-serif">
-																	<div class style="font-size: 12px; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; mso-line-height-alt: 14.399999999999999px; color: #555555; line-height: 1.2;">
-																		<p style="margin: 0; font-size: 16px; text-align: center; mso-line-height-alt: 19.2px;"><span style="font-size:30px;color:#2b303a;"><strong>&nbsp;Contacto de Soporte SIPPyEM<br></strong></span></p>
-																	</div>
-																</div>
-															</td>
-														</tr>
-													</table>
-													<table class="image_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-														<tr>
-															<td class="pad" style="padding-left:40px;padding-right:40px;width:100%;">
-																<div class="alignment" align="center" style="line-height:10px">
-																	<div class="fullWidth" style="max-width: 352px;"><img src="https://f2edaf7f96.imgdist.com/public/users/Integrators/BeeProAgency/955344_939853/Call%20center-rafiki.png" style="display: block; height: auto; border: 0; width: 100%;" width="352" alt="I'm an image" title="I'm an image" height="auto"></div>
-																</div>
-															</td>
-														</tr>
-													</table>
-													<table class="text_block block-3" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-														<tr>
-															<td class="pad" style="padding-bottom:10px;padding-left:40px;padding-right:40px;padding-top:10px;">
-																<div style="font-family: sans-serif">
-																	<div class style="font-size: 12px; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; mso-line-height-alt: 14.399999999999999px; color: #555555; line-height: 1.2;">
-																		<p style="margin: 0; font-size: 16px; text-align: left; mso-line-height-alt: 19.2px;"><span style="font-size:30px;color:#2b303a;"><strong><span style="font-size:22px;">&nbsp;Reestablecer Contraseña</span><br></strong></span></p>
-																	</div>
+															<td class="pad">
+																<div class="alignment" align="center">
+																	<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+																		<tr>
+																			<td class="divider_inner" style="font-size: 1px; line-height: 1px; border-top: 4px solid #736969;"><span style="word-break: break-word;">&#8202;</span></td>
+																		</tr>
+																	</table>
 																</div>
 															</td>
 														</tr>
@@ -184,32 +164,26 @@
 						<tbody>
 							<tr>
 								<td>
-									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f8f8f9; color: #000000; width: 640px; margin: 0 auto;" width="640">
+									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000000; width: 640px; margin: 0 auto;" width="640">
 										<tbody>
 											<tr>
-												<td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+												<td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
 													<table class="text_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
 														<tr>
 															<td class="pad" style="padding-bottom:10px;padding-left:40px;padding-right:40px;padding-top:10px;">
-																<div style="font-family: Arial, sans-serif">
-																	<div class style="font-size: 12px; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; mso-line-height-alt: 18px; color: #555555; line-height: 1.5;">
-																		<p style="margin: 0; font-size: 15px; text-align: justify; mso-line-height-alt: 22.5px;"><span style="font-size:15px;">Estimado usuario,</span></p>
-																		<p style="margin: 0; font-size: 15px; text-align: justify; mso-line-height-alt: 22.5px;"><span style="font-size:15px;">Recibes este correo electrónico porque has solicitado restablecer tu contraseña en nuestra plataforma. Para continuar con el proceso, por favor haz clic en el boton a continuación:</span></p>
+																<div style="font-family: sans-serif">
+																	<div class style="font-size: 12px; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; mso-line-height-alt: 14.399999999999999px; color: #555555; line-height: 1.2;">
+																		<p style="margin: 0; font-size: 16px; text-align: center; mso-line-height-alt: 19.2px;"><span style="word-break: break-word; font-size: 30px; color: #2b303a;"><strong>&nbsp;Contacto de Soporte<br></strong></span></p>
 																	</div>
 																</div>
 															</td>
 														</tr>
 													</table>
-													<table class="button_block block-2" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+													<table class="image_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
 														<tr>
-															<td class="pad">
-																<div class="alignment" align="center"><!--[if mso]>
-<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="height:42px;width:239px;v-text-anchor:middle;" arcsize="10%" stroke="false" fillcolor="#387a47">
-<w:anchorlock/>
-<v:textbox inset="0px,0px,0px,0px">
-<center style="color:#ffffff; font-family:Tahoma, sans-serif; font-size:16px">
-<![endif]-->
-																	<a href={{$url}}><div style="text-decoration:none;display:inline-block;color:#ffffff;background-color:#387a47;border-radius:4px;width:auto;border-top:0px solid transparent;font-weight:400;border-right:0px solid transparent;border-bottom:0px solid transparent;border-left:0px solid transparent;padding-top:5px;padding-bottom:5px;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:16px;text-align:center;mso-border-alt:none;word-break:keep-all;"><span style="padding-left:20px;padding-right:20px;font-size:16px;display:inline-block;letter-spacing:normal;"><span style="word-break: break-word; line-height: 32px;">Reestablecer Contraseña</span></span></div><!--[if mso]></center></v:textbox></v:roundrect><![endif]--></a>
+															<td class="pad" style="padding-left:40px;padding-right:40px;width:100%;">
+																<div class="alignment" align="center" style="line-height:10px">
+																	<div class="fullWidth" style="max-width: 352px;"><img src="https://f2edaf7f96.imgdist.com/pub/bfra/yh8b59wi/prl/lb8/6ly/Forgot%20password-bro.png" style="display: block; height: auto; border: 0; width: 100%;" width="352" alt="I'm an image" title="I'm an image" height="auto"></div>
 																</div>
 															</td>
 														</tr>
@@ -217,23 +191,10 @@
 													<table class="text_block block-3" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
 														<tr>
 															<td class="pad" style="padding-bottom:10px;padding-left:40px;padding-right:40px;padding-top:10px;">
-																<div style="font-family: Arial, sans-serif">
-																	<div class style="font-size: 12px; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; mso-line-height-alt: 18px; color: #555555; line-height: 1.5;">
-																		<p style="margin: 0; mso-line-height-alt: 22.5px;"><span style="font-size:15px;">Si no solicitaste este cambio, puedes ignorar este correo.</span></p>
+																<div style="font-family: sans-serif">
+																	<div class style="font-size: 12px; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; mso-line-height-alt: 14.399999999999999px; color: #555555; line-height: 1.2;">
+																		<p style="margin: 0; font-size: 16px; text-align: left; mso-line-height-alt: 19.2px;"><span style="word-break: break-word; font-size: 30px; color: #2b303a;"><strong><span style="word-break: break-word; font-size: 22px;">&nbsp;Asunto</span><br></strong></span></p>
 																	</div>
-																</div>
-															</td>
-														</tr>
-													</table>
-													<table class="divider_block block-4" width="100%" border="0" cellpadding="20" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-														<tr>
-															<td class="pad">
-																<div class="alignment" align="center">
-																	<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-																		<tr>
-																			<td class="divider_inner" style="font-size: 1px; line-height: 1px; border-top: 0px solid #BBBBBB;"><span>&#8202;</span></td>
-																		</tr>
-																	</table>
 																</div>
 															</td>
 														</tr>
@@ -250,30 +211,55 @@
 						<tbody>
 							<tr>
 								<td>
-									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #2b303a; color: #000000; width: 640px; margin: 0 auto;" width="640">
+									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000000; width: 640px; margin: 0 auto;" width="640">
 										<tbody>
 											<tr>
-												<td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-													<table class="divider_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+												<td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+													<table class="text_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+														<tr>
+															<td class="pad" style="padding-bottom:10px;padding-left:40px;padding-right:40px;padding-top:10px;">
+																<div style="font-family: Arial, sans-serif">
+																	<div class style="font-size: 12px; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; mso-line-height-alt: 18px; color: #555555; line-height: 1.5;">
+																		<p style="margin: 0; font-size: 15px; text-align: justify; mso-line-height-alt: 22.5px;"><span style="word-break: break-word; font-size: 15px;">Estimado usuario,</span></p>
+																		<p style="margin: 0; font-size: 15px; text-align: justify; mso-line-height-alt: 22.5px;"><span style="word-break: break-word; font-size: 15px;">Olvidaste tu contraseña, ¿Cierto?</span></p>
+																		<p style="margin: 0; font-size: 15px; text-align: justify; mso-line-height-alt: 22.5px;"><span style="word-break: break-word; font-size: 15px;">Recibes este correo electrónico porque has solicitado restablecer tu contraseña. Para continuar con el proceso, por favor haz clic en el boton a continuación:</span></p>
+																	</div>
+																</div>
+															</td>
+														</tr>
+													</table>
+													<table class="button_block block-2" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+														<tr>
+															<td class="pad">
+																<div class="alignment" align="center"><!--[if mso]>
+<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="height:42px;width:239px;v-text-anchor:middle;" arcsize="10%" stroke="false" fillcolor="#387a47">
+<w:anchorlock/>
+<v:textbox inset="0px,0px,0px,0px">
+<center dir="false" style="color:#ffffff;font-family:Tahoma, sans-serif;font-size:16px">
+<![endif]-->
+																	<a href={{$url}}><div style="background-color:#387a47;border-bottom:0px solid transparent;border-left:0px solid transparent;border-radius:4px;border-right:0px solid transparent;border-top:0px solid transparent;color:#ffffff;display:inline-block;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:16px;font-weight:400;mso-border-alt:none;padding-bottom:5px;padding-top:5px;text-align:center;text-decoration:none;width:auto;word-break:keep-all;"><span style="word-break: break-word; padding-left: 20px; padding-right: 20px; font-size: 16px; display: inline-block; letter-spacing: normal;"><span style="word-break: break-word; line-height: 32px;">Reestablecer Contraseña</span></span></div><!--[if mso]></center></v:textbox></v:roundrect><![endif]--></a>
+																</div>
+															</td>
+														</tr>
+													</table>
+													<table class="text_block block-3" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+														<tr>
+															<td class="pad" style="padding-bottom:10px;padding-left:40px;padding-right:40px;padding-top:10px;">
+																<div style="font-family: Arial, sans-serif">
+																	<div class style="font-size: 12px; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; mso-line-height-alt: 18px; color: #555555; line-height: 1.5;">
+																		<p style="margin: 0; mso-line-height-alt: 22.5px;"><span style="word-break: break-word; font-size: 15px;">Si no solicitaste este cambio, puedes ignorar este correo.</span></p>
+																	</div>
+																</div>
+															</td>
+														</tr>
+													</table>
+													<table class="divider_block block-4" width="100%" border="0" cellpadding="20" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
 														<tr>
 															<td class="pad">
 																<div class="alignment" align="center">
 																	<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
 																		<tr>
-																			<td class="divider_inner" style="font-size: 1px; line-height: 1px; border-top: 4px solid #636C6B;"><span>&#8202;</span></td>
-																		</tr>
-																	</table>
-																</div>
-															</td>
-														</tr>
-													</table>
-													<table class="divider_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-														<tr>
-															<td class="pad" style="padding-bottom:10px;padding-left:40px;padding-right:40px;padding-top:25px;">
-																<div class="alignment" align="center">
-																	<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-																		<tr>
-																			<td class="divider_inner" style="font-size: 1px; line-height: 1px; border-top: 1px solid #555961;"><span>&#8202;</span></td>
+																			<td class="divider_inner" style="font-size: 1px; line-height: 1px; border-top: 0px solid #BBBBBB;"><span style="word-break: break-word;">&#8202;</span></td>
 																		</tr>
 																	</table>
 																</div>
@@ -289,6 +275,48 @@
 						</tbody>
 					</table>
 					<table class="row row-5" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+						<tbody>
+							<tr>
+								<td>
+									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #2b303a; color: #000000; width: 640px; margin: 0 auto;" width="640">
+										<tbody>
+											<tr>
+												<td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+													<table class="divider_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+														<tr>
+															<td class="pad">
+																<div class="alignment" align="center">
+																	<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+																		<tr>
+																			<td class="divider_inner" style="font-size: 1px; line-height: 1px; border-top: 4px solid #636C6B;"><span style="word-break: break-word;">&#8202;</span></td>
+																		</tr>
+																	</table>
+																</div>
+															</td>
+														</tr>
+													</table>
+													<table class="divider_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+														<tr>
+															<td class="pad" style="padding-bottom:60px;padding-left:40px;padding-right:40px;padding-top:25px;">
+																<div class="alignment" align="center">
+																	<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+																		<tr>
+																			<td class="divider_inner" style="font-size: 1px; line-height: 1px; border-top: 1px solid #555961;"><span style="word-break: break-word;">&#8202;</span></td>
+																		</tr>
+																	</table>
+																</div>
+															</td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="row row-6" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
 						<tbody>
 							<tr>
 								<td>
