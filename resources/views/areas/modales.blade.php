@@ -43,7 +43,7 @@
                     </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                 <input class="form-control" type="hidden" name="registro" value="{{ auth()->user()->id }}">
                 <input type="submit" href="usuarios/store" class="btn btn-success" value="Enviar" />
             </div>
@@ -118,7 +118,7 @@
                     <input class="form-control" type="text" name="registro" value="{{ auth()->user()->id }}" style="display: none;">
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                 <button type="submit" class="btn btn-success">Editar</button>
             </div>
             </form>

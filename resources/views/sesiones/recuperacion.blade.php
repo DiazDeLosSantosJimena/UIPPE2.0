@@ -39,7 +39,7 @@
                     <label for="email" class="form-label mt-3">&nbsp;<i class="fa-solid fa-envelope"></i> Correo Electrónico:</label>
                     <input type="email" class="form-control w-11 mb-5" name="email" placeholder="correo@proveedor.dominio">
 
-                    <p>Ingresa la dirección de correo que se te asignó, se te enviara un coreo electrónico a esa dirección.</p>
+                    <p>Ingresa la dirección de correo que se te asignó, se te enviara un correo electrónico a esa dirección.</p>
                     <ol>
                         <li>Abre el correo electrónico.</li>
                         <li>Haz click en el enlace.</li>

@@ -101,7 +101,7 @@ $session_area = session('session_area');
                             </div>
                             <div class="col-12 text-center">
                                 <div class="text-xs font-weight-bold text-uppercase mb-1">
-                                    <h3>Perfíl</h3>
+                                    <h3>Perfil</h3>
                                 </div>
                             </div>
                         </div>
