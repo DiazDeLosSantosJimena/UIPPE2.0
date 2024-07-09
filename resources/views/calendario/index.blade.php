@@ -32,7 +32,7 @@ $session_area = session('session_area');
         </div>
             <div class="col-xs-4 col-md-4 col-xl-4 d-flex">
                 <i class='bx bxs-rectangle text-success mx-3 my-1'></i>
-                <p>Cantidad Propuesta</p>
+                <p>Tabla de metas con cantidad propuesta.</p>
             </div>
             <div class="col p-4 d-flex justify-content-end">
                 <a class="btn btn-success" href="{{ route('entregaMetas') }}">Entrega Metas</a>
@@ -55,12 +55,12 @@ $session_area = session('session_area');
                     @foreach($areasconMeses as $meta)
                         @if($session_area == $meta->area_id)
                             @if($meta->meses_c >= $meta->cantidad_c)
-                            <tr id="tr{{ $meta -> id_areasmetas }}" style="background-color: #dc3545; color: white;">
+                            <tr id="tr{{ $meta -> id_areasmetas }}">
                                 <td class="text-center">{{ $meta -> clave }}</td>
                                 <td>{{$meta->nombreM}}</td>
                                 <td>{{ $meta -> nombrePA }}</td>
                                 <td>
-                                    <p class="text-center" id="cantEntrega{{ $meta->id_areasmetas }}">{{ $meta->meses_c }}</p>
+                                    <p class="text-center" id="cantEntrega{{ $meta->id_meta }}">{{ $meta->meses_c }}</p>
                                 </td>
                                 <!-- Button calendar modal -->
                                 <td class="text-center">
@@ -70,12 +70,12 @@ $session_area = session('session_area');
                             @endif
                         @elseif($session_area == 0)
                             @if($meta->meses_c >= $meta->cantidad_c)
-                            <tr id="tr{{ $meta -> id_areasmetas }}" style="background-color: #dc3545; color: white;">
+                            <tr id="tr{{ $meta -> id_areasmetas }}">
                                 <td class="text-center">{{ $meta -> clave }}</td>
                                 <td>{{$meta->nombreM}}</td>
                                 <td>{{ $meta -> nombrePA }}</td>
                                 <td>
-                                    <p class="text-center" id="cantEntrega{{ $meta->id_areasmetas }}">{{ $meta->meses_c }}</p>
+                                    <p class="text-center" id="cantEntrega{{ $meta->id_meta }}">{{ $meta->meses_c }}</p>
                                 </td>
                                 <!-- Button calendar modal -->
                                 <td class="text-center">
@@ -89,12 +89,8 @@ $session_area = session('session_area');
             </table>
         </div>
         <div class="col-xs-4 col-md-4 col-xl-4 d-flex">
-            <i class='bx bxs-rectangle text-warning mx-3 my-1'></i>
-            <p>Cantidad por establecer</p>
-        </div>
-        <div class="col-xs-4 col-md-4 col-xl-4 d-flex">
             <i class='bx bxs-rectangle text-danger mx-3 my-1'></i>
-            <p>Cantidad sin registro eficiente</p>
+            <p>Tabla de metas sin cantidad establecida.</p>
         </div>
         <!-- Tabla de metas por completar -->
         <div class="table-responsive my-4">
@@ -113,12 +109,12 @@ $session_area = session('session_area');
                     <!-- Regitros en tabla metas -->
                     @foreach($areasmetas as $meta)
                         @if($session_area == $meta->area_id)
-                        <tr id="tr{{ $meta -> id_areasmetas }}" style="background-color: #dc3545; color: white;">
+                        <tr id="tr{{ $meta -> id_areasmetas }}">
                             <td class="text-center">{{ $meta -> clave }}</td>
                             <td>{{$meta->nombreM}}</td>
                             <td>{{ $meta -> nombrePA }}</td>
                             <td>
-                                <p class="text-center" id="cantEntrega{{ $meta->id_areasmetas }}">50</p>
+                                <p class="text-center" id="cantEntrega{{ $meta->id_meta }}">50</p>
                             </td>
                             <!-- Button calendar modal -->
                             <td class="text-center">
@@ -126,12 +122,12 @@ $session_area = session('session_area');
                             </td>
                         </tr>
                         @elseif($session_area == 0)
-                        <tr id="tr{{ $meta -> id_areasmetas }}" style="background-color: #dc3545; color: white;">
+                        <tr id="tr{{ $meta -> id_areasmetas }}">
                             <td class="text-center">{{ $meta -> clave }}</td>
                             <td>{{$meta->nombreM}}</td>
                             <td>{{ $meta -> nombrePA }}</td>
                             <td>
-                                <p class="text-center" id="cantEntrega{{ $meta->id_areasmetas }}">50</p>
+                                <p class="text-center" id="cantEntrega{{ $meta->id_meta }}">50</p>
                             </td>
                             <!-- Button calendar modal -->
                             <td class="text-center">
@@ -213,73 +209,5 @@ $session_area = session('session_area');
 </div>
 @endguest
 
-<script>
-    //======================================================
-    //Para consulta de id_areasmetas con registros en meses
-    //======================================================
-
-    window.addEventListener('DOMContentLoaded', () => {
-    @foreach($areasconMeses as $areas)
-    @if($session_area == $areas->area_id)
-        document.querySelector("#cantEntrega{{ $areas->id_areasmetas }}").setAttribute('value', '{{ $areas -> meses_c }}');
-        document.getElementById("cantidad{{ $areas->id_areasmetas }}").value = {{ $areas -> meses_c }};
-        document.querySelector("#cantEntrega{{ $areas->id_areasmetas }}").innerHTML = "{{ $areas -> meses_c }}";
-
-        var sumaI{{ $areas->id_areasmetas }} = 0;
-        var input{{ $areas->id_areasmetas }} = new Array;
-
-        for(var i=0; i<12; i++){
-            input{{ $areas->id_areasmetas }}.push(document.querySelector(".sum"+i+"{{ $areas->id_areasmetas }}").value || 0);
-            sumaI{{ $areas->id_areasmetas }} = parseInt(sumaI{{ $areas->id_areasmetas }})+parseInt(input{{ $areas->id_areasmetas }}[i]);
-        }
-
-        var tr = document.querySelector("#tr{{$areas -> id_areasmetas}}");
-
-        if({{ $areas->meses_c }} > {{ $areas->cantidad_c }}){
-            $("#tr{{$areas -> id_areasmetas}}").css("background-color","#8b67cc");
-        }else if({{ $areas -> cantidad_c }} == sumaI{{ $areas->id_areasmetas }}){
-            $("#tr{{$areas -> id_areasmetas}}").css("background-color","#198754");
-        }else if(sumaI{{ $areas->id_areasmetas }} >= Math.floor({{ $areas -> cantidad_c }}/2)){
-            $("#tr{{$areas -> id_areasmetas}}").css("background-color","#ffc107");
-            $("#tr{{$areas -> id_areasmetas}}").css("color","black");
-        }else{
-
-        }
-
-        document.getElementById("sumaTotal{{ $areas->id_areasmetas }}").innerHTML = "";
-        document.getElementById("sumaTotal{{ $areas->id_areasmetas }}").innerHTML = sumaI{{ $areas->id_areasmetas }};
-    @elseif($session_area == 0)
-    document.querySelector("#cantEntrega{{ $areas->id_areasmetas }}").setAttribute('value', '{{ $areas -> meses_c }}');
-        document.getElementById("cantidad{{ $areas->id_areasmetas }}").value = {{ $areas -> meses_c }};
-        document.querySelector("#cantEntrega{{ $areas->id_areasmetas }}").innerHTML = "{{ $areas -> meses_c }}";
-
-        var sumaI{{ $areas->id_areasmetas }} = 0;
-        var input{{ $areas->id_areasmetas }} = new Array;
-
-        for(var i=0; i<12; i++){
-            input{{ $areas->id_areasmetas }}.push(document.querySelector(".sum"+i+"{{ $areas->id_areasmetas }}").value || 0);
-            sumaI{{ $areas->id_areasmetas }} = parseInt(sumaI{{ $areas->id_areasmetas }})+parseInt(input{{ $areas->id_areasmetas }}[i]);
-        }
-
-        var tr = document.querySelector("#tr{{$areas -> id_areasmetas}}");
-
-        if({{ $areas->meses_c }} > {{ $areas->cantidad_c }}){
-            $("#tr{{$areas -> id_areasmetas}}").css("background-color","#8b67cc");
-        }else if({{ $areas -> cantidad_c }} == sumaI{{ $areas->id_areasmetas }}){
-            $("#tr{{$areas -> id_areasmetas}}").css("background-color","#198754");
-        }else if(sumaI{{ $areas->id_areasmetas }} >= Math.floor({{ $areas -> cantidad_c }}/2)){
-            $("#tr{{$areas -> id_areasmetas}}").css("background-color","#ffc107");
-            $("#tr{{$areas -> id_areasmetas}}").css("color","black");
-        }else{
-
-        }
-
-        document.getElementById("sumaTotal{{ $areas->id_areasmetas }}").innerHTML = "";
-        document.getElementById("sumaTotal{{ $areas->id_areasmetas }}").innerHTML = sumaI{{ $areas->id_areasmetas }};
-    @endif
-    @endforeach
-    });
-
-</script>
 
 @endsection    <!-- // ENDSECTION DE CONTENIDO = @section('content') -->

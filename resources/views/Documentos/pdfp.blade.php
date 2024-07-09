@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <!--<link href="{{ public_path('/css/app.css') }}" rel="stylesheet" type="text/css">-->
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-    <img src="data:image/png;base64,{{base64_encode(file_get_contents(public_path('/img/logos/uippelogo.png'))) }}" height="60px">
+    <img src="data:image/png;base64,{{base64_encode(file_get_contents(public_path('/img/logos/SIPPyEM.png'))) }}" height="60px">
     <img src="data:image/png;base64,{{base64_encode(file_get_contents(public_path('/img/logos/logotipoutvt.png'))) }}" height="60px" class="image-right">
 </head>
 

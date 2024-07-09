@@ -13,7 +13,7 @@ class CalendarizarsController extends Controller
     {
         // Obtiene información sobre áreas de metas con ciertos criterios y las pasa a la vista 'calendario.index'
         // Utiliza consultas SQL directas con el facade DB
-        $areasmetas = \DB::SELECT('SELECT tb_areasmetas.id_areasmetas, tb_areasmetas.area_id, tb_metas.nombre AS nombreM, tb_metas.clave, tb_programas.abreviatura AS nombrePA
+        $areasmetas = \DB::SELECT('SELECT tb_areasmetas.id_areasmetas, tb_areasmetas.area_id, tb_metas.nombre AS nombreM, tb_metas.clave, tb_programas.abreviatura AS nombrePA, tb_metas.id_meta AS id_meta
         FROM tb_areasmetas
         JOIN tb_metas ON tb_areasmetas.meta_id = tb_metas.id_meta
         JOIN tb_programas ON tb_areasmetas.id_programa = tb_programas.id_programa
@@ -24,7 +24,7 @@ class CalendarizarsController extends Controller
         WHERE meses.m_cantidad >= calend.cantidad)
         ORDER BY tb_areasmetas.id_areasmetas');
 
-        $areasconMeses = \DB::SELECT('SELECT areasM.id_areasmetas, areasM.area_id, areasM.objetivo, metas.nombre as nombreM, metas.clave, program.abreviatura as nombrePA, calend.meses_id, calend.cantidad as cantidad_c, meses.m_enero, meses.m_febrero, meses.m_marzo, meses.m_abril, meses.m_mayo, meses.m_junio, meses.m_julio, meses.m_agosto, meses.m_septiembre, meses.m_octubre, meses.m_noviembre, meses.m_diciembre, meses.m_cantidad as meses_c
+        $areasconMeses = \DB::SELECT('SELECT areasM.id_areasmetas, areasM.area_id, areasM.meta_id AS id_meta, areasM.objetivo, metas.nombre as nombreM, metas.clave, program.abreviatura as nombrePA, calend.meses_id, calend.cantidad as cantidad_c, meses.m_enero, meses.m_febrero, meses.m_marzo, meses.m_abril, meses.m_mayo, meses.m_junio, meses.m_julio, meses.m_agosto, meses.m_septiembre, meses.m_octubre, meses.m_noviembre, meses.m_diciembre, meses.m_cantidad as meses_c
         FROM tb_areasmetas as areasM 
             JOIN tb_metas as metas ON metas.id_meta = areasM.meta_id
             JOIN tb_programas as program ON program.id_programa = areasM.id_programa
@@ -32,7 +32,7 @@ class CalendarizarsController extends Controller
             JOIN tb_meses as meses on meses.id_meses = calend.meses_id
         ORDER BY areasM.id_areasmetas');
 
-        $areassinMeses = \DB::SELECT('SELECT areasM.id_areasmetas, areasM.area_id, areasM.objetivo, metas.nombre AS nombreM, program.abreviatura AS nombrePA
+        $areassinMeses = \DB::SELECT('SELECT areasM.id_areasmetas, areasM.area_id, areasM.objetivo, metas.nombre AS nombreM, program.abreviatura AS nombrePA, metas.id_meta
         FROM tb_areasmetas AS areasM
             JOIN tb_metas AS metas ON metas.id_meta = areasM.meta_id
             JOIN tb_programas AS program ON program.id_programa = areasM.id_programa
