@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Tipos;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class UsuariosController extends Controller
@@ -64,13 +65,13 @@ class UsuariosController extends Controller
             'academico' => $request->input('academico'),
             'foto' => $foto2,
             'email' => $request->input('email'),
-            'password' => Hash::make('123123'), //$request->input('pass'),VERIFICAR COMO ASIGNAR UNA CONTRASEÑA
+            'password' => '123123', //$request->input('pass'),VERIFICAR COMO ASIGNAR UNA CONTRASEÑA
             'id_tipo' => $request->input('id_tipo'),
             'activo' => 1,
             'id_registro' => $request->input('registro'),
         ));
 
-        return redirect('usuarios');
+        return redirect('usuarios')->with('success', 'Registro creado con éxito!');
     }
 
     public function show($id)
@@ -123,16 +124,21 @@ class UsuariosController extends Controller
         $query->id_registro = trim($request->registro);
         $query->save();
 
-        return redirect('usuarios');
+        $user = Auth::user();
+        if ($user->id_tipo == 3 || $user->id_tipo == 4) {
+            return redirect()->route('registrosA', ['id' => $id]);
+        }
+
+        return redirect('usuarios')->with('success', 'Registro modificado con éxito!');
     }
 
-    public function destroy(Usuarios $id, Request $request)
+    public function destroy(User $id, Request $request)
     {
-        $query = User::find($id->id_usuario);
+        $query = User::find($id->id);
         $query -> activo = 0;
         $query -> id_registro = trim($request->registro);
         $query -> save();
-        return redirect('usuarios');
+        return redirect('usuarios')->with('success', 'Registro desactivado con éxito!');
     }
 
     public function perfil()

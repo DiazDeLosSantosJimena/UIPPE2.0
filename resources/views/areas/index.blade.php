@@ -16,11 +16,16 @@ $session_area = session('session_area');
             <li class="breadcrumb-item" aria-current="page">Áreas</li>
         </ol>
     </nav>
+    @if(session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Mensaje!</strong> {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
     <div class="row">
         <div class="col p-4">
             <h3>Áreas</h3>
         </div>
-
         <div class="col p-4 d-flex justify-content-end">
             <a href="{{route('pdfAreas')}}" class="mx-1 my-1"><button type="button" class="btn btn-danger"><i class="fa-solid fa-file-pdf"></i></button>
             <a class="btn btn-success float-end mx-1 my-1" href="{{ route('areas.export') }}"><i class="fa-sharp fa-solid fa-file-excel"></i></a>
@@ -43,7 +48,7 @@ $session_area = session('session_area');
                     @foreach($areas as $info)
                     @if($session_area === 0)
                     <tr>
-                        <td class="text-center"><img src="{{ asset('img/post/'.$info-> foto) }}" alt="{{ $info->foto }}" style="width: 50px; border-radius: 15px;"></td>
+                        <td class="text-center"><img src="img/post/{{$info-> foto}}" alt="{{ $info->foto }}" style="width: 50px; border-radius: 15px;"></td>
                         <td>{{ $info->clave}}</td>
                         <td>{{ $info->nombre}}</td>
                         <td>{{ $info->descripcion}}</td>
@@ -73,7 +78,7 @@ $session_area = session('session_area');
                     </tr>
                     @elseif($session_area === $info->id_area)
                     <tr>
-                        <td class="text-center"><img src="{{ asset('img/post/'.$info-> foto) }}" alt="{{ $info->foto }}" style="width: 50px; border-radius: 15px;"></td>
+                        <td class="text-center"><img src="'img/post/'.$ino-> foto" alt="{{ $info->foto }}" style="width: 50px; border-radius: 15px;"></td>
                         <td>{{ $info->clave}}</td>
                         <td>{{ $info->nombre}}</td>
                         <td>{{ $info->descripcion}}</td>
@@ -119,7 +124,7 @@ $session_area = session('session_area');
             <h3>Áreas</h3>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 py-3 text-center">
-            <img src="{{ asset('img/logos/login.png') }}" alt="Inicie Sesión para poder ver el contenido" class="img-fluid" style="width: 800px;">
+            <img src="img/logos/login.png" alt="Inicie Sesión para poder ver el contenido" class="img-fluid" style="width: 800px;">
             <p>Para ver el contenido <a href="{{ route('login') }}">Iniciar Sesión</a></p>
         </div>
     </div>

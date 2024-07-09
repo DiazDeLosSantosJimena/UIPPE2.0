@@ -3,7 +3,7 @@
 <?php
 $session_area = session('session_area');
 ?>
-<title>UIPPE</title>
+<title>SIPPyEM</title>
 @auth    <!-- Condición de acceso al contenido LOGGEADO IF -->
 <div class="container p-4">
     <div class="row justify-content-md-center">
@@ -101,7 +101,7 @@ $session_area = session('session_area');
                             </div>
                             <div class="col-12 text-center">
                                 <div class="text-xs font-weight-bold text-uppercase mb-1">
-                                    <h3>Perfíl</h3>
+                                    <h3>Perfil</h3>
                                 </div>
                             </div>
                         </div>
@@ -119,7 +119,7 @@ $session_area = session('session_area');
             <h3>Inicio</h3>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 py-3 text-center">
-            <img src="{{ asset('img/login.png') }}" alt="Inicie Sesión para poder ver el contenido" class="img-fluid" style="width: 800px;">
+            <img src="img/login.png" alt="Inicie Sesión para poder ver el contenido" class="img-fluid" style="width: 800px;">
             <p>Para ver el contenido <a href="{{ route('login') }}">Iniciar Sesión</a></p>
         </div>
     </div>

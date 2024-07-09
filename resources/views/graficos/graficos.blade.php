@@ -14,16 +14,14 @@
         <div class="col p-4">
             <h3>Reportes</h3>
         </div>
-        <div class="col p-4 d-flex justify-content-end">
-            <button type="button" class="btn btn-success" id="btn_alta" data-bs-toggle="modal" data-bs-target="#modalalta"><i class="fa-regular fa-file-excel"></i></button>
-        </div>
+
     </div>
     <div class="row">
         <!-- -----------------------------------------Grafica Muestra----------------------------------- -->
-        <h5>Graficas de Muestra </h5>
+        <h5>Gráficas de Muestra </h5>
         <div class="container p-1">
             <div id="my-div">
-                <button class="btn btn-success" onclick="mostrarContenido('contenido4')">Metas asignadas por areas</button>
+                <button class="btn btn-success" onclick="mostrarContenido('contenido4')">Metas asignadas por áreas</button>
                 <button class="btn btn-success" onclick="mostrarContenido('contenido5')">Programas Metas</button>
                 <button class="btn btn-success" onclick="mostrarContenido('contenido6')">Usuarios Puestos</button>
                 <button class="btn btn-success" onclick="location.reload()">Cerrar</button>
@@ -63,7 +61,7 @@
                 </div>
             </div>
             <!-- -----------------------------------------Grafica de prueba por meses Enero-Marzo ----------------------------------- -->
-            <h5>Graficas de las metas por Meses y Trimestral </h5>
+            <h5>Gráficas de las metas por Meses y Trimestral </h5>
             <div class="container p-1">
                 <div id="my-div">
                     <button class="btn btn-success" onclick="mostrarContenido('contenido0')">Enero</button>
@@ -138,7 +136,7 @@
 @guest
 <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 py-3 text-center">
-        <img src="{{ asset('img/login.png') }}" alt="Inicie Sesión para poder ver el contenido" class="img-fluid" style="width: 800px;">
+        <img src="img/login.png" alt="Inicie Sesión para poder ver el contenido" class="img-fluid" style="width: 800px;">
         <p>Para ver el contenido <a href="{{ route('login') }}">Iniciar Sesión</a></p>
     </div>
 </div>

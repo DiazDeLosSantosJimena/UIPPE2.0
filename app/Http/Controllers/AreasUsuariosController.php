@@ -61,13 +61,13 @@ class AreasUsuariosController extends Controller
             ));
         }
 
-        return redirect('areas-usuarios');
+        return redirect('areas-usuarios')->with('success', 'Registro creado con éxito!');
     }
 
     public function destroy(AreasUsuarios $id)
     {
         $query = AreasUsuarios::findOrFail($id->id_areasusuarios);
         $query->delete();
-        return redirect('areas-usuarios');
+        return redirect('areas-usuarios')->with('success', 'Registro eliminado con éxito!');
     }
 }

@@ -2,7 +2,7 @@
 
 <!-- Importacion de estilos para el select START -->
 @section('dataTablesCss')
-<link rel="stylesheet" href="{{ asset('css/dataTables.bootstrap5.min.css') }}">
+<link rel="stylesheet" href="css/dataTables.bootstrap5.min.css">
 @endsection
 <!-- Importacion de estilos para el select START -->
 
@@ -24,6 +24,12 @@ $session_area = session('session_area');
             <li class="breadcrumb-item" aria-current="page">Metas</li>
         </ol>
     </nav>
+    @if(session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Alerta!</strong> {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
     @if($session_area == 0) <!-- Condición de acceso al contenido AREA IF -->
     <div class="row">
         <div class="col p-4">
@@ -133,8 +139,8 @@ $session_area = session('session_area');
 
 <!-- Importacion y configuracion para las tablas dinamicas START -->
 @section('js')
-<script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('js/dataTables.bootstrap5.min.js') }}"></script>
+<script src="js/jquery.dataTables.min.js"></script>
+<script src="js/dataTables.bootstrap5.min.js"></script>
 <script>
     $(document).ready(function() {
         $('#metasTable').DataTable({
@@ -170,7 +176,7 @@ $session_area = session('session_area');
             <h3>Metas</h3>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 py-3 text-center">
-            <img src="{{ asset('img/logos/login.png') }}" alt="Inicie Sesión para poder ver el contenido" class="img-fluid" style="width: 800px;">
+            <img src="img/logos/login.png" alt="Inicie Sesión para poder ver el contenido" class="img-fluid" style="width: 800px;">
             <p>Para ver el contenido <a href="{{ route('login') }}">Iniciar Sesión</a></p>
         </div>
     </div>

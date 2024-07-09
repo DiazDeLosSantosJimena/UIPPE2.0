@@ -41,7 +41,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="text-center py-3">
-                        <img src="{{ asset('img/post/'.$usuario->foto) }}" alt="{{ $usuario -> foto }}" style="width: 300px; border-radius: 100px;">
+                        <img src="img/post/{{$usuario->foto }}" alt="{{ $usuario -> foto }}" style="width: 300px; border-radius: 100px;">
                     </div>
                     <div class="text-center">
                         <h4>
@@ -59,7 +59,7 @@
                     <div class="col-6 text-center">
                         <strong>Estado: </strong>@if($usuario -> activo > 0) <p style="color: green;">Activo</p> @else <p style="color: red;">Inactivo</p> @endif
                     </div>
-                    <p><strong>Academico: </strong>{{$usuario -> academico}}</p>
+                    <p><strong>Académico: </strong>{{$usuario -> academico}}</p>
                     <p><strong>Correo: </strong>{{$usuario -> email}}</p>
                     <p><strong>Tipo: </strong> {{$usuario->nombreT}}</p>
                 </div>
@@ -103,7 +103,7 @@
                         </div>
                     </div>
                     <div class="py-2">
-                        <label for="colFormLabelSm" class="form-label">Sexo | Genero :</label>
+                        <label for="colFormLabelSm" class="form-label">Sexo | Género :</label>
                         @if($usuario->gen == "F")
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="M" id="flexCheckDefault" name="gen">
@@ -279,7 +279,7 @@
                     <input class="form-control" type="text" name="registro" value="{{ auth()->user()->id }}" style="display: none;">
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                 <input type="submit" href="usuarios/store" class="btn btn-success" value="Enviar" />
             </div>
             </form>

@@ -2,7 +2,7 @@
 
 <!-- Importacion de estilos para el select START -->
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/virtual-select.min.css') }}">
+<link rel="stylesheet" href="css/virtual-select.min.css">
 @endsection
 <!-- Importacion de estilos para el select END -->
 
@@ -17,6 +17,12 @@
             <li class="breadcrumb-item" aria-current="page">Áreas-Usuarios</li>
         </ol>
     </nav>
+    @if(session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Alerta!</strong> {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
     <div class="row">
         <div class="col p-4">
             <h3>Áreas | Usuarios</h3>
@@ -31,7 +37,7 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Area</th>
+                        <th>Área</th>
                         <th>Usuario</th>
                         <th class="text-center">Acción</th>
                         <th></th>
@@ -63,7 +69,7 @@
 {{--
 <script>
     window.location.replace("{{ route('registrosA', ['id' => $session_area]) }}");
-</script>    
+</script>
 --}}
 
 @include('areas-usuarios.modales')
@@ -76,7 +82,7 @@
             <h3>Áreas - Usuarios</h3>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 py-3 text-center">
-            <img src="{{ asset('img/logos/login.png') }}" alt="Inicie Sesión para poder ver el contenido" class="img-fluid" style="width: 800px;">
+            <img src="img/logos/login.png" alt="Inicie Sesión para poder ver el contenido" class="img-fluid" style="width: 800px;">
             <p>Para ver el contenido <a href="{{ route('login') }}">Iniciar Sesión</a></p>
         </div>
     </div>
@@ -112,8 +118,8 @@
 </script>
 <!-- SCRIPT PARA MULTISELECT END -->
 <!-- Importacion y configuracion para las tablas dinamicas START -->
-<script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('js/dataTables.bootstrap5.min.js') }}"></script>
+<script src="js/jquery.dataTables.min.js"></script>
+<script src="js/dataTables.bootstrap5.min.js"></script>
 <script>
     $(document).ready(function() {
         $('#areas-usuarios').DataTable({

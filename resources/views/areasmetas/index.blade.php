@@ -1,8 +1,8 @@
 @extends('layout.navbar')
 <!-- Importacion de estilos para el select START -->
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/virtual-select.min.css') }}">
-<link rel="stylesheet" href="{{ asset('css/dataTables.bootstrap5.min.css') }}">
+<link rel="stylesheet" href="css/virtual-select.min.css">
+<link rel="stylesheet" href="css/dataTables.bootstrap5.min.css">
 @endsection
 <!-- Importacion de estilos para el select START -->
 
@@ -14,8 +14,9 @@ $session_area = session('session_area');
 ?>
 <!-- Variables de Sesiones del usuario END -->
 <!-- SCRIPT de petición para el multi-select START -->
+
 <head>
-    <script src="{{ asset('js\jquery-3.6.4.min.js') }}"></script>
+    <script src="js\jquery-3.6.4.min.js"></script>
     <script>
         $(document).ready(function() {
             // --------Programas =-> Metas---------------------------------------------------
@@ -50,7 +51,7 @@ $session_area = session('session_area');
 </head>
 <!-- SCRIPT de petición para el multi-select END -->
 
-@auth    <!-- Condición de acceso al contenido LOGGEADO -->
+@auth <!-- Condición de acceso al contenido LOGGEADO -->
 <div class="container p-4">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -59,6 +60,12 @@ $session_area = session('session_area');
             <li class="breadcrumb-item" aria-current="page">Áreas-Metas</li>
         </ol>
     </nav>
+    @if(session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Alerta!</strong> {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
     <div class="row">
         <div class="col p-4">
             <h3>Áreas | Metas</h3>
@@ -77,7 +84,8 @@ $session_area = session('session_area');
                         <th scope="col">Programa</th>
                         <th scope="col">Meta</th>
                         <th scope="col">Objetivo</th>
-                        <th class="text-center">Acciones</th>
+                        <th class="text-center">Editar</th>
+                        <th class="text-center">Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -88,6 +96,10 @@ $session_area = session('session_area');
                         <td>{{ $info->pnombre }}</td>
                         <td>{{ $info->nmeta }}</td>
                         <td>{{ $info->objetivo }}</td>
+                        <td class="text-center">
+                            <!-- Button edit modal -->
+                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal{{ $info->id_areasmetas }}"><i class="fa-solid fa-pen-to-square"></i></button>
+                        </td>
                         <td class="text-center">
                             <!-- Button delete modal -->
                             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $info->id_areasmetas }}"><i class="fa-solid fa-trash"></i></button>
@@ -133,15 +145,18 @@ $session_area = session('session_area');
 </script>
 <!-- SCRIPT PARA MULTISELECT END -->
 <!-- Importacion y configuracion para las tablas dinamicas START -->
-<script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('js/dataTables.bootstrap5.min.js') }}"></script>
+<script src="js/jquery.dataTables.min.js"></script>
+<script src="js/dataTables.bootstrap5.min.js"></script>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $('#areasMetas').DataTable({
-            "lengthMenu": [[5, 10, 50, -1], [5, 10, 50, "Todo"]],
+            "lengthMenu": [
+                [5, 10, 50, -1],
+                [5, 10, 50, "Todo"]
+            ],
             ordering: false,
             info: false,
-            language:{
+            language: {
                 "search": "Buscar:",
                 "paginate": {
                     "first": "Primero",
@@ -167,11 +182,11 @@ $session_area = session('session_area');
             <h3>Áreas | Metas</h3>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 py-3 text-center">
-            <img src="{{ asset('img/logos/login.png') }}" alt="Inicie Sesión para poder ver el contenido" class="img-fluid" style="width: 800px;">
+            <img src="img/logos/login.png" alt="Inicie Sesión para poder ver el contenido" class="img-fluid" style="width: 800px;">
             <p>Para ver el contenido <a href="{{ route('login') }}">Iniciar Sesión</a></p>
         </div>
     </div>
 </div>
 @endguest
 
-@endsection     <!-- ENDSECTION DE CONTENIDO = @section('content') -->
+@endsection <!-- ENDSECTION DE CONTENIDO = @section('content') -->

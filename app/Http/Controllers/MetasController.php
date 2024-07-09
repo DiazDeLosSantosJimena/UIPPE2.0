@@ -50,7 +50,7 @@ class MetasController extends Controller
         $query -> id_registro = $request->registro;
         $query->save();
 
-        return redirect('metas');
+        return redirect('metas')->with('success', 'Registro modificado con éxito!');
     }
 
     public function store(Request $request){
@@ -89,7 +89,7 @@ class MetasController extends Controller
             'id_registro' => $request->input('registro'),
         ));
 
-        return redirect('metas');
+        return redirect('metas')->with('success', 'Registro creado con éxito!');
     }
 
     public function destroy(Metas $id, Request $request)
@@ -98,6 +98,6 @@ class MetasController extends Controller
         $query -> activo = 0;
         $query -> id_registro = trim($request->registro);
         $query -> save();
-        return redirect('metas');
+        return redirect('metas')->with('success', 'Registro desactivado con éxito!');
     }
 }

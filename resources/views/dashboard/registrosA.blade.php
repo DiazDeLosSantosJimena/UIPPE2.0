@@ -1,7 +1,7 @@
 @extends('layout.navbar')
 
 @section('css') <!-- Importacion de estilos para el select START -->
-<link rel="stylesheet" href="{{ asset('css/virtual-select.min.css') }}">
+<link rel="stylesheet" href="css/virtual-select.min.css">
 @endsection <!-- Importacion de estilos para el select END -->
 
 
@@ -60,7 +60,7 @@ $session_area = session('session_area');
                                 <p style="color: black;">{{ $areas -> descripcion }}</p>
                             </div>
                             <div class="col-xl-12 col-md-12 text-center align-items-center">
-                                <img src="{{ asset('/img/post/'.$areas->foto) }}" alt="{{ $areas->foto }}" class="img-fluid">
+                                <img src="img/post/{{$areas->foto }}" alt="{{ $areas->foto }}" class="img-fluid">
                             </div>
                             <div class="col-xl-12 col-md-12 text-center align-items-center my-5">
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $session_area }}">Editar datos del área</button>
@@ -102,7 +102,7 @@ $session_area = session('session_area');
                                         @foreach($asig as $info)
                                         <tr>
                                             <td>{{ $info->id_area}}</td>
-                                            <td class="text-center"><img src="{{ asset('img/post/'.$info-> foto) }}" alt="{{ $info->foto }}" style="width: 45px; border-radius: 15px;"></td>
+                                            <td class="text-center"><img src="img/post/{{$info-> foto }}" alt="{{ $info->foto }}" style="width: 45px; border-radius: 15px;"></td>
                                             <td>{{ $info->nombreU .' '. $info->app .' '. $info->apm}}</td>
                                             <td>{{ $info->email }}</td>
                                             <td>{{ $info->nombre}}</td>
@@ -214,7 +214,7 @@ $session_area = session('session_area');
     });
 </script>
 <!-- SCRIPT PARA MULTISELECT START -->
-<script type="text/javascript" src="{{ asset('js/virtual-select.min.js') }}"></script>
+<script type="text/javascript" src="js/virtual-select.min.js"></script>
 <script type="text/javascript">
     VirtualSelect.init({
         ele: '#usuariosSelect'
@@ -227,7 +227,7 @@ $session_area = session('session_area');
 @guest
 <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 py-3 text-center">
-        <img src="{{ asset('img/logos/login.png') }}" alt="Inicie Sesión para poder ver el contenido" class="img-fluid" style="width: 800px;">
+        <img src="img/logos/login.png" alt="Inicie Sesión para poder ver el contenido" class="img-fluid" style="width: 800px;">
         <p>Para ver el contenido <a href="{{ route('login') }}">Iniciar Sesión</a></p>
     </div>
 </div>

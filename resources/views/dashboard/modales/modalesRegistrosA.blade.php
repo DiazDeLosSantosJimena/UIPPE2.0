@@ -45,7 +45,7 @@
                     <input class="form-control" type="text" name="registro" value="{{ auth()->user()->id }}" style="display: none;">
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                 <input type="submit" href="usuarios/store" class="btn btn-success" value="Enviar" />
             </div>
             </form>
@@ -66,7 +66,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="text-center py-3">
-                        <img src="{{ asset('img/post/'.$usuario->foto) }}" alt="{{ $usuario -> foto }}" style="width: 300px; border-radius: 100px;">
+                        <img src="img/post/{{$usuario->foto }}" alt="{{ $usuario -> foto }}" style="width: 300px; border-radius: 100px;">
                     </div>
                     <div class="text-center">
                         <h4>
@@ -258,7 +258,7 @@
                     <input class="form-control" type="text" name="registro" value="{{ auth()->user()->id }}" style="display: none;">
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                 <button type="submit" class="btn btn-success">Editar</button>
             </div>
             </form>

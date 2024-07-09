@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Areas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AreasController extends Controller
 {
@@ -63,7 +64,7 @@ class AreasController extends Controller
 
         ));
         //ARRAY END
-        return redirect('areas');
+        return redirect('areas')->with('success', 'Registro creado con éxito!');
     }
 
     public function edit(Areas $id, Request $request)
@@ -97,7 +98,12 @@ class AreasController extends Controller
         $query->id_registro = trim($request->registro);
         $query->save();
 
-        return redirect('areas'); //CHECAR BIEN LA DIRECCION
+        $user = Auth::user();
+        if ($user->id_tipo == 3 || $user->id_tipo == 4) {
+            return redirect()->route('registrosA', ['id' => $id]);
+        }
+
+        return redirect('areas')->with('success', 'Registro modificado con éxito!');
     }
 
     public function destroy(Areas $id, Request $request)
@@ -106,6 +112,6 @@ class AreasController extends Controller
         $query->activo = 0;
         $query->id_registro = trim($request->registro);
         $query->save();
-        return redirect('areas');
+        return redirect('areas')->with('success', 'Registro desactivado con éxito!');
     }
 }

@@ -47,7 +47,7 @@ class ProgramasController extends Controller
             'activo' => 1,
             'id_registro' => $request->input('registro')
         ));
-        return redirect()->route("programas.index");
+        return redirect()->route("programas.index")->with('success', 'Registro creado con éxito!');
     }
 
     public function edit(Programas $id, Request $request)
@@ -71,7 +71,7 @@ class ProgramasController extends Controller
 
         $query->save();
 
-        return redirect('programas');
+        return redirect('programas')->with('success', 'Registro modificado con éxito!');
 
     }
 
@@ -81,6 +81,6 @@ class ProgramasController extends Controller
         $query -> activo = 0;
         $query -> id_registro = trim($request->registro);
         $query->save();
-        return redirect('programas');
+        return redirect('programas')->with('success', 'Registro desactivado con éxito!');
     }
 }
