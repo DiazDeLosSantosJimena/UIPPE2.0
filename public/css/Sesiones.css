@@ -1,7 +1,7 @@
 /*Universal*/
 .bg{
     background-image: url("../img/logos/SIPPyEM.png");
-    width: auto;
+    background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
 }

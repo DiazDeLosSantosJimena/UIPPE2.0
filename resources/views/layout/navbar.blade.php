@@ -23,7 +23,7 @@ $session_area = session('session_area');
         {{ auth()->user()->nombre .' '. auth()->user()->app .' '. auth()->user()->apm}}
     </div>
     &nbsp;&nbsp;
-    <div class="header_"> <img src="img/post/ {{auth()->user()->foto }}" alt="img"> </div>
+    <div class="header_img"> <img src="img/post/{{auth()->user()->foto }}" alt="img"> </div>
     @endauth
     <!-- @auth {{ auth()->user()->name ?? auth()->user()->username }} @endauth -->
 </header>
@@ -139,6 +139,7 @@ $session_area = session('session_area');
             let regex = /\/(.*?)\//;
             let match = URLpath.match(regex);
             console.log(URLpath);
+            // if (URLpath === "/~pruebasutvtol/dashboard") {
             if (URLpath === "/dashboard") {
                 let elementoNav = document.querySelector('#a_sippyem');
                 elementoNav.classList.add('active');
