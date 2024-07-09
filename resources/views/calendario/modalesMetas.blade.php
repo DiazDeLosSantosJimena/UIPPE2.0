@@ -5,7 +5,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="modalshowLabel">Asignar entrega por Mes</h1>
-                <div style="margin-left: 180px;" id="sumaTotal{{ $meta->id_areasmetas }}">{{ $meta->meses_c }}</div>
+                <div style="margin-left: 180px;" id="sumaTotal{{ $meta->id_meta }}">{{ $meta->meses_c }}</div>
             </div>
             <div class="modal-body">
                 <form action="{{ route('calendUpdate', ['id' => $meta->id_areasmetas]) }}" method="POST" enctype="multipart/form-data" onclick="sumaFormulario(this); validacion(this);" id="{{ $meta->id_meta }}">
@@ -60,7 +60,7 @@
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="colFormLabel" class="col-sm-x3 col-form-label">Septiembre:</label>
+                        <label for="colFormLabel" class="col-sm-3 col-form-label">Septiembre:</label>
                         <div class="col-sm-9">
                             <input type="number" name="septiembre" class="form-control" placeholder="Asignar la cantidad de Septiembre" value="{{ $meta -> m_septiembre }}">
                         </div>
@@ -95,20 +95,24 @@
         </div>
     </div>
 </div>
+@endforeach
+<!-- MODAL MESES CON REGISTRO EN MESES END -->
 <!-- SCRIPT para la validación de los modales START -->
 <script>
     function validacion(formulario) {
-        const cantidadEstablecida = {{ $meta->meses_c }};
-        const nuevaCantidad = formulario.parentElement.parentElement.lastElementChild.querySelector(`#cantidad${formulario.id}`);
-
-        if(nuevaCantidad > cantidadEstablecida){
-            
-        }
+        formulario.addEventListener('input', () => {
+            var nuevaCantidad = parseInt(formulario.parentElement.parentElement.firstElementChild.querySelector(`#sumaTotal${formulario.id}`).textContent);
+            const cantidadEstablecida = parseInt(formulario.parentElement.parentElement.lastElementChild.querySelector(`#cantidad${formulario.id}`).value);
+            console.log(cantidadEstablecida, nuevaCantidad);
+            if (nuevaCantidad < cantidadEstablecida) {
+                formulario.parentElement.parentElement.lastElementChild.querySelector(`#save${formulario.id}`).setAttribute('disabled', 'disabled');
+            } else {
+                formulario.parentElement.parentElement.lastElementChild.querySelector(`#save${formulario.id}`).removeAttribute('disabled');
+            }
+        });
     }
 </script>
 <!-- SCRIPT para la validación de los modales END -->
-@endforeach
-<!-- MODAL MESES CON REGISTRO EN MESES END -->
 
 <!-- MODAL MESES SIN REGISTRO EN MESES START -->
 @foreach ($areassinMeses as $meta)
@@ -214,7 +218,6 @@
         //  Ubica el registro en la tabla y selecciona la columna con la cantidad propuesta anual
         const impresionTabla = String(`cantEntrega${formulario.id}`);
         const inputElements = formulario.querySelectorAll('input[type="number"]');
-        const cantidad = document.getElementById(String(`cantidad${formulario.id}`));
 
         inputElements.forEach(inputElement => {
             inputElement.addEventListener('input', () => {
@@ -227,7 +230,6 @@
                     }
                 });
                 formulario.parentElement.parentElement.firstElementChild.querySelector('div').textContent = CantidadTotal;
-                cantidad.value = CantidadTotal;
                 document.getElementById(impresionTabla).textContent = CantidadTotal;
             });
         });
