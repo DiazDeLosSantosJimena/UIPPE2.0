@@ -21,6 +21,13 @@ $session_area = session('session_area');
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
+    
+@if(isset($errors) && count($errors) > 0)
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>¡Mensaje!</strong> Ha ocurrido un error. Por favor, revisa los campos e intenta de nuevo.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
     @if($session_area == 0)     <!-- Condición de acceso al contenido - por AREA IF -->
     <div class="row">
         <div class="col p-4">

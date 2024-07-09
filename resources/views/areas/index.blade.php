@@ -7,7 +7,7 @@ $session_id = session('session_id');
 $session_area = session('session_area');
 ?>
 <!-- Variables de Sesiones del usuario END -->
-@auth    <!-- Validacion de contenido LOGGEADO IF -->
+@auth <!-- Validacion de contenido LOGGEADO IF -->
 <div class="container p-4">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -16,20 +16,31 @@ $session_area = session('session_area');
             <li class="breadcrumb-item" aria-current="page">Áreas</li>
         </ol>
     </nav>
+
     @if(session('success'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
         <strong>Mensaje!</strong> {{ session('success') }}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
-    @endif
+@endif
+
+@if(isset($errors) && count($errors) > 0)
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>¡Mensaje!</strong> Ha ocurrido un error. Por favor, revisa los campos e intenta de nuevo.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+
+
+
     <div class="row">
         <div class="col p-4">
             <h3>Áreas</h3>
         </div>
         <div class="col p-4 d-flex justify-content-end">
             <a href="{{route('pdfAreas')}}" class="mx-1 my-1"><button type="button" class="btn btn-danger"><i class="fa-solid fa-file-pdf"></i></button>
-            <a class="btn btn-success float-end mx-1 my-1" href="{{ route('areas.export') }}"><i class="fa-sharp fa-solid fa-file-excel"></i></a>
-            <button type="button" class="btn btn-success mx-1 my-1" id="btn_alta" data-bs-toggle="modal" data-bs-target="#modalalta"><i class="fa-solid fa-plus"></i></button>
+                <a class="btn btn-success float-end mx-1 my-1" href="{{ route('areas.export') }}"><i class="fa-sharp fa-solid fa-file-excel"></i></a>
+                <button type="button" class="btn btn-success mx-1 my-1" id="btn_alta" data-bs-toggle="modal" data-bs-target="#modalalta"><i class="fa-solid fa-plus"></i></button>
         </div>
 
         <div class="table-responsive" id="resultado">
@@ -116,7 +127,7 @@ $session_area = session('session_area');
 
 @include('areas.modales')
 
-@endauth   <!-- Validacion de contenido LOGGEADO ELSE -->
+@endauth <!-- Validacion de contenido LOGGEADO ELSE -->
 @guest
 <div class="container p-4">
     <div class="row">
