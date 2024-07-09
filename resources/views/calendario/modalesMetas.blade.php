@@ -95,6 +95,10 @@
         </div>
     </div>
 </div>
+
+@endforeach
+<!-- MODAL MESES CON REGISTRO EN MESES END -->
+@foreach($areasconMeses as $meta)
 <!-- SCRIPT para la suma dinamica de los modales START -->
 <script>
     window.addEventListener('load', () => {
@@ -126,8 +130,6 @@
 </script>
 <!-- SCRIPT para la suma dinamica de los modales END -->
 @endforeach
-<!-- MODAL MESES CON REGISTRO EN MESES END -->
-
 <!-- MODAL MESES SIN REGISTRO EN MESES START -->
 @foreach ($areassinMeses as $meta)
 <div class="modal fade" id="modalshow{{ $meta->id_areasmetas }}" tabindex="-1" aria-labelledby="modalshowLabel" aria-hidden="true">
