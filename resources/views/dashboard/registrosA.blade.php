@@ -14,14 +14,6 @@
 $session_area = session('session_area');
 ?>
 
-<!-- SCRIPT QUE FUNCIONA COMO MIDDLEWARE START -->
-<!-- {{-- @if(auth()->user()->id_tipo == 5)
-<script>
-    window.location.replace("{{ route('dashboard')}}");
-</script>
-@endif --}} -->
-<!-- SCRIPT QUE FUNCIONA COMO MIDDLEWARE END -->
-
 <title>Registros</title>
 @auth <!-- Contenido con sesión iniciada START -->
 <div class="container p-4">

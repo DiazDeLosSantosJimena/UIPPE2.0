@@ -37,19 +37,19 @@ $session_area = session('session_area');
                 <!-- <a href="#" class="nav_logo"><img src="logos/SIPPyEMlogo.png" alt="SIPPyEM" style="height: 70px;"></a> -->
                 <div class="nav_list">
                     @if(auth()->user())
-                    @if(auth()->user()->id_tipo == 5)
-                    <a href="{{ route('graficos') }}" class="nav_link" id="a_graficos"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Reportes</span> </a>
-                    <a href="{{ route('EditarPerfil') }}" class="nav_link" id="a_perfil"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Perfíl</span> </a>
-                    @endif
-                    @if(auth()->user()->id_tipo != 5)
-                    <a href="{{ route('registrosA', ['id' => $session_area]) }}" class="nav_link" id="a_registros"> <i class='bx bxs-edit'></i></i> <span class="nav_name">Registros</span> </a>
-                    <a href="{{ route('graficos') }}" class="nav_link" id="a_graficos"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Reportes</span> </a>
-                    <a href="{{ route('calendario') }}" class="nav_link" id="a_calendario"> <i class='bx bx-calendar nav_icon'></i> <span class="nav_name">Calendario</span> </a>
-                    @if(auth()->user()->id_tipo == 1 || auth()->user()->id_tipo == 2)
-                    <a href="{{ route('correo') }}" class="nav_link" id="a_correo"> <i class="bx bx-envelope nav_icon"></i> <span class="nav_name">Correo</span></a>
-                    @endif
-                    <a href="{{ route('perfil') }}" class="nav_link" id="a_perfil"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Perfíl</span> </a>
-                    @endif
+                        @if(auth()->user()->id_tipo == 5)
+                            <a href="{{ route('graficos') }}" class="nav_link" id="a_graficos"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Reportes</span> </a>
+                            <a href="{{ route('EditarPerfil') }}" class="nav_link" id="a_perfil"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Perfíl</span> </a>
+                        @endif
+                        @if(auth()->user()->id_tipo != 5)
+                            <a href="{{ route('registrosA', ['id' => $session_area]) }}" class="nav_link" id="a_registros"> <i class='bx bxs-edit'></i></i> <span class="nav_name">Registros</span> </a>
+                            <a href="{{ route('graficos') }}" class="nav_link" id="a_graficos"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Reportes</span> </a>
+                            <a href="{{ route('calendario') }}" class="nav_link" id="a_calendario"> <i class='bx bx-calendar nav_icon'></i> <span class="nav_name">Calendario</span> </a>
+                            @if(auth()->user()->id_tipo == 1 || auth()->user()->id_tipo == 2)
+                                <a href="{{ route('correo') }}" class="nav_link" id="a_correo"> <i class="bx bx-envelope nav_icon"></i> <span class="nav_name">Correo</span></a>
+                            @endif
+                        <a href="{{ route('perfil') }}" class="nav_link" id="a_perfil"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Perfíl</span> </a>
+                        @endif
                     @endif
                 </div>
             </div>
