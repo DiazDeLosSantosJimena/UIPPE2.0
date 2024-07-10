@@ -218,6 +218,7 @@
         //  Ubica el registro en la tabla y selecciona la columna con la cantidad propuesta anual
         const impresionTabla = String(`cantEntrega${formulario.id}`);
         const inputElements = formulario.querySelectorAll('input[type="number"]');
+        const cantidad = formulario.parentElement.parentElement.lastElementChild.querySelector(String(`#cantidad${formulario.id}`));
 
         inputElements.forEach(inputElement => {
             inputElement.addEventListener('input', () => {
@@ -230,6 +231,7 @@
                     }
                 });
                 formulario.parentElement.parentElement.firstElementChild.querySelector('div').textContent = CantidadTotal;
+                cantidad.value = CantidadTotal;
                 document.getElementById(impresionTabla).textContent = CantidadTotal;
             });
         });
