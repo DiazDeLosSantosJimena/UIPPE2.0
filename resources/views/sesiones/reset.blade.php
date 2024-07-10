@@ -16,7 +16,7 @@
         crossorigin="anonymous"></script>
 
     <!-- Enlace a hojas de estilo CSS locales -->
-    <link rel="stylesheet" href="css/sesiones.css">
+    <link rel="stylesheet" href="{{ asset('css/sesiones.css') }}">
 
     <!-- Enlace a hojas de estilos CSS de Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
@@ -24,7 +24,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Carga de script JavaScript local -->
-    <script src="js/sesiones.js"></script>
+    <script src="{{ asset('js/sesiones.js') }}"></script>
 
     <title>Recuperación de Contraseña</title>
 </head>
@@ -46,7 +46,7 @@
 
     <div class="contenedor rounded shadow">
         <div class="text-end">
-            <img src="logos/logotipoutvt.png" width="200px" alt="">
+            <img src="{{asset('logos/logotipoutvt.png')}}" width="200px" alt="">
         </div> <!-- Cierre de la etiqueta del logo -->
 
         <!-- Columna central -->

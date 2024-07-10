@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AreasMetas;
 use App\Models\Calendarizars;
 use App\Models\Entregas;
 use App\Models\Meses;

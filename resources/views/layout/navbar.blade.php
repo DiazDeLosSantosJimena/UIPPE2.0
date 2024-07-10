@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/menu.css" />
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/menu.css') }}" />
     <!-- <link rel="stylesheet" href="css/all.min.css') }}"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet">
@@ -23,7 +23,7 @@ $session_area = session('session_area');
         {{ auth()->user()->nombre .' '. auth()->user()->app .' '. auth()->user()->apm}}
     </div>
     &nbsp;&nbsp;
-    <div class="header_img"> <img src="img/post/{{auth()->user()->foto }}" alt="img"> </div>
+    <div class="header_img"> <img src="{{ asset('img/post/'.auth()->user()->foto) }}" alt="img"> </div>
     @endauth
     <!-- @auth {{ auth()->user()->name ?? auth()->user()->username }} @endauth -->
 </header>
@@ -68,10 +68,10 @@ $session_area = session('session_area');
     <!--Container Main end-->
 
     <!-- Scripts START -->
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/3aafa2d207.js"></script>
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/menu.js"></script>
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('js/3aafa2d207.js') }}"></script>
+    <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ asset('js/menu.js') }}"></script>
     <!-- <script src="js/jquery-3.6.4.min.js)"></script> -->
     <!-- <script src="js/datatables.min.js)"></script>  -->
     <script>

@@ -1,7 +1,7 @@
 @extends('layout.navbar')
 <!-- Importacion de estilos para el select START -->
 @section('css')
-<link rel="stylesheet" href="css/dataTables.bootstrap5.min.css">
+<link rel="stylesheet" href="{{ asset('css/dataTables.bootstrap5.min.css') }}">
 @endsection
 <!-- Importacion de estilos para el select END -->
 
@@ -66,7 +66,7 @@ $session_area = session('session_area');
                     @foreach($Usuarios as $usuario)
                     @if(auth()->user()->id != 3)
                     <tr>
-                        <td class="text-center"><img src="img/post/{{$usuario-> foto}}" alt="{{ $usuario->foto }}" style="width: 45px; border-radius: 15px;"></td>
+                        <td class="text-center"><img src="{{ asset('img/post/'.$usuario-> foto) }}" alt="{{ $usuario->foto }}" style="width: 45px; border-radius: 15px;"></td>
                         <td>{{ $usuario->clave}}</td>
                         <td>{{ $usuario->nombreU}}</td>
                         <td>{{ $usuario->app .' '. $usuario->apm }}</td>
@@ -107,7 +107,7 @@ $session_area = session('session_area');
                     </tr>
                     @elseif($usuario->activo > 0)
                     <tr>
-                        <td class="text-center"><img src="img/post/{{$usuario-> foto }}" alt="{{ $usuario->foto }}" style="width: 45px; border-radius: 15px;"></td>
+                        <td class="text-center"><img src="{{ asset('img/post/'.$usuario-> foto) }}" alt="{{ $usuario->foto }}" style="width: 45px; border-radius: 15px;"></td>
                         <td>{{ $usuario->clave}}</td>
                         <td>{{ $usuario->nombreU}}</td>
                         <td>{{ $usuario->app .' '. $usuario->apm }}</td>
@@ -180,8 +180,8 @@ $session_area = session('session_area');
 
 <!-- Importacion y configuracion para las tablas dinamicas START -->
 @section('js')
-<script src="js/jquery.dataTables.min.js"></script>
-<script src="js/dataTables.bootstrap5.min.js"></script>
+<script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('js/dataTables.bootstrap5.min.js') }}"></script>
 <script>
     $(document).ready(function() {
         $('#userTable').DataTable({
