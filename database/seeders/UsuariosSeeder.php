@@ -24,7 +24,7 @@ class UsuariosSeeder extends Seeder
         $usuario->fn = '2001-01-01';
         $usuario->academico = 'SIPPyEM';
         $usuario->foto = 'cuervo.png';
-        $usuario->email = 'admin@syppyem.com';
+        $usuario->email = 'admin@sippyem.com';
         $usuario->password = 'admin';
         $usuario->id_tipo = '1';
         $usuario->activo = '1';
