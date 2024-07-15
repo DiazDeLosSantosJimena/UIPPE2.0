@@ -138,7 +138,7 @@ $session_area = session('session_area');
             var URLpath = window.location.pathname;
             let regex = /\/(.*?)\//;
             let match = URLpath.match(regex);
-            console.log(URLpath);
+            // console.log(URLpath);
             // if (URLpath === "/~pruebasutvtol/dashboard") {
             if (URLpath === "/dashboard") {
                 let elementoNav = document.querySelector('#a_sippyem');
@@ -155,10 +155,11 @@ $session_area = session('session_area');
             } else if (URLpath === "/perfil") {
                 let elementoNav = document.querySelector('#a_perfil');
                 elementoNav.classList.add('active');
-            } else if (URLpath === "/registros" || URLpath === "/areas" || URLpath === "/tipos" || URLpath === "/usuarios" || URLpath === "/areas-usuarios" || URLpath === "/programas" || URLpath === "/metas" || URLpath === "/areasmetas" || match[1] === "registrosA") {
-                let elementoNav = document.querySelector('#a_registros');
-                elementoNav.classList.add('active');
             }
+            // } else if (URLpath === "/registros" || URLpath === "/areas" || URLpath === "/tipos" || URLpath === "/usuarios" || URLpath === "/areas-usuarios" || URLpath === "/programas" || URLpath === "/metas" || URLpath === "/areasmetas" || match[1] === "registrosA") {
+            //     let elementoNav = document.querySelector('#a_registros');
+            //     elementoNav.classList.add('active');
+            // }
         });
     </script>
     @yield('js')

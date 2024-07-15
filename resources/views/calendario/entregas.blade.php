@@ -1,7 +1,7 @@
 @extends('layout.navbar')
 <!-- Importación y configiración de estilos para las tablas dinamicas START -->
 @section('dataTablesCss')
-<link rel="stylesheet" href="{{ asset('css/dataTables.bootstrap5.min.css') }}s">
+<link rel="stylesheet" href="{{ asset('css/dataTables.bootstrap5.min.css') }}">
 <style>
     input[type=number]::-webkit-inner-spin-button,
     input[type=number]::-webkit-outer-spin-button {
@@ -261,7 +261,7 @@ $session_area = session('session_area');
                                 <td class="text-center" id="mes4{{ $meta->id_areasmetas }}"></td>
                                 <td class="table-success"><input type="number" style="background-color:transparent;" name="abril" onkeyup="suma{{ $meta->id_areasmetas }}(this.value)" onfocus="input{{ $meta->id_areasmetas }}(this.value)" onblur="desfoc{{$meta->id_areasmetas}}()" class="form-control sum3{{ $meta->id_areasmetas }} border-0"></td>
                                 <td class="text-center" id="mes5{{ $meta->id_areasmetas }}"></td>
-                                <td class="table-success"><input type="number" style="background-color:transparent;" name="mayo" onkeyup="suma{{ $meta->id_areasmetas }}(this.value)" onfocus="input{{ $meta->id_areasmetas }}(this.value)" onblur="desfoc{{$meta->id_areasmetas}}()" class="form-control sum4{{ $meta->id_areasmetas }} border-0"</td>
+                                <td class="table-success"><input type="number" style="background-color:transparent;" name="mayo" onkeyup="suma{{ $meta->id_areasmetas }}(this.value)" onfocus="input{{ $meta->id_areasmetas }}(this.value)" onblur="desfoc{{$meta->id_areasmetas}}()" class="form-control sum4{{ $meta->id_areasmetas }} border-0"></td>
                                 <td class="text-center" id="mes6{{ $meta->id_areasmetas }}"></td>
                                 <td class="table-success"><input type="number" style="background-color:transparent;" name="junio" onkeyup="suma{{ $meta->id_areasmetas }}(this.value)" onfocus="input{{ $meta->id_areasmetas }}(this.value)" onblur="desfoc{{$meta->id_areasmetas}}()" class="form-control sum5{{ $meta->id_areasmetas }} border-0"></td>
                                 <td class="text-center" id="mes7{{ $meta->id_areasmetas }}"></td>
@@ -271,7 +271,7 @@ $session_area = session('session_area');
                                 <td class="text-center" id="mes9{{ $meta->id_areasmetas }}"></td>
                                 <td class="table-success"><input type="number" style="background-color:transparent;" name="septiembre" onkeyup="suma{{ $meta->id_areasmetas }}(this.value)" onfocus="input{{ $meta->id_areasmetas }}(this.value)" onblur="desfoc{{$meta->id_areasmetas}}()" class="form-control sum8{{ $meta->id_areasmetas }} border-0"></td>
                                 <td class="text-center" id="mes10{{ $meta->id_areasmetas }}"></td>
-                                <td class="table-success"><input type="number" style="background-color:transparent;" name="octubre" onkeyup="suma{{ $meta->id_areasmetas }}(this.value)" onfocus="input{{ $meta->id_areasmetas }}(this.value)" onblur="desfoc{{$meta->id_areasmetas}}()" class="form-control sum9{{ $meta->id_areasmetas }} border-0"</td>
+                                <td class="table-success"><input type="number" style="background-color:transparent;" name="octubre" onkeyup="suma{{ $meta->id_areasmetas }}(this.value)" onfocus="input{{ $meta->id_areasmetas }}(this.value)" onblur="desfoc{{$meta->id_areasmetas}}()" class="form-control sum9{{ $meta->id_areasmetas }} border-0"></td>
                                 <td class="text-center" id="mes11{{ $meta->id_areasmetas }}"></td>
                                 <td class="table-success"><input type="number" style="background-color:transparent;" name="noviembre" onkeyup="suma{{ $meta->id_areasmetas }}(this.value)" onfocus="input{{ $meta->id_areasmetas }}(this.value)" onblur="desfoc{{$meta->id_areasmetas}}()" class="form-control sum10{{ $meta->id_areasmetas }} border-0"></td>
                                 <td class="text-center" id="mes12{{ $meta->id_areasmetas }}"></td>
@@ -559,7 +559,7 @@ $session_area = session('session_area');
         var mesNow = fecha.getMonth();
 
         @if(auth()->user()->id_tipo>=3)
-            for(var i=0; i<12; i++){
+            for(var i=0; i<=11; i++){
                 var inputTotal = document.querySelector(".sum"+i+"{{ $cantP->id_areasmetas }}");
                 if(i>=mesNow){
 

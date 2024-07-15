@@ -99,8 +99,8 @@ $session_area = session('session_area');
                     <!-- Campos en tabla metas -->
                     <tr>
                         <th class="text-center">Clave</th>
-                        <th>Programa</th>
                         <th>Nombre Meta</th>
+                        <th>Programa</th>
                         <th class="text-center">Cantidad Propuesta Anual</th>
                         <th class="text-center">Acciones</th>
                     </tr>

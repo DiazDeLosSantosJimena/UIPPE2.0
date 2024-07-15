@@ -52,6 +52,9 @@ Route::name('prueba')->get('prueba', [CorreosController::class, 'prueba']);
 
 Route::middleware('auth')->group(function () {
 
+    //  Pruebas de entregas
+    Route::name('entregas2')->get('/entregas2', [CalendarizarsController::class, 'entregasView']);
+
     //  Dashboard
     Route::name('dashboard')->get('/dashboard', [DashboardController::class, 'dashboard']);
     Route::name('registrosA')->get('registrosA/{id}', [DashboardController::class, 'registrosArea'])->middleware('registrosAreasMiddleware:id', 'areausuario');
